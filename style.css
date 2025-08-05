@@ -203,7 +203,6 @@ body {
   transform: translateY(-2px);
 }
 
-<style>
 .why-akserver h2 {
   font-size: 2.5rem;
   margin-bottom: 3rem;
@@ -258,7 +257,67 @@ body {
     font-size: 0.95rem;
   }
 }
-</style>
+
+.how-it-works h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #00ffd5;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.step {
+  background: #181818;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #00ffd522;
+  text-align: left;
+  box-shadow: 0 0 15px #00ffd511;
+}
+
+.step-number {
+  font-size: 2rem;
+  background: #00ffd5;
+  color: #0f0f0f;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.step h3 {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .how-it-works h2 {
+    font-size: 2rem;
+  }
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+  .step p {
+    font-size: 0.95rem;
+  }
+}
 
 /* ====================
    Responsive Media Queries
@@ -283,4 +342,5 @@ body {
     font-size: 1rem;
   }
 }
+
 
