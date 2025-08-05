@@ -203,7 +203,62 @@ body {
   transform: translateY(-2px);
 }
 
+<style>
+.why-akserver h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #00ffd5;
+}
 
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: start;
+  justify-content: center;
+}
+
+.why-box {
+  background: #181818;
+  border: 1px solid #00ffd522;
+  border-radius: 12px;
+  padding: 2rem;
+  color: #fff;
+  box-shadow: 0 0 10px #00ffd522;
+  transition: transform 0.3s ease;
+}
+
+.why-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #00ffd555;
+}
+
+.why-box h3 {
+  margin-bottom: 1rem;
+  color: #00ffd5;
+  font-size: 1.5rem;
+}
+
+.why-box ul {
+  list-style: none;
+  padding-left: 0;
+  line-height: 2;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+@media (max-width: 600px) {
+  .why-akserver h2 {
+    font-size: 1.8rem;
+  }
+  .why-box h3 {
+    font-size: 1.3rem;
+  }
+  .why-box ul {
+    font-size: 0.95rem;
+  }
+}
+</style>
 
 /* ====================
    Responsive Media Queries
@@ -228,3 +283,4 @@ body {
     font-size: 1rem;
   }
 }
+
