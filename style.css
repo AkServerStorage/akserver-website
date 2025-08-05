@@ -120,13 +120,16 @@ body {
 }
 
 .why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
   gap: 2rem;
-  align-items: start;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; /* ensures responsive wrap on small screens */
 }
 
 .why-box {
+  flex: 1 1 45%; /* responsive width, adjusts down on small screens */
+  max-width: 500px;
   background: #181818;
   border: 1px solid #00ffd522;
   border-radius: 12px;
@@ -135,6 +138,7 @@ body {
   box-shadow: 0 0 10px #00ffd522;
   transition: transform 0.3s ease;
 }
+
 
 .why-box:hover {
   transform: translateY(-5px);
@@ -425,3 +429,4 @@ body {
     font-size: 1rem;
   }
 }
+
