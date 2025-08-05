@@ -110,53 +110,41 @@ body {
   transform: translateY(-2px);
 }
 
-/* ===================================
-   Why AkServer Section
-=================================== */
-.why-akserver h2 {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #00ffd5;
-}
-
-.why-grid {
-  display: flex;
+/* =========================
+   Unified Feature Grid Style (Why AkServer & Features)
+========================= */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 2rem;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap; /* ensures responsive wrap on small screens */
+  margin-top: 2rem;
 }
 
-.why-box {
-  flex: 1 1 45%; /* responsive width, adjusts down on small screens */
-  max-width: 500px;
+.feature-card {
   background: #181818;
   border: 1px solid #00ffd522;
   border-radius: 12px;
   padding: 2rem;
-  color: #fff;
-  box-shadow: 0 0 10px #00ffd522;
-  transition: transform 0.3s ease;
+  box-shadow: 0 0 12px #00ffd511;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
-
-.why-box:hover {
+.feature-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 20px #00ffd555;
 }
 
-.why-box h3 {
-  margin-bottom: 1rem;
+.feature-card h3 {
   color: #00ffd5;
-  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
 }
 
-.why-box ul {
-  list-style: none;
-  padding-left: 0;
-  line-height: 2;
-  font-size: 1rem;
+.feature-card p {
   color: #ccc;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 /* ===================================
@@ -255,44 +243,7 @@ body {
   100% { transform: translateX(-100%); }
 }
 
-/* ===================================
-   Features Grid
-=================================== */
-.features {
-  background: #1a1a1a;
-}
 
-.feature-grid {
-  max-width: 900px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  text-align: center;
-}
-
-.feature-card {
-  background: #181818;
-  border: 1px solid #00ffd522;
-  border-radius: 12px;
-  padding: 2rem 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px #00ffd566;
-}
-
-.feature-card h3 {
-  color: #00ffd5;
-  margin-bottom: 0.5rem;
-}
-
-.feature-card p {
-  color: #bbb;
-  font-size: 0.95rem;
-}
 
 /* ===================================
    Contact Form
@@ -429,4 +380,5 @@ body {
     font-size: 1rem;
   }
 }
+
 
