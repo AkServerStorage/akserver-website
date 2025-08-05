@@ -111,7 +111,7 @@ body {
 }
 
 /* =========================
-   Why AkServer – Problem + Solution Cards
+   Bonded Problem + Solution Tiles
 ========================= */
 .why-pairs-grid {
   display: grid;
@@ -120,51 +120,58 @@ body {
   margin-top: 3rem;
 }
 
-.why-card {
-  background: #181818;
+.why-tile {
+  display: flex;
+  flex-direction: column;
+  background: #1a1a1a;
   border: 1px solid #00ffd522;
   border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 0 10px #00ffd511;
+  overflow: hidden;
+  box-shadow: 0 0 12px #00ffd511;
   transition: transform 0.3s ease;
 }
 
-.why-card:hover {
+.why-tile:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 20px #00ffd533;
+}
+
+.tile-header, .tile-footer {
+  padding: 1.5rem;
+}
+
+.tile-header {
+  background: #181818;
+  border-bottom: 1px solid #00ffd522;
 }
 
 .problem-title {
   color: #ff4e4e;
   font-size: 1.3rem;
-  font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
 .problem-text {
   color: #ccc;
-  margin-bottom: 1rem;
   font-size: 1rem;
 }
 
-.solution-box {
-  background: #111;
-  border-left: 4px solid #00ffd5;
-  padding: 1rem 1.25rem;
-  border-radius: 8px;
+.tile-footer {
+  background: #121212;
 }
 
-.solution-box h4 {
-  margin: 0 0 0.5rem;
-  font-size: 1.1rem;
+.solution-title {
   color: #00ffd5;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
 }
 
-.solution-box p {
+.solution-text {
   color: #aaa;
   font-size: 0.95rem;
 }
 
+/* Responsive Grid */
 @media (max-width: 768px) {
   .why-pairs-grid {
     grid-template-columns: 1fr;
@@ -405,6 +412,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
