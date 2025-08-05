@@ -111,39 +111,62 @@ body {
 }
 
 /* =========================
-   Why AkServer Tiles – Alternating Block Grid
+   Why AkServer – Problem + Solution Cards
 ========================= */
-.why-grid-tiles {
+.why-pairs-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
 
-.why-tile {
+.why-card {
   background: #181818;
   border: 1px solid #00ffd522;
   border-radius: 12px;
-  padding: 1.5rem;
-  color: #ccc;
+  padding: 2rem;
   box-shadow: 0 0 10px #00ffd511;
   transition: transform 0.3s ease;
 }
 
-.why-tile:hover {
+.why-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 20px #00ffd544;
+  box-shadow: 0 0 20px #00ffd533;
 }
 
-.tile-header {
-  font-size: 1.2rem;
+.problem-title {
+  color: #ff4e4e;
+  font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+}
+
+.problem-text {
+  color: #ccc;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.solution-box {
+  background: #111;
+  border-left: 4px solid #00ffd5;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+}
+
+.solution-box h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
   color: #00ffd5;
 }
 
+.solution-box p {
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
 @media (max-width: 768px) {
-  .why-grid-tiles {
+  .why-pairs-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -382,6 +405,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
