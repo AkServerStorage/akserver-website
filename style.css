@@ -181,6 +181,31 @@ body {
 }
 
 /* ====================
+   hero section style
+==================== */
+.btn-primary {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  color: #0f0f0f;
+  background-color: #00ffd5;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #00c0a1;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+
+
+/* ====================
    Responsive Media Queries
 ==================== */
 @media (max-width: 768px) {
@@ -202,26 +227,4 @@ body {
   .subtitle {
     font-size: 1rem;
   }
-}
-/* ====================
-   hero section style
-==================== */
-.btn-primary {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.9rem 2rem;
-  font-size: 1rem;
-  color: #0f0f0f;
-  background-color: #00ffd5;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-primary:hover {
-  background-color: #00c0a1;
-  color: #ffffff;
-  transform: translateY(-2px);
 }
