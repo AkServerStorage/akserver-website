@@ -113,12 +113,6 @@ body {
 /* =========================
    Bonded Problem + Solution Tiles
 ========================= */
-.why-pairs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
 
 .why-tile {
   display: flex;
@@ -489,6 +483,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
