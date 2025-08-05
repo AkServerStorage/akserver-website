@@ -25,30 +25,28 @@
 <!-- =========================
      Hero Section with Animation
      ========================= -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<section id="home" class="section hero">
-  <div class="content" style="position: relative; z-index: 2;">
-    <h1 class="main-title" data-aos="fade-up" data-aos-duration="1000">AkServer</h1>
-    <p class="subtitle" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-      We empower you to establish your very own, completely private file storage system,<br />
-      operating entirely on your local network – <strong>Your Files, Your Network, Your Control.</strong>
-    </p>
-    <a href="#contact" class="btn-primary" data-aos="zoom-in" data-aos-delay="600">Get Your Custom Solution</a>
+  <!-- Hero Section -->
+  <section class="akserver-hero-animated section hero" id="home">
+    <div class="content">
+      <h1 class="main-title animated-title">AkServer</h1>
+      <p class="subtitle animated-subtitle">Your Private Storage. Anywhere. Anytime.</p>
 
-    <!-- Animated Visual Steps -->
-    <div class="hero-animation" data-aos="fade-up" data-aos-delay="800" style="margin-top: 4rem;">
-      <img src="media/folder-lock.png" alt="Folder Lock" style="width:60px; margin:0 1rem;">
-      <img src="media/arrow-right.png" alt="Arrow" style="width:40px;">
-      <img src="media/server-box.png" alt="AkServer Box" style="width:70px; margin:0 1rem;">
-      <img src="media/arrow-right.png" alt="Arrow" style="width:40px;">
-      <img src="media/devices.png" alt="Devices" style="width:70px;">
+      <!-- Animated Visual Flow -->
+      <div class="animation-track">
+        <img src="media/folder-lock.png" class="step-icon" />
+        <img src="media/arrow.svg" class="arrow-icon" />
+        <img src="media/server-box.png" class="step-icon" />
+        <img src="media/arrow.svg" class="arrow-icon" />
+        <img src="media/devices.png" class="step-icon" />
+      </div>
+
+      <a href="#contact" class="btn-primary">Get Started</a>
     </div>
-  </div>
-</section>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+  </section>
+
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
 
 <!-- =========================
      Why AkServer Section
@@ -199,6 +197,7 @@
 
 </body>
 </html>
+
 
 
 
