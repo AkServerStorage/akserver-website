@@ -111,41 +111,43 @@ body {
 }
 
 /* =========================
-   Unified Feature Grid Style (Why AkServer & Features)
+   Why AkServer Tiles – Alternating Block Grid
 ========================= */
-.feature-grid {
+.why-grid-tiles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
-.feature-card {
+.why-tile {
   background: #181818;
   border: 1px solid #00ffd522;
   border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 0 12px #00ffd511;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px #00ffd555;
-}
-
-.feature-card h3 {
-  color: #00ffd5;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-}
-
-.feature-card p {
+  padding: 1.5rem;
   color: #ccc;
-  font-size: 1rem;
-  line-height: 1.5;
+  box-shadow: 0 0 10px #00ffd511;
+  transition: transform 0.3s ease;
 }
+
+.why-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #00ffd544;
+}
+
+.tile-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #00ffd5;
+}
+
+@media (max-width: 768px) {
+  .why-grid-tiles {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* ===================================
    How It Works Section
@@ -380,5 +382,6 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
