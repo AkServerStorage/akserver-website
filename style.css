@@ -111,11 +111,11 @@ body {
 }
 
 /* =========================
-   Bonded Problem + Solution Tiles
+   2x2 Grid for Why-AkServer Section
 ========================= */
 .why-pairs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -129,6 +129,7 @@ body {
   overflow: hidden;
   box-shadow: 0 0 12px #00ffd511;
   transition: transform 0.3s ease;
+  min-height: 220px;
 }
 
 .why-tile:hover {
@@ -169,6 +170,14 @@ body {
 .solution-text {
   color: #aaa;
   font-size: 0.95rem;
+}
+
+/* Optional: Empty tile styling for balance */
+.empty-tile {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  min-height: 220px;
 }
 
 /* Responsive Grid */
@@ -412,6 +421,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
