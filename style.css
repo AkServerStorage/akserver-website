@@ -367,6 +367,19 @@ body {
     flex: 0 0 80%;
   }
 }
+.cta-tagline {
+  background: linear-gradient(145deg, #111111, #1b1b1b);
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+.cta-tagline .tagline {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00ffd5;
+}
+
 /* ====================
    Responsive Media Queries
 ==================== */
@@ -390,6 +403,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
