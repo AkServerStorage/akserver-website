@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="AkServer lets you build your own private file sync system, fully offline and customizable — designed for total control over your data." />
   <title>AkServer | Custom File Sync System</title>
-  <link rel="stylesheet" href="style.css?v=1.0.2" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=1.0.1" />
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
 </head>
 <body>
   <!-- Top Navigation -->
@@ -21,27 +22,193 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="akserver-hero-animated section hero" id="home">
-    <div class="content">
-      <h1 class="main-title animated-title">AkServer</h1>
-      <p class="subtitle animated-subtitle">Your Private Storage. Anywhere. Anytime.</p>
+<!-- =========================
+     Hero Section with Animation
+     ========================= -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<section id="home" class="section hero">
+  <div class="content" style="position: relative; z-index: 2;">
+    <h1 class="main-title" data-aos="fade-up" data-aos-duration="1000">AkServer</h1>
+    <p class="subtitle" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+      We empower you to establish your very own, completely private file storage system,<br />
+      operating entirely on your local network – <strong>Your Files, Your Network, Your Control.</strong>
+    </p>
+    <a href="#contact" class="btn-primary" data-aos="zoom-in" data-aos-delay="600">Get Your Custom Solution</a>
 
-      <!-- Animated Visual Flow -->
-      <div class="animation-track">
-        <img src="media/folder-lock.png" class="step-icon" />
-        <img src="media/arrow.svg" class="arrow-icon" />
-        <img src="media/server-box.png" class="step-icon" />
-        <img src="media/arrow.svg" class="arrow-icon" />
-        <img src="media/devices.png" class="step-icon" />
+    <!-- Animated Visual Steps -->
+    <div class="hero-animation" data-aos="fade-up" data-aos-delay="800" style="margin-top: 4rem;">
+      <img src="media/folder-lock.png" alt="Folder Lock" style="width:60px; margin:0 1rem;">
+      <img src="media/arrow-right.png" alt="Arrow" style="width:40px;">
+      <img src="media/server-box.png" alt="AkServer Box" style="width:70px; margin:0 1rem;">
+      <img src="media/arrow-right.png" alt="Arrow" style="width:40px;">
+      <img src="media/devices.png" alt="Devices" style="width:70px;">
+    </div>
+  </div>
+</section>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<!-- =========================
+     Why AkServer Section
+     ========================= -->
+<section id="why-akserver" class="section why-akserver">
+  <div class="content">
+    <h2 data-aos="fade-up" data-aos-duration="1000">Why AkServer?</h2>
+    <div class="why-grid">
+
+      <!-- Left: Problem Block -->
+      <div class="why-box" data-aos="fade-right" data-aos-delay="200">
+        <h3>❌ The Cloud Problem</h3>
+        <ul>
+          <li>⚡ Dependent on internet and routers</li>
+          <li>🔐 Privacy risks and data leaks</li>
+          <li>💸 Monthly fees, hidden limits</li>
+          <li>🌐 Controlled by third-party platforms</li>
+        </ul>
       </div>
 
-      <a href="#contact" class="btn-primary">Get Started</a>
-    </div>
-  </section>
+      <!-- Right: Solution Block -->
+      <div class="why-box" data-aos="fade-left" data-aos-delay="200">
+        <h3>✅ The AkServer Way</h3>
+        <ul>
+          <li>🔧 Turns old PCs into private servers</li>
+          <li>📶 Works via local Wi-Fi or its own hotspot</li>
+          <li>🛡⃣ Blocks external access completely</li>
+          <li>❌ No right-click or long-press downloads</li>
+          <li>⛔ Self-hosted, zero cloud, no middlemen</li>
+          <li>✨ Ultra-fast sync with full user control</li>
+        </ul>
+      </div>
 
-  <!-- AOS Animation Script -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     How It Works Section
+     ========================= -->
+<section id="how-it-works" class="section how-it-works">
+  <div class="content">
+    <h2 data-aos="fade-up">How AkServer Works</h2>
+    <div class="steps">
+      <div class="step" data-aos="fade-up" data-aos-delay="200">
+        <div class="step-number">1</div>
+        <h3>Install & Launch</h3>
+        <p>Run AkServer on any old PC or laptop. No setup headaches. Just install and go.</p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="400">
+        <div class="step-number">2</div>
+        <h3>Create Local Network</h3>
+        <p>Either connect via local Wi-Fi or let AkServer create its own hotspot — no router needed.</p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="600">
+        <div class="step-number">3</div>
+        <h3>Access & Sync Securely</h3>
+        <p>Sync folders instantly. Access via browser. No cloud. No spying. Just you and your files.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     Use Cases Carousel Section
+     ========================= -->
+<section id="use-cases" class="section use-cases">
+  <div class="content">
+    <h2 data-aos="fade-up">Real-World Use Cases</h2>
+    <div class="carousel" data-aos="zoom-in">
+      <div class="carousel-track">
+        <div class="carousel-card">
+          <h3>🏫 Schools & Colleges</h3>
+          <p>Private, fast offline file sharing in classrooms and labs.</p>
+        </div>
+        <div class="carousel-card">
+          <h3>🏢 Offices & Teams</h3>
+          <p>Distribute reports or sync team folders without cloud dependency.</p>
+        </div>
+        <div class="carousel-card">
+          <h3>🚗 Field Work</h3>
+          <p>Transfer files wirelessly between devices in remote locations.</p>
+        </div>
+        <div class="carousel-card">
+          <h3>🎮 Personal Use</h3>
+          <p>Turn any device into your own secure, offline storage unit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+
+
+
+
+
+<!-- Features Section -->
+<section id="features" class="section features">
+  <div class="content">
+    <h2 class="section-title">Why AkServer?</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>⚡ Offline-First</h3>
+        <p>No internet needed. Works locally, always.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📂 Folder Sync</h3>
+        <p>Smart sync entire folders, instantly.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🛡️ Secure & Private</h3>
+        <p>Data stays local. Nothing goes to cloud.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🔧 Custom Ready</h3>
+        <p>Tailored for industries, teams, or individuals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="section contact">
+  <div class="content">
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="subtitle">Interested in a custom solution? Let's talk.</p>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Enquiry</button>
+    </form>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 AkServer. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
