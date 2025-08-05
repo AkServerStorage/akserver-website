@@ -57,54 +57,83 @@
     </div>
   </section>
 
-<!-- =========================
-     Why AkServer Section (Bonded Tiles)
-     ========================= -->
-<section id="why-akserver" class="section why-akserver">
-  <div class="content">
-    <h2 data-aos="fade-up">Why AkServer?</h2>
+/* =========================
+   2x2 Grid for Why-AkServer Section
+========================= */
+.why-pairs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
 
-    <div class="why-pairs-grid">
+.why-tile {
+  display: flex;
+  flex-direction: column;
+  background: #1a1a1a;
+  border: 1px solid #00ffd522;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 12px #00ffd511;
+  transition: transform 0.3s ease;
+  min-height: 220px;
+}
 
-      <!-- Tile 1 -->
-      <div class="why-tile" data-aos="fade-up" data-aos-delay="100">
-        <div class="tile-header">
-          <h3 class="problem-title">❌ Cloud Dependency</h3>
-          <p class="problem-text">Requires internet, routers, or third-party control.</p>
-        </div>
-        <div class="tile-footer">
-          <h4 class="solution-title">✅ AkServer Solution</h4>
-          <p class="solution-text">Runs 100% offline using local Wi-Fi or its own hotspot.</p>
-        </div>
-      </div>
+.why-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #00ffd533;
+}
 
-      <!-- Tile 2 -->
-      <div class="why-tile" data-aos="fade-up" data-aos-delay="200">
-        <div class="tile-header">
-          <h3 class="problem-title">🔓 Data Leaks</h3>
-          <p class="problem-text">Files stored on cloud are always vulnerable to breaches.</p>
-        </div>
-        <div class="tile-footer">
-          <h4 class="solution-title">🛡️ AkServer Solution</h4>
-          <p class="solution-text">All files stay local, with zero external access allowed.</p>
-        </div>
-      </div>
+.tile-header, .tile-footer {
+  padding: 1.5rem;
+}
 
-      <!-- Tile 3 -->
-      <div class="why-tile" data-aos="fade-up" data-aos-delay="300">
-        <div class="tile-header">
-          <h3 class="problem-title">💸 Monthly Costs</h3>
-          <p class="problem-text">Cloud services charge forever, with hidden data limits.</p>
-        </div>
-        <div class="tile-footer">
-          <h4 class="solution-title">💡 AkServer Solution</h4>
-          <p class="solution-text">No subscriptions. One-time setup. Unlimited usage.</p>
-        </div>
-      </div>
+.tile-header {
+  background: #181818;
+  border-bottom: 1px solid #00ffd522;
+}
 
-    </div>
-  </div>
-</section>
+.problem-title {
+  color: #ff4e4e;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.problem-text {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.tile-footer {
+  background: #121212;
+}
+
+.solution-title {
+  color: #00ffd5;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.solution-text {
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+/* Optional: Empty tile styling for balance */
+.empty-tile {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  min-height: 220px;
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+  .why-pairs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
 
@@ -198,6 +227,7 @@
 
 </body>
 </html>
+
 
 
 
