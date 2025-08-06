@@ -377,7 +377,6 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   padding: 0 2rem;
-  justify-content: center;
 }
 
 
@@ -584,6 +583,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
