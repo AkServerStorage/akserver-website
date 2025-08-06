@@ -188,57 +188,40 @@ body {
 }
 
 /* ===============================
-   Why AkServer (Split Layout)
+   Why AkServer (Modern Grid)
 ================================= */
-.split-layout {
+.why-akserver {
   background: #f7fafd;
   padding: 5rem 2rem;
-}
-
-.split-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.visual img {
-  max-width: 400px;
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-}
-
-.text-grid {
-  max-width: 600px;
-  flex: 1;
 }
 
 .section-title {
   font-size: 2.4rem;
   color: #2a8bff;
-  margin-bottom: 2rem;
+  text-align: center;
   font-weight: 700;
+  margin-bottom: 3rem;
 }
 
-.feature-grid {
+.why-features-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .feature-card {
   background: #ffffff;
-  border: 1px solid #e0e0e0;
+  padding: 1.8rem;
+  border: 1px solid #e2e2e2;
   border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
@@ -247,40 +230,35 @@ body {
   margin-bottom: 0.6rem;
 }
 
-.feature-card h4 {
+.feature-card h3 {
   font-size: 1.1rem;
   color: #d32f2f;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .feature-card .desc {
-  color: #555;
+  color: #444;
   font-size: 0.95rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
 }
 
 .feature-card .solution {
   color: #2a8bff;
   font-size: 0.92rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .split-container {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .feature-grid {
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .why-features-grid {
     grid-template-columns: 1fr;
   }
 
   .section-title {
-    text-align: center;
+    font-size: 2rem;
   }
 }
-
 
 /* ===============================
    How It Works Section
@@ -483,6 +461,7 @@ body {
     flex: 0 0 80%;
   }
 }
+
 
 
 
