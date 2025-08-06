@@ -9,7 +9,7 @@
   <meta name="description" content="AkServer lets you build your own private file sync system, fully offline and customizable — designed for total control over your data." />
   <title>AkServer | Custom File Sync System</title>
   <!-- ===== CSS Imports ===== -->
-  <link rel="stylesheet" href="style.css?v=3.1.3" />
+  <link rel="stylesheet" href="style.css?v=3.1.4" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
@@ -166,35 +166,57 @@
   </div>
 </section>
 
+<!-- Step 1: Install & Launch -->
+<div class="step install-flow" data-aos="fade-up">
+  <div class="step-title">
+    <div class="step-number">1</div>
+    <h3>Install & Launch</h3>
+  </div>
 
-
-  <!-- =========================
-       How It Works Section
-       ========================= -->
-  <section id="how-it-works" class="section how-it-works">
-    <div class="content">
-      <h2 data-aos="fade-up">How AkServer Works</h2>
-      <div class="steps">
-        <div class="step" data-aos="fade-up" data-aos-delay="200">
-          <div class="step-number">1</div>
-          <h3>Install & Launch</h3>
-          <p>Run AkServer on any old PC or laptop. No setup headaches. Just install and go.</p>
-        </div>
-
-        <div class="step" data-aos="fade-up" data-aos-delay="400">
-          <div class="step-number">2</div>
-          <h3>Create Local Network</h3>
-          <p>Either connect via local Wi-Fi or let AkServer create its own hotspot — no router needed.</p>
-        </div>
-
-        <div class="step" data-aos="fade-up" data-aos-delay="600">
-          <div class="step-number">3</div>
-          <h3>Access & Sync Securely</h3>
-          <p>Sync folders instantly. Access via browser. No cloud. No spying. Just you and your files.</p>
-        </div>
-      </div>
+  <div class="install-sequence">
+    <!-- Block 1: Defender -->
+    <div class="install-step">
+      <img src="images/defender_warning.png" alt="Defender SmartScreen" />
+      <h4>Windows Defender Warning</h4>
+      <p>Click <strong>More Info</strong> → <strong>Run Anyway</strong></p>
     </div>
-  </section>
+
+    <!-- Block 2: UAC Prompt -->
+    <div class="install-step">
+      <img src="images/uac_prompt.png" alt="User Account Control" />
+      <h4>Unknown Publisher</h4>
+      <p>Click <strong>Yes</strong> to allow installation</p>
+    </div>
+
+    <!-- Block 3: Setup Window -->
+    <div class="install-step">
+      <img src="images/setup_screen.png" alt="Setup Wizard" />
+      <h4>Install Wizard</h4>
+      <p>Simple steps. Enable <strong>Start on Boot</strong> if preferred.</p>
+    </div>
+
+    <!-- Block 4: Auto Start Info -->
+    <div class="install-step">
+      <img src="images/startup_option.png" alt="Startup Setting" />
+      <h4>Runs Automatically</h4>
+      <p>Useful for backup PCs — no manual launch needed.</p>
+    </div>
+
+    <!-- Block 5: Firewall Prompt -->
+    <div class="install-step">
+      <img src="images/firewall_prompt.png" alt="Firewall Permission" />
+      <h4>Firewall Prompt</h4>
+      <p>Click <strong>Allow Access</strong> to start local server</p>
+    </div>
+
+    <!-- Block 6: AkServer Running -->
+    <div class="install-step">
+      <img src="images/akserver_running.png" alt="AkServer Running" />
+      <h4>You're Ready!</h4>
+      <p>AkServer is now live on your device!</p>
+    </div>
+  </div>
+</div>
 
   <!-- =========================
        Use Cases Section
@@ -273,6 +295,7 @@
      
 </body>
 </html>
+
 
 
 
