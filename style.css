@@ -111,37 +111,38 @@ body {
   transform: translateY(-2px);
 }
 
-/*software work flow*/
-.flow-diagram {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 3rem;
-  padding: 1rem;
-  background-color: #f4f8ff;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-}
+<!-- =========================
+     AkServer Flow Diagram (Horizontal)
+     ========================= -->
+<div class="flow-diagram" data-aos="fade-up" data-aos-delay="800">
+  <div class="flow-step">
+    <div class="flow-icon">💻</div>
+    <p class="flow-title">Old PC</p>
+    <small class="flow-sub">Becomes AkServer</small>
+  </div>
+  <div class="flow-arrow">➡️</div>
 
-.flow-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 120px;
-  text-align: center;
-}
+  <div class="flow-step">
+    <div class="flow-icon">📁</div>
+    <p class="flow-title">Folder Sync</p>
+    <small class="flow-sub">Choose folders to share</small>
+  </div>
+  <div class="flow-arrow">➡️</div>
 
-.flow-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
+  <div class="flow-step">
+    <div class="flow-icon">📡</div>
+    <p class="flow-title">Local Network</p>
+    <small class="flow-sub">LAN or Hotspot, No Internet</small>
+  </div>
+  <div class="flow-arrow">➡️</div>
 
-.flow-arrow {
-  font-size: 2rem;
-  color: #666;
-}
+  <div class="flow-step">
+    <div class="flow-icon">📱🖥️</div>
+    <p class="flow-title">Any Device</p>
+    <small class="flow-sub">Access via browser</small>
+  </div>
+</div>
+
 
 /* ===============================
    Why Tiles Grid
@@ -382,4 +383,5 @@ body {
     flex: 0 0 80%;
   }
 }
+
 
