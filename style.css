@@ -183,7 +183,7 @@ body {
 
 
 /* ===============================
-   Why AkServer (Grid Layout)
+   Why AkServer (Modern Grid)
 ================================= */
 .why-akserver {
   background: #f7fafd;
@@ -442,3 +442,4 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
