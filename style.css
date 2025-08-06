@@ -469,6 +469,11 @@ body {
     padding: 0 0.3rem;
   }
 }
+@media screen and (max-width: 767px) {
+  .install-grid {
+    grid-template-columns: 1fr !important; /* Force single column */
+  }
+}
 
 /* ===============================
    Use Case Carousel
@@ -608,6 +613,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
