@@ -191,19 +191,19 @@ body {
 
 .split-container {
   display: flex;
-  align-items: flex-start; /* 🔥 Align top edges */
+  align-items: stretch; /* CHANGE THIS */
   flex-wrap: wrap;
   gap: 2rem;
 }
 
-/* Ensure visual box grows with the content */
 .visual {
   flex: 1;
   display: flex;
-  align-items: flex-start; /* 🔥 Keeps it top-aligned */
+  align-items: center; /* ✅ CENTER it vertically */
   justify-content: center;
   padding: 1rem;
 }
+
 
 .visual .info-box {
   background: #ffffff;
@@ -571,6 +571,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
