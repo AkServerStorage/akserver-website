@@ -111,37 +111,51 @@ body {
   transform: translateY(-2px);
 }
 
-<!-- =========================
-     AkServer Flow Diagram (Horizontal)
-     ========================= -->
-<div class="flow-diagram" data-aos="fade-up" data-aos-delay="800">
-  <div class="flow-step">
-    <div class="flow-icon">💻</div>
-    <p class="flow-title">Old PC</p>
-    <small class="flow-sub">Becomes AkServer</small>
-  </div>
-  <div class="flow-arrow">➡️</div>
+/* =========================
+   AkServer Horizontal Flow Diagram
+   ========================= */
+.flow-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: #f7fafd;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 120, 255, 0.1);
+}
 
-  <div class="flow-step">
-    <div class="flow-icon">📁</div>
-    <p class="flow-title">Folder Sync</p>
-    <small class="flow-sub">Choose folders to share</small>
-  </div>
-  <div class="flow-arrow">➡️</div>
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 130px;
+  text-align: center;
+  padding: 0.5rem;
+}
 
-  <div class="flow-step">
-    <div class="flow-icon">📡</div>
-    <p class="flow-title">Local Network</p>
-    <small class="flow-sub">LAN or Hotspot, No Internet</small>
-  </div>
-  <div class="flow-arrow">➡️</div>
+.flow-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+}
 
-  <div class="flow-step">
-    <div class="flow-icon">📱🖥️</div>
-    <p class="flow-title">Any Device</p>
-    <small class="flow-sub">Access via browser</small>
-  </div>
-</div>
+.flow-title {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+.flow-sub {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.flow-arrow {
+  font-size: 2rem;
+  color: #999;
+}
 
 
 /* ===============================
@@ -383,5 +397,6 @@ body {
     flex: 0 0 80%;
   }
 }
+
 
 
