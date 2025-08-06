@@ -374,23 +374,10 @@ body {
 /* ===============================
    How It Works Section
 ================================= */
-.how-it-works h2 {
-  font-size: 2.4rem;
-  color: #2a8bff;
-  margin-bottom: 3rem;
-}
-
 
 /* ===============================
    Install & Launch Section (Compact Grid)
 ================================= */
-.install-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 0 1rem;
-  justify-items: center;
-}
 
 .install-card {
   background: #ffffff;
@@ -593,6 +580,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
