@@ -202,14 +202,23 @@ body {
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   text-align: left;
-  max-width: 400px;
+  max-width: 420px;
   margin: 0 auto;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .visual .info-box h3 {
-  font-size: 1.6rem;
-  color: #2a8bff;
+  font-size: 1.5rem;
+  color: #d32f2f; /* was #2a8bff before */
   margin-bottom: 1rem;
+}
+
+.visual .info-box h4 {
+  font-size: 1.2rem;
+  color: #2a8bff;
+  margin-top: 1.5rem;
 }
 
 .visual .info-box .tagline {
@@ -221,19 +230,26 @@ body {
 .visual .info-box .highlight-list {
   list-style: none;
   padding-left: 0;
-  margin-bottom: 1rem;
+  margin: 1rem 0 1rem 0;
 }
 
 .visual .info-box .highlight-list li {
+  margin-bottom: 0.6rem;
   font-size: 0.95rem;
-  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.visual .info-box .key-line {
+  margin-top: 1.5rem;
+  font-weight: 500;
   color: #333;
 }
 
 .visual .info-box .final-note {
-  font-size: 0.9rem;
-  color: #2a8bff;
-  font-weight: bold;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #2a2a2a;
   margin-top: 1rem;
 }
 
@@ -545,6 +561,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
