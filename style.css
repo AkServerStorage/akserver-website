@@ -229,6 +229,13 @@ body {
   text-align: center;
 }
 
+.why-akserver h2 {
+  font-size: 2.4rem;
+  color: #2a8bff;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  text-align: center;
+}
 
 /* ===============================
    How It Works Section
@@ -431,3 +438,4 @@ body {
     flex: 0 0 80%;
   }
 }
+
