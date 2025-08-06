@@ -411,14 +411,6 @@ body {
   margin-bottom: 1rem;
 }
 
-.step h3 {
-  margin-bottom: 0.5rem;
-  color: #222;
-}
-
-.step p {
-  color: #555;
-}
 /* ===============================
    Install & Launch Section (Compact Grid)
 ================================= */
@@ -631,6 +623,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
