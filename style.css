@@ -374,51 +374,45 @@ body {
 /* ===============================
    How It Works Section
 ================================= */
-.how-it-works h2 {
-  font-size: 2.4rem;
-  color: #2a8bff;
-  margin-bottom: 3rem;
-}
-
-.steps {
+.install-sequence {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  justify-content: space-between;
 }
 
-.step {
-  background: #ffffff;
-  padding: 2rem;
+.install-step {
+  width: 160px;
+  text-align: center;
+  background: #fff;
+  padding: 1rem;
   border-radius: 12px;
-  border: 1px solid #dcdcdc;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.install-step img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.step-title {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 .step-number {
-  font-size: 2rem;
+  font-size: 1.5rem;
   background: #2a8bff;
   color: #fff;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 50%;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
 }
 
-.step h3 {
-  margin-bottom: 0.5rem;
-  color: #222;
-}
-
-.step p {
-  color: #555;
-}
 
 
 /* ===============================
@@ -568,6 +562,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
