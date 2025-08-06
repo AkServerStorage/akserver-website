@@ -424,60 +424,50 @@ body {
 ================================= */
 .install-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.install-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  text-align: center;
   padding: 1rem;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.install-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
 .install-card img {
   width: 100%;
   height: auto;
-  max-height: 160px; /* Try increasing this if needed */
-  display: block;
-  margin: 0 auto 0.5rem;
+  max-height: 160px;
   object-fit: contain;
+  margin-bottom: 1rem;
   border-radius: 8px;
 }
 
-
-
-.install-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-}
-
-.install-card img {
-  width: 100%;
-  height: auto;
-  max-height: 140px;
-  object-fit: contain;
-  border-bottom: 1px solid #eee;
-  display: block;
-  margin: 0 auto;
-}
-
-
-.install-card .text-block {
-  padding: 0.7rem 0.9rem;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: calc(100% - 160px); /* Remainder below image */
-}
-
 .install-card h4 {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: #d32f2f;
-  margin: 0 0 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 .install-card p {
-  font-size: 0.8rem;
-  color: #555;
-  line-height: 1.4;
-  margin: 0;
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 0;
 }
+
 
 
 
@@ -629,6 +619,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
