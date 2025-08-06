@@ -489,15 +489,6 @@ body {
   margin-bottom: 0.5rem;
 }
 
-@keyframes scroll-carousel {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
 
 /* ===============================
    Contact Section
@@ -598,6 +589,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
