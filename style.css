@@ -419,6 +419,27 @@ body {
   transform: scale(1.02);
   transition: all 0.3s ease;
 }
+/* Toggle Button Style */
+.toggle-btn {
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  padding: 0.3rem 0.6rem;
+  background-color: #2a8bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #1565c0;
+}
+
+/* Hide content initially */
+.hidden {
+  display: none;
+}
 
 /* ===============================
    Use Case Carousel
@@ -558,6 +579,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
