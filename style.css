@@ -436,13 +436,13 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   width: 100%;
   max-width: 340px;
-  padding: 1rem;
-  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
+  overflow: hidden;
   height: 100%;
   transition: transform 0.3s ease;
+  padding: 0;
 }
 
 .install-card:hover {
@@ -452,23 +452,31 @@ body {
 
 .install-card img {
   width: 100%;
-  height: 180px;
-  object-fit: contain;
-  border-radius: 8px;
-  margin-bottom: auto;
+  height: 200px;
+  object-fit: cover; /* show full image but fills box */
+  border-radius: 12px 12px 0 0;
 }
 
-.install-card h4 {
+.text-block {
+  padding: 1rem 1rem 1.2rem;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.text-block h4 {
   font-size: 1.05rem;
   color: #d32f2f;
   margin: 0.8rem 0 0.3rem;
 }
 
-.install-card p {
+.text-block p {
   font-size: 0.92rem;
   color: #444;
   margin: 0;
-  padding-bottom: 0.2rem;
+  line-height: 1.4;
 }
 
 
@@ -623,6 +631,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
