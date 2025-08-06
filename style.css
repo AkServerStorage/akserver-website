@@ -378,18 +378,6 @@ body {
 
 
 
-.install-card img {
-  width: 100%;
-  height: 50px;
-  object-fit: cover; /* show full image but fills box */
-  border-radius: 12px 12px 0 0;
-}
-
-
-
-
-
-
 
 /* ===============================
    Use Case Carousel
@@ -538,6 +526,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
