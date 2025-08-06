@@ -196,6 +196,46 @@ body {
   align-items: center;
   justify-content: center;
 }
+.visual .info-box {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.visual .info-box h3 {
+  font-size: 1.6rem;
+  color: #2a8bff;
+  margin-bottom: 1rem;
+}
+
+.visual .info-box .tagline {
+  font-size: 1.05rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.visual .info-box .highlight-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.visual .info-box .highlight-list li {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.visual .info-box .final-note {
+  font-size: 0.9rem;
+  color: #2a8bff;
+  font-weight: bold;
+  margin-top: 1rem;
+}
 
 .privacy-message-box {
   background-color: #ffffff;
@@ -505,6 +545,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
