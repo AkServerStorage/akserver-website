@@ -218,13 +218,13 @@ body {
 
 /* Section Heading Style */
 #why-akserver .main-title {
-  font-size: 2.3rem;
+  font-size: 2.4rem;           /* same as .how-it-works h2 */
+  color: #2a8bff;              /* same blue tone */
+  margin-bottom: 3rem;         /* match spacing */
   font-weight: 700;
-  color: #1e1e1e;
-  margin-bottom: 2.5rem;
   text-align: center;
-  letter-spacing: -0.5px;
 }
+
 
 /* Responsive Adjustments */
 @media (max-width: 992px) {
@@ -425,6 +425,7 @@ body {
     flex: 0 0 80%;
   }
 }
+
 
 
 
