@@ -424,49 +424,53 @@ body {
 ================================= */
 .install-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
   padding: 0 1rem;
+  justify-items: center;
 }
 
 .install-card {
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  max-width: 340px;
   padding: 1rem;
-  transition: transform 0.2s ease;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-end;
   height: 100%;
+  transition: transform 0.3s ease;
 }
 
 .install-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
 .install-card img {
   width: 100%;
-  height: auto;
-  max-height: 160px;
+  height: 180px;
   object-fit: contain;
-  margin-bottom: 1rem;
   border-radius: 8px;
+  margin-bottom: auto;
 }
 
 .install-card h4 {
   font-size: 1.05rem;
   color: #d32f2f;
-  margin-bottom: 0.5rem;
+  margin: 0.8rem 0 0.3rem;
 }
 
 .install-card p {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: #444;
-  margin-bottom: 0;
+  margin: 0;
+  padding-bottom: 0.2rem;
 }
+
 
 
 
@@ -619,6 +623,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
