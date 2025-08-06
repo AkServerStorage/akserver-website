@@ -191,10 +191,12 @@ body {
 
 .split-container {
   display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
+  align-items: stretch;  /* Ensures both left and right sides match height */
+  justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
+
 /* Ensure visual box grows with the content */
 .visual {
   flex: 1;
@@ -568,6 +570,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
