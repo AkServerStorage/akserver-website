@@ -256,8 +256,25 @@
     AOS.init();
   </script>
 
+  <!-- =========================
+       Home page proper opening
+       ========================= -->     
+<script>
+  window.addEventListener('load', function () {
+    if (!location.hash) {
+      // Scroll to #home only on direct load
+      const homeSection = document.getElementById('home');
+      if (homeSection) {
+        homeSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+</script>
+
+     
 </body>
 </html>
+
 
 
 
