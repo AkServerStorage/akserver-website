@@ -173,50 +173,44 @@
     <h3>Install & Launch</h3>
   </div>
 
-  <div class="install-sequence">
-    <!-- Block 1: Defender -->
-    <div class="install-step">
-      <img src="images/defender_warning.png" alt="Defender SmartScreen" />
-      <h4>Windows Defender Warning</h4>
-      <p>Click <strong>More Info</strong> → <strong>Run Anyway</strong></p>
+  <div class="install-grid">
+    <!-- Block 1 -->
+    <div class="install-card">
+      <img src="images/defender_warning.png" alt="Defender Warning" />
+      <h4>Windows Defender</h4>
+      <p>Click <strong>More Info</strong> → <strong>Run Anyway</strong> to continue.</p>
     </div>
 
-    <!-- Block 2: UAC Prompt -->
-    <div class="install-step">
-      <img src="images/uac_prompt.png" alt="User Account Control" />
+    <!-- Block 2 -->
+    <div class="install-card">
+      <img src="images/uac_prompt.png" alt="UAC Prompt" />
       <h4>Unknown Publisher</h4>
-      <p>Click <strong>Yes</strong> to allow installation</p>
+      <p>Windows will ask permission. Click <strong>Yes</strong> to allow AkServer.</p>
     </div>
 
-    <!-- Block 3: Setup Window -->
-    <div class="install-step">
-      <img src="images/setup_screen.png" alt="Setup Wizard" />
-      <h4>Install Wizard</h4>
-      <p>Simple steps. Enable <strong>Start on Boot</strong> if preferred.</p>
+    <!-- Block 3 -->
+    <div class="install-card">
+      <img src="images/startup_option.png" alt="Startup Option" />
+      <h4>Start on Boot</h4>
+      <p>Enable <strong>auto-launch</strong> for backup PCs used for storage.</p>
     </div>
 
-    <!-- Block 4: Auto Start Info -->
-    <div class="install-step">
-      <img src="images/startup_option.png" alt="Startup Setting" />
-      <h4>Runs Automatically</h4>
-      <p>Useful for backup PCs — no manual launch needed.</p>
-    </div>
-
-    <!-- Block 5: Firewall Prompt -->
-    <div class="install-step">
+    <!-- Block 4 -->
+    <div class="install-card">
       <img src="images/firewall_prompt.png" alt="Firewall Permission" />
       <h4>Firewall Prompt</h4>
-      <p>Click <strong>Allow Access</strong> to start local server</p>
+      <p>Click <strong>Allow Access</strong> so AkServer can run locally.</p>
     </div>
 
-    <!-- Block 6: AkServer Running -->
-    <div class="install-step">
-      <img src="images/akserver_running.png" alt="AkServer Running" />
+    <!-- Block 5 -->
+    <div class="install-card">
+      <img src="images/akserver_running.png" alt="AkServer Ready" />
       <h4>You're Ready!</h4>
-      <p>AkServer is now live on your device!</p>
+      <p>AkServer is now running. Access it via browser — no internet needed.</p>
     </div>
   </div>
 </div>
+
 
   <!-- =========================
        Use Cases Section
@@ -295,6 +289,7 @@
      
 </body>
 </html>
+
 
 
 
