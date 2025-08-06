@@ -1,173 +1,224 @@
+<!-- =========================
+     AkServer Landing Page (HTML)
+     ========================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AkServer lets you build your own private file sync system, fully offline and customizable — designed for total control over your data.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AkServer lets you build your own private file sync system, fully offline and customizable — designed for total control over your data." />
   <title>AkServer | Custom File Sync System</title>
-  <link rel="stylesheet" href="style.css?v=3.1.6">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- ===== CSS Imports ===== -->
+  <link rel="stylesheet" href="style.css?v=3.1.6" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">
-      <a href="./"><img src="logo.png" alt="AkServer Logo" style="height: 40px;"></a>
-    </div>
-    <nav>
-      <ul>
-        <li>
-          <a href="#home">Home</a>
-        </li>
-        <li>
-          <a href="#features">Features</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+
+<!-- =========================
+     Top Navigation Section
+     ========================= -->
+<header class="navbar">
+<div class="logo">
+  <a href="./">
+    <img src="logo.png" alt="AkServer Logo" style="height: 40px;" />
+  </a>
+</div>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- =========================
+       Hero Section with Animation
+       ========================= -->
   <section id="home" class="section hero">
     <div class="content" style="position: relative; z-index: 2;">
+      
       <h1 class="main-title" data-aos="fade-up" data-aos-duration="1000">AkServer</h1>
-      <h2 class="tagline" data-aos="fade-up" data-aos-delay="200">Build Your Own Offline Cloud Storage & Private File Sync System</h2>
-      <p class="intro-message" data-aos="fade-up" data-aos-delay="350">AkServer empowers you to run a completely private file storage system, operating entirely on your local network — no cloud, no limits.</p>
-      <p class="strong-line" data-aos="fade-up" data-aos-delay="450"><strong>Your Files. Your Network. Your Control.</strong></p><a href="#contact" class="btn-primary" data-aos="zoom-in" data-aos-delay="600">Get Your Custom Solution</a>
+
+      <h2 class="tagline" data-aos="fade-up" data-aos-delay="200">
+        Build Your Own Offline Cloud Storage & Private File Sync System
+      </h2>
+
+      <p class="intro-message" data-aos="fade-up" data-aos-delay="350">
+        AkServer empowers you to run a completely private file storage system, operating entirely on your local network — no cloud, no limits.
+      </p>
+
+      <p class="strong-line" data-aos="fade-up" data-aos-delay="450">
+        <strong>Your Files. Your Network. Your Control.</strong>
+      </p>
+
+      <a href="#contact" class="btn-primary" data-aos="zoom-in" data-aos-delay="600">
+        Get Your Custom Solution
+      </a>
+
       <div class="flow-diagram" data-aos="fade-up" data-aos-delay="800">
         <div class="flow-step">
-          <div class="flow-icon">
-            💻
-          </div>
-          <p class="flow-title">PC / Laptop</p><small class="flow-sub">Becomes Your Private Cloud Storage</small>
+          <div class="flow-icon">💻</div>
+          <p class="flow-title">PC / Laptop</p>
+          <small class="flow-sub">Becomes Your Private Cloud Storage</small>
         </div>
-        <div class="flow-arrow">
-          ➡️
-        </div>
+        <div class="flow-arrow">➡️</div>
+
         <div class="flow-step">
-          <div class="flow-icon">
-            📁🖼️
-          </div>
-          <p class="flow-title">Sync Folders</p><small class="flow-sub">Docs, Media, Images — Your Choice</small>
+          <div class="flow-icon">📁🖼️</div>
+          <p class="flow-title">Sync Folders</p>
+          <small class="flow-sub">Docs, Media, Images — Your Choice</small>
         </div>
-        <div class="flow-arrow">
-          ➡️
-        </div>
+        <div class="flow-arrow">➡️</div>
+
         <div class="flow-step">
-          <div class="flow-icon">
-            🛜
-          </div>
-          <p class="flow-title">Local Network</p><small class="flow-sub">Wi-Fi or Hotspot, No Internet</small>
+          <div class="flow-icon">🛜</div>
+          <p class="flow-title">Local Network</p>
+          <small class="flow-sub">Wi-Fi or Hotspot, No Internet</small>
         </div>
-        <div class="flow-arrow">
-          ➡️
-        </div>
+        <div class="flow-arrow">➡️</div>
+
         <div class="flow-step">
-          <div class="flow-icon">
-            📱🖥️
-          </div>
-          <p class="flow-title">Any Device</p><small class="flow-sub">Access via browser</small>
+          <div class="flow-icon">📱🖥️</div>
+          <p class="flow-title">Any Device</p>
+          <small class="flow-sub">Access via browser</small>
         </div>
       </div>
     </div>
   </section>
-  <section id="why-akserver" class="section why-akserver split-layout">
-    <div class="content split-container">
-      <div class="visual" data-aos="fade-right">
-        <div class="info-box">
-          <h3>The Cloud Was Never Yours.</h3>
-          <ul class="highlight-list">
-            <li>📁 Uploads leave a footprint.</li>
-            <li>🖱️ Clicks carry risk.</li>
-            <li>🛡️ Privacy is a <strong>right</strong>.</li>
-          </ul>
-          <p class="key-line">AkServer gives you a <strong>private, offline</strong> file system — fully owned by you.</p>
-          <ul class="highlight-list">
-            <li>🚫 No Internet</li>
-            <li>💸 No Subscriptions</li>
-            <li>👀 No Spying</li>
-          </ul>
-          <h4>The best part?</h4>
-          <p class="final-note">You already have everything you need.<br>
-          Just launch AkServer — and you’re ready.</p>
+
+<!-- =========================
+     Why AkServer Section (Split Layout)
+========================= -->
+<section id="why-akserver" class="section why-akserver split-layout">
+  <div class="content split-container">
+    
+<!-- Left Side Visual (Now Text-Based Info Box) -->
+<div class="visual" data-aos="fade-right">
+  <div class="info-box">
+    <h3>The Cloud Was Never Yours.</h3>
+
+    <ul class="highlight-list">
+      <li>📁 Uploads leave a footprint.</li>
+      <li>🖱️ Clicks carry risk.</li>
+      <li>🛡️ Privacy is a <strong>right</strong>.</li>
+    </ul>
+
+    <p class="key-line">
+      AkServer gives you a <strong>private, offline</strong> file system — fully owned by you.
+    </p>
+
+    <ul class="highlight-list">
+      <li>🚫 No Internet</li>
+      <li>💸 No Subscriptions</li>
+      <li>👀 No Spying</li>
+    </ul>
+
+    <h4>The best part?</h4>
+    <p class="final-note">
+      You already have everything you need.<br />
+      Just launch AkServer — and you’re ready.
+    </p>
+  </div>
+</div>
+
+    <!-- Right Side Text Blocks -->
+    <div class="text-grid" data-aos="fade-left">
+      <h2 class="section-title">Why AkServer?</h2>
+      <div class="feature-grid">
+
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="icon">☁️</div>
+          <h4>Cloud Dependency</h4>
+          <p class="desc">Needs internet, servers, and third-party control.</p>
+          <p class="solution"><strong>✅ Go Fully Offline:</strong> AkServer works over your own Wi-Fi or hotspot — no cloud needed.</p>
         </div>
-      </div>
-      <div class="text-grid" data-aos="fade-left">
-        <h2 class="section-title">Why AkServer?</h2>
-        <div class="feature-grid">
-          <div class="feature-card">
-            <div class="icon">
-              ☁️
-            </div>
-            <h4>Cloud Dependency</h4>
-            <p class="desc">Needs internet, servers, and third-party control.</p>
-            <p class="solution"><strong>✅ Go Fully Offline:</strong> AkServer works over your own Wi-Fi or hotspot — no cloud needed.</p>
-          </div>
-          <div class="feature-card">
-            <div class="icon">
-              🛡🔓
-            </div>
-            <h4>Data Leaks</h4>
-            <p class="desc">Cloud services are prone to breaches and misuse.</p>
-            <p class="solution"><strong>✅ 100% Local:</strong> Your data never leaves your devices. AkServer = 0% exposure.</p>
-          </div>
-          <div class="feature-card">
-            <div class="icon">
-              💸
-            </div>
-            <h4>Subscription Costs</h4>
-            <p class="desc">Recurring fees drain resources for basic sharing.</p>
-            <p class="solution"><strong>✅ One-Time Setup:</strong> Pay once. No limits. AkServer runs forever — even free now.</p>
-          </div>
-          <div class="feature-card">
-            <div class="icon">
-              🧩
-            </div>
-            <h4>Sharing is a Hassle</h4>
-            <p class="desc">Links, logins, and approvals slow everything down.</p>
-            <p class="solution"><strong>✅ Private Sync:</strong> Share instantly with trusted devices — no accounts needed.</p>
-          </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="icon">🛡🔓</div>
+          <h4>Data Leaks</h4>
+          <p class="desc">Cloud services are prone to breaches and misuse.</p>
+          <p class="solution"><strong>✅ 100% Local:</strong> Your data never leaves your devices. AkServer = 0% exposure.</p>
         </div>
-      </div>
-    </div>
-  </section>
-  <section class="install-section">
-    <h2>Install & Launch AkServer</h2>
-    <div class="install-grid">
-      <div class="install-item">
-        <div class="img-box"><img src="images/defender_warning.png" alt="SmartScreen Warning"></div>
-        <h4>Bypass SmartScreen</h4>
-        <p>Click "More Info" → "Run Anyway" to start setup.</p>
-      </div>
-      <div class="install-item">
-        <div class="img-box">
-          <img src="images/uac_prompt.png" alt="UAC Prompt">
-          <h4>Allow Installer</h4>
-          <p>Windows may ask for permission. Click “Yes”.</p>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="icon">💸</div>
+          <h4>Subscription Costs</h4>
+          <p class="desc">Recurring fees drain resources for basic sharing.</p>
+          <p class="solution"><strong>✅ One-Time Setup:</strong> Pay once. No limits. AkServer runs forever — even free now.</p>
         </div>
-        <div class="install-item">
-          <div class="img-box">
-            <img src="images/startup_option.png" alt="Startup Option">
-            <h4>Enable Auto Start</h4>
-            <p>Let AkServer run on boot — ideal for backup PCs.</p>
-          </div>
-          <div class="install-item">
-            <div class="img-box">
-              <img src="images/akserver_running.png" alt="AkServer Running">
-              <h4>Run Setup</h4>
-              <p>Just a few clicks and you're good to go.</p>
-            </div>
-            <div class="install-item">
-              <div class="img-box">
-                <img src="images/firewall_allow.png" alt="Firewall Prompt">
-                <h4>Allow in Firewall</h4>
-                <p>Give permission when asked — this enables local access.</p>
-              </div>
-            </div>
-          </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="icon">🧩</div>
+          <h4>Sharing is a Hassle</h4>
+          <p class="desc">Links, logins, and approvals slow everything down.</p>
+          <p class="solution"><strong>✅ Private Sync:</strong> Share instantly with trusted devices — no accounts needed.</p>
         </div>
+
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+
+<section class="install-section">
+  <h2>Install & Launch AkServer</h2>
+  <div class="install-grid">
+
+    <!-- Step 1 -->
+<div class="install-item">
+  <div class="img-box">
+    <img src="images/defender_warning.png" alt="SmartScreen Warning" />
+  </div>
+  <h4>Bypass SmartScreen</h4>
+  <p>Click "More Info" → "Run Anyway" to start setup.</p>
+</div>
+
+
+    <!-- Step 2 -->
+    <div class="install-item">
+         <div class="img-box">
+      <img src="images/uac_prompt.png" alt="UAC Prompt" />
+      <h4>Allow Installer</h4>
+      <p>Windows may ask for permission. Click “Yes”.</p>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="install-item">
+         <div class="img-box">
+      <img src="images/startup_option.png" alt="Startup Option" />
+      <h4>Enable Auto Start</h4>
+      <p>Let AkServer run on boot — ideal for backup PCs.</p>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="install-item">
+         <div class="img-box">
+      <img src="images/akserver_running.png" alt="AkServer Running" />
+      <h4>Run Setup</h4>
+      <p>Just a few clicks and you're good to go.</p>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="install-item">
+         <div class="img-box">
+      <img src="images/firewall_allow.png" alt="Firewall Prompt" />
+      <h4>Allow in Firewall</h4>
+      <p>Give permission when asked — this enables local access.</p>
+    </div>
+
+  </div>
+</section>
+     
+  <!-- =========================
+       Use Cases Section
+       ========================= -->
   <section id="use-cases" class="section use-cases">
     <div class="content">
       <h2 data-aos="fade-up">Real-World Use Cases</h2>
@@ -193,28 +244,42 @@
       </div>
     </div>
   </section>
+
+  <!-- =========================
+       Contact Section
+       ========================= -->
   <section id="contact" class="section contact">
     <div class="content">
       <h2 class="section-title">Get in Touch</h2>
       <p class="subtitle">Interested in a custom solution? Let's talk.</p>
       <form class="contact-form">
-        <input type="text" placeholder="Your Name" required=""> <input type="email" placeholder="Your Email" required=""> 
-        <textarea rows="5" placeholder="Your Message" required=""></textarea> <button type="submit">Send Enquiry</button>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Enquiry</button>
       </form>
     </div>
   </section>
+
+  <!-- =========================
+       Footer
+       ========================= -->
   <footer class="footer">
-    <p>© 2025 AkServer. All rights reserved.</p>
+    <p>&copy; 2025 AkServer. All rights reserved.</p>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script> 
+
+  <!-- =========================
+       AOS Animation Script
+       ========================= -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-
-
     AOS.init();
-  </script> 
-  <script>
+  </script>
 
-
+  <!-- =========================
+       Home page proper opening
+       ========================= -->     
+<script>
   window.addEventListener('load', function () {
     if (!location.hash) {
       // Scroll to #home only on direct load
@@ -224,6 +289,7 @@
       }
     }
   });
-  </script>
+</script>
+     
 </body>
 </html>
