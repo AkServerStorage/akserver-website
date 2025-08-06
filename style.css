@@ -429,12 +429,16 @@ body {
   padding: 1rem;
 }
 
-.install-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 260px; /* Adjust to your liking */
+.install-card img {
+  width: 100%;
+  height: auto;
+  max-height: 160px; /* Try increasing this if needed */
+  display: block;
+  margin: 0 auto 0.5rem;
+  object-fit: contain;
+  border-radius: 8px;
 }
+
 
 
 .install-card:hover {
@@ -625,6 +629,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
