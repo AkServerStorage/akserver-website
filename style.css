@@ -219,7 +219,6 @@ body {
 }
 
 .visual .info-box h3 {
-  padding: 2rem 2rem 2.5rem;
   font-size: 1.5rem;
   color: #d32f2f; /* was #2a8bff before */
   margin-bottom: 1rem;
@@ -571,6 +570,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
