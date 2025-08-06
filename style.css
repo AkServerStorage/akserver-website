@@ -18,6 +18,7 @@ body {
   line-height: 1.6;
 }
 
+
 /* ===============================
    Navbar Styles
 ================================= */
@@ -55,6 +56,7 @@ body {
   color: #2a8bff;
 }
 
+
 /* ===============================
    Section Wrapper
 ================================= */
@@ -71,6 +73,7 @@ body {
   max-width: 1000px;
   text-align: center;
 }
+
 
 /* ===============================
    Hero Section
@@ -111,9 +114,10 @@ body {
   transform: translateY(-2px);
 }
 
-/* =========================
+
+/* ===============================
    AkServer Horizontal Flow Diagram
-   ========================= */
+================================= */
 .flow-diagram {
   display: flex;
   align-items: center;
@@ -156,6 +160,7 @@ body {
   font-size: 2rem;
   color: #999;
 }
+
 
 /* ===============================
    Why AkServer Section Grid
@@ -216,29 +221,12 @@ body {
   line-height: 1.6;
 }
 
-/* Section Heading Style */
 #why-akserver .main-title {
-  font-size: 2.4rem;           /* same as .how-it-works h2 */
-  color: #2a8bff;              /* same blue tone */
-  margin-bottom: 3rem;         /* match spacing */
+  font-size: 2.4rem;
+  color: #2a8bff;
+  margin-bottom: 3rem;
   font-weight: 700;
   text-align: center;
-}
-
-
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-  .why-pairs-grid {
-    grid-template-columns: 1fr;
-  }
-
-  #why-akserver .main-title {
-    font-size: 1.9rem;
-  }
-
-  .why-tile {
-    min-height: auto;
-  }
 }
 
 
@@ -291,6 +279,7 @@ body {
   color: #555;
 }
 
+
 /* ===============================
    Use Case Carousel
 ================================= */
@@ -330,9 +319,14 @@ body {
 }
 
 @keyframes scroll-carousel {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
+
 
 /* ===============================
    Contact Section
@@ -387,6 +381,7 @@ body {
   background-color: #1a6edd;
 }
 
+
 /* ===============================
    Footer
 ================================= */
@@ -398,9 +393,24 @@ body {
   color: #777;
 }
 
+
 /* ===============================
    Responsive
 ================================= */
+@media (max-width: 992px) {
+  .why-pairs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #why-akserver .main-title {
+    font-size: 1.9rem;
+  }
+
+  .why-tile {
+    min-height: auto;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -409,10 +419,6 @@ body {
 
   .main-title {
     font-size: 2.4rem;
-  }
-
-  .why-pairs-grid {
-    grid-template-columns: 1fr;
   }
 
   .step-number {
@@ -425,11 +431,3 @@ body {
     flex: 0 0 80%;
   }
 }
-
-
-
-
-
-
-
-
