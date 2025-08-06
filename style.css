@@ -430,17 +430,12 @@ body {
 }
 
 .install-card {
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  height: 240px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* 🟢 Push text to bottom */
-  padding: 0;
+  justify-content: space-between;
+  height: 260px; /* Adjust to your liking */
 }
+
 
 .install-card:hover {
   transform: translateY(-5px);
@@ -630,6 +625,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
