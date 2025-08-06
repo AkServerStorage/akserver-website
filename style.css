@@ -374,6 +374,48 @@ body {
 /* ===============================
    How It Works Section
 ================================= */
+.install-section {
+  padding: 4rem 2rem;
+}
+
+.install-section h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #2a8bff;
+  margin-bottom: 3rem;
+}
+
+.install-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.install-item {
+  text-align: center;
+}
+
+.install-item img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+}
+
+.install-item h4 {
+  font-size: 1.05rem;
+  color: #d32f2f;
+  margin: 0.3rem 0;
+}
+
+.install-item p {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 0;
+}
 
 
 
@@ -526,6 +568,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
