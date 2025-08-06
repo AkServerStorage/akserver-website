@@ -370,15 +370,27 @@ body {
 }
 
 /* ===============================
-   How It Works Section
+   How It Works Section (Install Tiles)
 ================================= */
+
+.install-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.install-grid-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .install-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* Always 3 per row */
   gap: 2rem;
   padding: 0 2rem;
-  justify-content: center;
-  align-content: start;
+  max-width: 1000px;
 }
 
 .install-item {
@@ -398,6 +410,8 @@ body {
   line-height: 1.4;
   margin: 0;
 }
+
+/* Image Container */
 .img-box {
   width: 100%;
   height: 200px;
@@ -407,36 +421,34 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
 }
+
 .img-box img {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
 }
 
-
+/* Hover Effect */
 .install-item:hover .img-box {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
   transform: scale(1.02);
-  transition: all 0.3s ease;
 }
 
-.install-section {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.install-grid-wrapper {
-  display: flex;
-  justify-content: center;
+/* Responsive Breakpoints */
+@media screen and (max-width: 1024px) {
+  .install-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.install-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 0 2rem;
-  max-width: 1100px; /* Controls width of the entire grid */
+@media screen and (max-width: 600px) {
+  .install-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
+
 
 
 /* ===============================
@@ -586,6 +598,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
