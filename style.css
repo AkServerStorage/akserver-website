@@ -419,31 +419,6 @@ body {
 }
 
 /* ===============================
-   How It Works Section
-================================= */
-.img-box {
-  width: 100%;
-  height: 200px;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #f7f7f7;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.img-box img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-}
-
-
-
-
-
-/* ===============================
    Use Case Carousel
 ================================= */
 .use-cases h2 {
@@ -590,6 +565,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
