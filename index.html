@@ -26,7 +26,7 @@
 
   <nav>
     <ul>
-      <li><a href="./#home">Home</a></li>
+      <li><a href="#home" id="home-link">Home</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -260,20 +260,29 @@
        Home page proper opening
        ========================= -->     
 <script>
-  window.addEventListener('load', function () {
-    if (!location.hash) {
-      // Scroll to #home only on direct load
-      const homeSection = document.getElementById('home');
-      if (homeSection) {
-        homeSection.scrollIntoView({ behavior: 'smooth' });
-      }
+  document.getElementById('home-link').addEventListener('click', function (e) {
+    const currentHash = window.location.hash;
+    const homeSection = document.getElementById('home');
+
+    if (currentHash === '#home' && homeSection) {
+      e.preventDefault(); // Prevent default anchor behavior
+      // Force smooth scroll again
+      homeSection.scrollIntoView({ behavior: 'smooth' });
+
+      // Optional: Flash animation or small bounce to indicate re-focus
+      homeSection.classList.add('pulse');
+      setTimeout(() => {
+        homeSection.classList.remove('pulse');
+      }, 800);
     }
   });
 </script>
 
+
      
 </body>
 </html>
+
 
 
 
