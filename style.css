@@ -426,51 +426,56 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
-  justify-content: center;
+  padding: 1rem;
 }
 
 .install-card {
   background: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-  padding: 1rem;
-  text-align: center;
-  transition: transform 0.25s ease;
-  height: 250px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  height: 240px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* ✅ Push text to bottom */
-  align-items: center;
-  position: relative;
-  overflow: hidden;
+  justify-content: flex-end; /* 🟢 Push text to bottom */
+  padding: 0;
 }
 
 .install-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
 .install-card img {
-  max-height: 100px;  /* ✅ Bigger image */
-  width: auto;
-  object-fit: contain;
-  margin-top: 0.2rem;
-  margin-bottom: 0.8rem;
+  width: 100%;
+  height: 160px; /* 🟢 Fixed height */
+  object-fit: cover; /* 🟢 Fill the space properly */
+  display: block;
+}
+
+.install-card .text-block {
+  padding: 0.7rem 0.9rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: calc(100% - 160px); /* Remainder below image */
 }
 
 .install-card h4 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #d32f2f;
-  margin-bottom: 0.3rem;
+  margin: 0 0 0.3rem;
 }
 
 .install-card p {
-  font-size: 0.85rem;
-  color: #444;
-  line-height: 1.3;
-  padding: 0 0.5rem;
-  margin-bottom: 0.3rem;
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.4;
+  margin: 0;
 }
+
 
 
 
@@ -621,6 +626,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
