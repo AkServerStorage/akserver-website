@@ -422,21 +422,9 @@ body {
 /* ===============================
    Install & Launch Section (Compact Grid)
 ================================= */
-.install-section {
-  padding: 3rem 1rem;
-  background: #f9fbff;
-}
-
-.install-section h2 {
-  font-size: 2.2rem;
-  color: #2a8bff;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
 .install-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 👈 Compact */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
   justify-content: center;
 }
@@ -448,11 +436,13 @@ body {
   padding: 1rem;
   text-align: center;
   transition: transform 0.25s ease;
-  height: 250px; /* 👈 Compact and uniform */
+  height: 250px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* ✅ Push text to bottom */
   align-items: center;
-  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
 }
 
 .install-card:hover {
@@ -461,17 +451,17 @@ body {
 }
 
 .install-card img {
-  max-width: 100%;
-  max-height: 80px; /* 👈 Smaller image */
+  max-height: 100px;  /* ✅ Bigger image */
+  width: auto;
   object-fit: contain;
-  margin-bottom: 0.6rem;
-  border-radius: 6px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.8rem;
 }
 
 .install-card h4 {
   font-size: 1rem;
   color: #d32f2f;
-  margin: 0.5rem 0 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
 .install-card p {
@@ -479,6 +469,7 @@ body {
   color: #444;
   line-height: 1.3;
   padding: 0 0.5rem;
+  margin-bottom: 0.3rem;
 }
 
 
@@ -630,6 +621,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
