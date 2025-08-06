@@ -300,9 +300,23 @@
     }
   });
 </script>
-     
+<script>
+  function toggleInstall() {
+    const content = document.getElementById('installContent');
+    const button = document.querySelector('.toggle-btn');
+    content.classList.toggle('hidden');
+
+    if (content.classList.contains('hidden')) {
+      button.textContent = 'Show Instructions ⬇';
+    } else {
+      button.textContent = 'Hide Instructions ⬆';
+    }
+  }
+</script>
+
 </body>
 </html>
+
 
 
 
