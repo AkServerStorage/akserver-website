@@ -74,6 +74,32 @@ body {
   text-align: center;
 }
 
+/* ===============================
+   Home page
+================================= */
+.tagline {
+  font-size: 1.4rem;
+  color: #444;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.intro-message {
+  font-size: 1.05rem;
+  color: #555;
+  margin-top: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.strong-line {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2a8bff;
+  margin-top: 1.2rem;
+}
 
 /* ===============================
    Hero Section
@@ -438,4 +464,5 @@ body {
     flex: 0 0 80%;
   }
 }
+
 
