@@ -378,6 +378,7 @@ body {
   gap: 2rem;
   padding: 0 2rem;
   justify-content: center;
+  align-content: start;
 }
 
 .install-item {
@@ -424,7 +425,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 
 
 /* ===============================
@@ -574,6 +574,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
