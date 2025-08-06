@@ -374,10 +374,12 @@ body {
 ================================= */
 .install-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Force 3 per row */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   padding: 0 2rem;
+  justify-content: center;
 }
+
 
 @media (max-width: 992px) {
   .install-grid {
@@ -582,6 +584,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
