@@ -4,7 +4,356 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;/* ===================================
+   Base Reset and Global Styles
+=================================== */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  color: #222222;
+  line-height: 1.6;
+}
+
+/* ===================================
+   Navbar Styles
+=================================== */
+.navbar {
+  background: #ffffff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #008f87;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  color: #222222;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #00a297;
+}
+
+/* ===================================
+   Section Wrapper
+=================================== */
+.section {
+  padding: 5rem 2rem;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+}
+
+.content {
+  max-width: 1000px;
+  text-align: center;
+}
+
+/* ===================================
+   Hero Section
+=================================== */
+.hero {
+  background: linear-gradient(145deg, #f2f2f2, #ffffff);
+}
+
+.main-title {
+  font-size: 3rem;
+  color: #008f87;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 1rem;
+  line-height: 1.8;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #008f87;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #006a63;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ===================================
+   Why AkServer Tiles
+=================================== */
+.why-pairs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.why-tile {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #d0f7f2;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 143, 135, 0.1);
+  transition: transform 0.3s ease;
+  min-height: 220px;
+}
+
+.why-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 143, 135, 0.25);
+}
+
+.tile-header, .tile-footer {
+  padding: 1.5rem;
+}
+
+.tile-header {
+  background: #f0f0f0;
+  border-bottom: 1px solid #ccefeb;
+}
+
+.problem-title {
+  color: #cc0000;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.problem-text {
+  color: #444;
+  font-size: 1rem;
+}
+
+.tile-footer {
+  background: #fdfdfd;
+}
+
+.solution-title {
+  color: #008f87;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.solution-text {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.empty-tile {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  min-height: 220px;
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+  .why-pairs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================================
+   How It Works Section
+=================================== */
+.how-it-works h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #008f87;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.step {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #d0f7f2;
+  text-align: left;
+  box-shadow: 0 0 15px rgba(0, 143, 135, 0.1);
+}
+
+.step-number {
+  font-size: 2rem;
+  background: #008f87;
+  color: #ffffff;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.step h3 {
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  color: #444;
+  font-size: 1rem;
+}
+
+/* ===================================
+   Use Cases Carousel
+=================================== */
+.use-cases h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #008f87;
+}
+
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll-carousel 20s linear infinite;
+  gap: 2rem;
+}
+
+.carousel-card {
+  flex: 0 0 240px;
+  background: #ffffff;
+  border: 1px solid #d0f7f2;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px rgba(0, 143, 135, 0.1);
+  color: #222;
+  text-align: center;
+  min-height: 160px;
+}
+
+.carousel-card h3 {
+  color: #008f87;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes scroll-carousel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ===================================
+   Contact Form
+=================================== */
+.contact {
+  background: #f9f9f9;
+  padding-bottom: 6rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 2rem auto 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  color: #222;
+  font-size: 1rem;
+  outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #999;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #008f87;
+  box-shadow: 0 0 5px #008f8788;
+}
+
+.contact-form button {
+  background-color: #008f87;
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #006a63;
+  color: #fff;
+}
+
+/* ===================================
+   Footer
+=================================== */
+.footer {
+  background: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+}
+
 }
 
 html {
@@ -416,3 +765,4 @@ body {
     font-size: 1rem;
   }
 }
+
