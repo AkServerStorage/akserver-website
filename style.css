@@ -191,10 +191,9 @@ body {
 
 .split-container {
   display: flex;
+  align-items: stretch;
   flex-wrap: wrap;
-  gap: 3rem;
-  align-items: center;
-  justify-content: center;
+  gap: 2rem;
 }
 /* Ensure visual box grows with the content */
 .visual {
@@ -569,6 +568,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
