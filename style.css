@@ -369,10 +369,9 @@ body {
   }
 }
 
-<!-- =========================
+/*=========================
      How It Works Section
-     ========================= -->
-<style>
+     ========================= */
   .install-section {
     padding: 40px 20px;
     background-color: #111;
@@ -454,7 +453,6 @@ body {
       justify-content: center;
     }
   }
-</style>
 
 
 /* ===============================
@@ -595,6 +593,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
