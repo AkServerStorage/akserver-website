@@ -9,7 +9,7 @@
   <meta name="description" content="AkServer lets you build your own private file sync system, fully offline and customizable — designed for total control over your data." />
   <title>AkServer | Custom File Sync System</title>
   <!-- ===== CSS Imports ===== -->
-  <link rel="stylesheet" href="style.css?v=3.2.2" />
+  <link rel="stylesheet" href="style.css?v=3.2.3" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
@@ -166,80 +166,125 @@
   </div>
 </section>
      
-<!-- =========================
-     How It Works Section
-     ========================= -->
+ <!-- =========================
+   How It Works Section
+   ========================= -->
 
-<section class="setup-section">
-  <h2 class="section-title">How to Set Up AkServer</h2>
+  <section class="setup-section">
+    <h2 class="section-title">How to Set Up AkServer</h2>
+    <div class="container">
+      <div class="scroll-wrapper">
+        <button class="scroll-btn left" id="scrollLeft" aria-label="Scroll Left">◀</button>
 
-  <div class="scroll-wrapper">
-    <button class="scroll-btn left" id="scrollLeft" aria-label="Scroll Left">◀</button>
+        <div class="horizontal-steps" id="setupScroller">
 
-    <div class="horizontal-steps" id="setupScroller">
-      <!-- Each Step Box -->
-      <div class="step-box">
-        <img src="images/defender_warning.png" alt="SmartScreen Warning">
-        <h4>Bypass SmartScreen</h4>
-        <p>Click "More Info" → "Run Anyway" to start setup.</p>
-      </div>
-      <div class="step-box">
-        <img src="images/uac_prompt.png" alt="UAC Prompt">
-        <h4>Allow Installer</h4>
-        <p>Windows may ask for permission. Click “Yes”.</p>
-      </div>
-      <div class="step-box">
-        <img src="images/startup_option.png" alt="Startup Option">
-        <h4>Enable Auto Start</h4>
-        <p>Let AkServer run on boot — ideal for backup PCs.</p>
-      </div>
-      <div class="step-box">
-        <img src="images/akserver_running.png" alt="AkServer Running">
-        <h4>Run Setup</h4>
-        <p>Just a few clicks and you're good to go.</p>
-      </div>
-      <div class="step-box">
-        <img src="images/firewall_allow.png" alt="Firewall Prompt">
-        <h4>Allow in Firewall</h4>
-        <p>Give permission when asked — this enables local access.</p>
-      </div>
-      <div class="step-box">
-        <img src="images/akserver_main_window.png" alt="AkServer Main Window">
-        <h4>First Setup</h4>
-        <p>After firewall approval, AkServer window opens — ready for action.</p>
-      </div>
-      <div class="step-box">
-        <img src="images/connect_click.png" alt="Connect Button">
-        <h4>Connect & Scan</h4>
-        <p>Click "Connect" and scan the QR or access the link directly.</p>
-      </div>
-      <div class="step-box">
-        <img src="images/otp_generate.png" alt="OTP Generation">
-        <h4>Generate OTP</h4>
-        <p>Click “Gen” to get a one-time code for secure device registration.</p>
-      </div>
-      <div class="step-box">
-        <img src="images/folder_setup.png" alt="Folder Setup">
-        <h4>Setup Folder</h4>
-        <p>Select a folder where files from your devices will sync.</p>
-      </div>
-      <div class="step-box">
-        <img src="images/linked_devices.png" alt="Linked Devices">
-        <h4>Connect More Devices</h4>
-        <p>Register and link multiple devices — all visible in one place.</p>
-      </div>
-      <div class="step-box">
-        <img src="images/more_info.png" alt="More Info">
-        <h4>Need More Help?</h4>
-        <p>Click “More Info” on main screen to explore advanced options.</p>
+          <!-- Step Box Template -->
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/defender_warning.png" alt="SmartScreen Warning">
+            </div>
+            <div class="step-text">
+              <h4>Bypass SmartScreen</h4>
+              <p>Click "More Info" → "Run Anyway" to start setup.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/uac_prompt.png" alt="UAC Prompt">
+            </div>
+            <div class="step-text">
+              <h4>Allow Installer</h4>
+              <p>Windows may ask for permission. Click “Yes”.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/startup_option.png" alt="Startup Option">
+            </div>
+            <div class="step-text">
+              <h4>Enable Auto Start</h4>
+              <p>Let AkServer run on boot — ideal for backup PCs.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/firewall_allow.png" alt="Firewall Prompt">
+            </div>
+            <div class="step-text">
+              <h4>Allow in Firewall</h4>
+              <p>Give permission when asked — this enables local access.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/akserver_main_window.png" alt="AkServer Main Window">
+            </div>
+            <div class="step-text">
+              <h4>First Setup</h4>
+              <p>After firewall approval, AkServer window opens — ready for action.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/connect_click.png" alt="Connect Button">
+            </div>
+            <div class="step-text">
+              <h4>Connect & Scan</h4>
+              <p>Click "Connect" and scan the QR or access the link directly.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/otp_generate.png" alt="OTP Generation">
+            </div>
+            <div class="step-text">
+              <h4>Generate OTP</h4>
+              <p>Click “Gen” to get a one-time code for secure device registration.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/folder_setup.png" alt="Folder Setup">
+            </div>
+            <div class="step-text">
+              <h4>Setup Folder</h4>
+              <p>Select a folder where files from your devices will sync.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/linked_devices.png" alt="Linked Devices">
+            </div>
+            <div class="step-text">
+              <h4>Connect More Devices</h4>
+              <p>Register and link multiple devices — all visible in one place.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/more_info.png" alt="More Info">
+            </div>
+            <div class="step-text">
+              <h4>Need More Help?</h4>
+              <p>Click “More Info” on main screen to explore advanced options.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="scroll-btn right" id="scrollRight" aria-label="Scroll Right">▶</button>
       </div>
     </div>
-
-    <button class="scroll-btn right" id="scrollRight" aria-label="Scroll Right">▶</button>
-  </div>
-</section>
-
-
+  </section>
  
   <!-- =========================
        Use Cases Section
@@ -315,22 +360,40 @@
     }
   });
 </script>
- <script>
-  const scrollLeftBtn = document.getElementById('scrollLeft');
-  const scrollRightBtn = document.getElementById('scrollRight');
-  const stepsWrapper = document.getElementById('setupScroller');  // <-- FIXED ID
-
-  scrollLeftBtn.addEventListener('click', () => {
-    stepsWrapper.scrollBy({ left: -300, behavior: 'smooth' });
-  });
-
-  scrollRightBtn.addEventListener('click', () => {
-    stepsWrapper.scrollBy({ left: 300, behavior: 'smooth' });
-  });
-</script>
+  <script>
+    const scrollLeftBtn = document.getElementById('scrollLeft');
+    const scrollRightBtn = document.getElementById('scrollRight');
+    const stepsWrapper = document.getElementById('setupScroller'); // <-- FIXED ID
+    scrollLeftBtn.addEventListener('click', () => {
+      stepsWrapper.scrollBy({
+        left: -300,
+        behavior: 'smooth'
+      });
+    });
+    scrollRightBtn.addEventListener('click', () => {
+      stepsWrapper.scrollBy({
+        left: 300,
+        behavior: 'smooth'
+      });
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") {
+        stepsWrapper.scrollBy({
+          left: 300,
+          behavior: 'smooth'
+        });
+      } else if (e.key === "ArrowLeft") {
+        stepsWrapper.scrollBy({
+          left: -300,
+          behavior: 'smooth'
+        });
+      }
+    });
+  </script>
     
 </body>
 </html>
+
 
 
 
