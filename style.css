@@ -433,16 +433,19 @@ body {
 }
 
 .step-box h4 {
-  font-size: 16px;
+  font-size: 14px;           /* Smaller text */
   color: #2a8bff;
-  margin: 10px 0 6px;
+  margin: 6px 0 2px;         /* Less space around */
+  line-height: 1.2;          /* Tighter spacing */
 }
 
 .step-box p {
-  font-size: 14px;
-  color: #444;
-  line-height: 1.4;
+  font-size: 12px;           /* Smaller paragraph */
+  color: #555;               /* Slightly muted */
+  line-height: 1.3;
+  margin-bottom: 0;          /* No extra space below */
 }
+
 
 /* Scroll Buttons */
 .scroll-btn {
@@ -617,6 +620,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
