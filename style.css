@@ -372,87 +372,64 @@ body {
 /*=========================
      How It Works Section
      ========================= */
-  .install-section {
-    padding: 40px 20px;
-    background-color: #111;
-    color: #fff;
-    text-align: center;
+ .setup-section {
+  background-color: #f7fafd;
+  padding: 40px 20px;
+  color: #222;
+  font-family: 'Segoe UI', sans-serif;
+  border-top: 1px solid #333;
+}
+.section-title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 30px;
+  color: #2a8bff;
+}
+/* Horizontal Scroll Row */
+.horizontal-steps {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+  scroll-snap-type: x mandatory;
+}
+.step-box {
+  flex: 0 0 auto;
+  width: 240px;
+  background-color: #f7fafd;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 5px;
+  scroll-snap-align: start;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.step-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.step-box h4 {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0 6px;
+}
+.step-box p {
+  font-size: 14px;
+  color: #222;
+  line-height: 1.4;
+}
+.step-box:hover {
+  transform: scale(1.03);
+}
+/* Mobile Fixes */
+@media (max-width: 600px) {
+  .step-box {
+    width: 80%;
+    margin-right: 10px;
   }
-
-  .install-section h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
-
-  .install-slider {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 20px;
-    padding-bottom: 20px;
-  }
-
-  .install-slider::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .install-slider::-webkit-scrollbar-thumb {
-    background: #444;
-    border-radius: 10px;
-  }
-
-  .install-item {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    background: #222;
-    border-radius: 10px;
-    padding: 20px;
-    width: 250px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  }
-
-  .img-box {
-    width: 100%;
-    height: 160px;
-    margin-bottom: 15px;
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    overflow: hidden;
-  }
-
-  .img-box img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
-
-  .install-item h4 {
-    font-size: 18px;
-    margin: 10px 0 5px;
-    color: #0ff;
-  }
-
-  .install-item p {
-    font-size: 14px;
-    line-height: 1.4;
-    color: #ccc;
-  }
-
-  @media (min-width: 768px) {
-    .install-item {
-      width: 300px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .install-slider {
-      justify-content: center;
-    }
-  }
+}
 
 
 /* ===============================
@@ -593,6 +570,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
