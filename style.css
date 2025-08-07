@@ -12,12 +12,11 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background-color: #f1f3f6;
   color: #2a2a2a;
   line-height: 1.6;
 }
-
 
 /* ===============================
    Navbar Styles
@@ -56,7 +55,6 @@ body {
   color: #2a8bff;
 }
 
-
 /* ===============================
    Section Wrapper
 ================================= */
@@ -73,7 +71,6 @@ body {
   max-width: 1000px;
   text-align: center;
 }
-
 
 /* ===============================
    Home Page
@@ -133,7 +130,6 @@ body {
   background-color: #1a6edd;
   transform: translateY(-2px);
 }
-
 
 /* ===============================
    AkServer Flow Diagram
@@ -307,13 +303,6 @@ body {
   margin: 0 auto;
   padding: 0 16px;
   position: relative;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 26px;
-  margin-bottom: 30px;
-  color: #2a8bff;
 }
 .scroll-wrapper {
   position: relative;
@@ -512,7 +501,6 @@ body {
   background-color: #1a6edd;
 }
 
-
 /* ===============================
    Footer
 ================================= */
@@ -523,7 +511,6 @@ body {
   font-size: 0.9rem;
   color: #777;
 }
-
 
 /* ===============================
    Responsive
@@ -558,79 +545,3 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
