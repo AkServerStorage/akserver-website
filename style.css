@@ -181,190 +181,118 @@ body {
   color: #999;
 }
 
-/* ===============================
-   Why AkServer (Split Layout)
-================================= */
-.split-layout {
-  background: #f7fafd;
-  padding: 5rem 2rem;
-}
-
-.split-container {
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-/* Ensure visual box grows with the content */
-.visual {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-.visual .info-box {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  text-align: left;
-  max-width: 420px;
-  margin: 0 auto;
-  color: #333;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.visual .info-box h3 {
-  font-size: 1.5rem;
-  color: #d32f2f; /* was #2a8bff before */
-  margin-bottom: 1rem;
-}
-
-.visual .info-box h4 {
-  font-size: 1.2rem;
-  color: #2a8bff;
-  margin-top: 1.5rem;
-}
-
-.visual .info-box .tagline {
-  font-size: 1.05rem;
-  color: #444;
-  margin-bottom: 1rem;
-}
-
-.visual .info-box .highlight-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 1rem 0 1rem 0;
-}
-
-.visual .info-box .highlight-list li {
-  margin-bottom: 0.6rem;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #444;
-}
-
-.visual .info-box .key-line {
-  margin-top: 1.5rem;
-  font-weight: 500;
-  color: #333;
-}
-
-.visual .info-box .final-note {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #2a2a2a;
-  margin-top: 1rem;
-}
-
-.privacy-message-box {
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  text-align: left;
-  max-width: 420px;
-  margin: 0 auto;
-  line-height: 1.6;
-  font-size: 1rem;
-  color: #333;
-}
-
-.privacy-message-box h3 {
-  color: #d32f2f;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.privacy-message-box h4 {
-  color: #2a8bff;
-  margin-top: 1.5rem;
-  font-size: 1.2rem;
-}
-
-.privacy-message-box p {
-  margin: 0.6rem 0;
-}
-
-.privacy-message-box hr {
-  margin: 1.5rem 0;
-  border: none;
-  border-top: 1px solid #ddd;
-}
-
-.text-grid {
-  max-width: 600px;
-  flex: 1;
+.akserver-section {
+  background-color: #f5f5f5;
+  padding: 40px 20px;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .section-title {
-  font-size: 2.4rem;
-  color: #2a8bff;
-  margin-bottom: 2rem;
-  font-weight: 700;
+  text-align: center;
+  color: #05445e;
+  font-size: 2em;
+  margin-bottom: 30px;
 }
 
-.feature-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+.split-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.left-column {
+  flex: 1;
+  min-width: 300px;
+  padding: 10px;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.left-column .intro {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #189ab4;
+}
+
+.problem-block {
+  margin-bottom: 25px;
+}
+
+.problem-block h4 {
+  margin: 0;
+  font-size: 1.05em;
+  color: #05445e;
+}
+
+.problem-block .problem {
+  margin: 5px 0;
+  color: #555;
+}
+
+.problem-block .solution {
+  margin: 0;
+  color: #189ab4;
+  font-weight: 500;
+}
+
+.left-column .punchline {
+  margin-top: 30px;
+  font-style: italic;
+  color: #05445e;
+}
+
+.right-column {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .feature-card {
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 20px;
   border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
 }
 
 .feature-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
-.feature-card .icon {
-  font-size: 1.8rem;
-  margin-bottom: 0.6rem;
+.feature-card h3 {
+  margin-top: 0;
+  color: #05445e;
+  font-size: 1.1em;
 }
 
-.feature-card h4 {
-  font-size: 1.1rem;
-  color: #d32f2f;
-  margin-bottom: 0.4rem;
+.feature-card p {
+  margin: 8px 0 0;
+  color: #333;
+  font-size: 0.95em;
+}
+.problems li,
+.benefits li {
+  margin-bottom: 8px;
+  font-size: 0.95em;
 }
 
-.feature-card .desc {
-  color: #555;
-  font-size: 0.95rem;
-  margin-bottom: 0.6rem;
+.benefits {
+  margin-top: 20px;
 }
 
-.feature-card .solution {
-  color: #2a8bff;
-  font-size: 0.92rem;
-  line-height: 1.5;
+.solution {
+  font-weight: 500;
+  color: #006778;
+  margin: 15px 0;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .split-container {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .feature-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .section-title {
-    text-align: center;
-  }
-}
 /* =========================
    How It Works Section
 ========================= */
@@ -612,6 +540,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
