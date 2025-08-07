@@ -372,7 +372,7 @@ body {
 /*=========================
      How It Works Section
      ========================= */
- .setup-section {
+.setup-section {
   background-color: #f7fafd;
   padding: 40px 20px;
   color: #222;
@@ -423,15 +423,6 @@ body {
 .step-box:hover {
   transform: scale(1.03);
 }
-/* Mobile Fixes */
-@media (max-width: 600px) {
-  .step-box {
-    width: 80%;
-    margin-right: 10px;
-  }
-}
-
-
 /* ===============================
    Use Case Carousel
 ================================= */
@@ -570,6 +561,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
