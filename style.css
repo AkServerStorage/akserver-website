@@ -295,9 +295,6 @@ body {
   border-top: 1px solid #ddd;
 }
 
-
-
-
 .text-grid {
   max-width: 600px;
   flex: 1;
@@ -371,12 +368,17 @@ body {
 /* =========================
    How It Works Section
 ========================= */
+/* Setup Scroll Cards Section */
 .setup-section {
-  background-color: #f7fafd;
-  padding: 40px 20px;
-  color: #222;
-  font-family: "Segoe UI", sans-serif;
-  border-top: 1px solid #ccc;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
 }
 
 .section-title {
@@ -385,32 +387,25 @@ body {
   margin-bottom: 30px;
   color: #2a8bff;
 }
-
-/* Scroll Wrapper */
 .scroll-wrapper {
   position: relative;
-  display: flex;
-  align-items: center;
   overflow: hidden;
+  margin-top: 30px;
 }
 
-/* Horizontal Scroll Container */
 .horizontal-steps {
   display: flex;
-  gap: 20px;
   overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 10px 40px;
   scroll-snap-type: x mandatory;
-  scrollbar-width: none; /* Firefox */
-}
-.horizontal-steps::-webkit-scrollbar {
-  display: none;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  gap: 20px;
 }
 
 .step-box {
   flex: 0 0 auto;
-  width: 240px;
+  width: 320px;
+  height: 350px; /* fixed height for even box layout */
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 12px;
@@ -418,68 +413,65 @@ body {
   scroll-snap-align: start;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
 .step-box:hover {
   transform: scale(1.03);
 }
-
-.step-box img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  margin-bottom: 12px;
+.step-image {
+  max-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.step-box h4 {
-  font-size: 14px;           /* Smaller text */
+.step-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.step-text h4 {
+  margin: 5px 0 6px;
+  font-size: 18px;
   color: #2a8bff;
-  margin: 6px 0 2px;         /* Less space around */
-  line-height: 1.2;          /* Tighter spacing */
 }
 
-.step-box p {
-  font-size: 12px;           /* Smaller paragraph */
-  color: #555;               /* Slightly muted */
-  line-height: 1.3;
-  margin-bottom: 0;          /* No extra space below */
+.step-text p {
+  font-size: 14px;
+  color: #444;
+  padding: 0 12px;
+  margin-bottom: 5px;
 }
 
-
-/* Scroll Buttons */
 .scroll-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #ffffff;
-  border: 1px solid #2a8bff;
-  font-size: 1.8rem;
-  color: #2a8bff;
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  font-size: 18px;
   cursor: pointer;
-  padding: 0.3rem 0.6rem;
-  border-radius: 50%;
+  border-radius: 6px;
   z-index: 10;
   transition: background 0.2s;
 }
+
 .scroll-btn:hover {
-  background-color: #e0f0ff;
-}
-.scroll-btn.left {
-  left: 10px;
-}
-.scroll-btn.right {
-  right: 10px;
+  background: #555;
 }
 
-/* Responsive Tweaks */
-@media (max-width: 600px) {
-  .scroll-btn {
-    font-size: 1.5rem;
-  }
-  .step-box {
-    width: 180px;
-  }
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
 }
 
 /* ===============================
@@ -620,6 +612,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
