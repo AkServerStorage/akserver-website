@@ -369,56 +369,93 @@ body {
   }
 }
 
-/* ===============================
-   How It Works Section
-================================= */
-.install-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 0 2rem; /* Breathing space */
-  justify-content: center;
-}
+<!-- =========================
+     How It Works Section
+     ========================= -->
+<style>
+  .install-section {
+    padding: 40px 20px;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+  }
 
-.install-item {
-  text-align: center;
-  padding-bottom: 1rem;
-}
+  .install-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
 
-.install-item h4 {
-  font-size: 1rem;
-  margin: 0.5rem 0 0.3rem;
-  color: #d32f2f;
-}
+  .install-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
 
-.install-item p {
-  font-size: 0.92rem;
-  color: #444;
-  line-height: 1.4;
-  margin: 0;
-}
-.img-box {
-  width: 100%;
-  height: 200px;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #f7f7f7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.img-box img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-}
+  .install-slider::-webkit-scrollbar {
+    height: 6px;
+  }
 
+  .install-slider::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+  }
 
-.install-item:hover .img-box {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
-  transform: scale(1.02);
-  transition: all 0.3s ease;
-}
+  .install-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    background: #222;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  }
+
+  .img-box {
+    width: 100%;
+    height: 160px;
+    margin-bottom: 15px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .img-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .install-item h4 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+    color: #0ff;
+  }
+
+  .install-item p {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #ccc;
+  }
+
+  @media (min-width: 768px) {
+    .install-item {
+      width: 300px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .install-slider {
+      justify-content: center;
+    }
+  }
+</style>
+
 
 /* ===============================
    Use Case Carousel
@@ -558,6 +595,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
