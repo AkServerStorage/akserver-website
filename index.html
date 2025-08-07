@@ -315,9 +315,23 @@
     }
   });
 </script>
-     
+ <script>
+  const scrollLeftBtn = document.getElementById('scrollLeft');
+  const scrollRightBtn = document.getElementById('scrollRight');
+  const stepsWrapper = document.getElementById('setupScroller');  // <-- FIXED ID
+
+  scrollLeftBtn.addEventListener('click', () => {
+    stepsWrapper.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+
+  scrollRightBtn.addEventListener('click', () => {
+    stepsWrapper.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+</script>
+    
 </body>
 </html>
+
 
 
 
