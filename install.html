@@ -109,12 +109,13 @@
       box-shadow: 0 6px 22px rgba(23,33,60,0.04);
       border: 1px solid rgba(10,20,40,0.03);
     }
-    .panel ul {
-      padding-left: 20px; /* space for bullets */
-    }
+.panel ul {
+  padding-left: 20px; /* space for bullets */
+}
+
     .panel h3 { color: var(--brand-deep); margin-bottom:10px; font-size:1.05rem; }
     .lead { color: var(--muted); margin-bottom:14px; }
-  
+
     /* Step block */
     .step {
       display:flex;
@@ -143,18 +144,109 @@
     .step .content p { color: var(--muted); font-size:0.95rem; margin:0; }
 
     /* Screenshots / gallery */
-    .screens {
-      display:flex;
-      gap:10px;
-      overflow-x:auto;
-      padding:6px 2px;
-    }
-    .screens img {
-      height:110px;
-      border-radius:8px;
-      border:1px solid rgba(0,0,0,0.06);
-      object-fit:cover;
-    }
+  
+/* =========================
+   How It Works Section
+========================= */
+/* Setup Scroll Cards Section */
+.setup-section {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+}
+.scroll-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.horizontal-steps {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  gap: 20px;
+}
+
+.step-box {
+  flex: 0 0 auto;
+  width: 320px;
+  height: 350px; /* fixed height for even box layout */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 12px;
+  scroll-snap-align: start;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.step-box:hover {
+  transform: scale(1.03);
+}
+.step-image {
+  max-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.step-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.step-text h4 {
+  margin: 5px 0 6px;
+  font-size: 18px;
+  color: #2a8bff;
+}
+
+.step-text p {
+  font-size: 14px;
+  color: #444;
+  padding: 0 12px;
+  margin-bottom: 5px;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 10;
+  transition: background 0.2s;
+}
+
+.scroll-btn:hover {
+  background: #555;
+}
+
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
+}
+
 
     /* Right column: toc and quick download */
     .side {
@@ -290,18 +382,125 @@
           </div>
 
           <!-- Screenshots example (optional) -->
-          <div style="margin-top:12px;">
-            <h4 style="margin-bottom:8px; color:var(--brand-deep)">Screenshots</h4>
-            <div class="screens">
-              <!-- Replace src with real images -->
-              <img src="images/defender_warning.png" alt="SmartScreen warning">
-              <img src="images/uac_prompt.png" alt="UAC prompt">
-              <img src="images/akserver_main_window.png" alt="AkServer main window">
-            </div>
-            <div class="meta">Tip: click images to open larger versions.</div>
-          </div>
-        </section>
+   <!-- =========================
+   Installation instruction
+   ========================= -->
 
+  <section class="setup-section">
+    <h2 class="section-title">How to Set Up AkServer</h2>
+    <div class="container">
+      <div class="scroll-wrapper">
+        <button class="scroll-btn left" id="scrollLeft" aria-label="Scroll Left">◀</button>
+
+        <div class="horizontal-steps" id="setupScroller">
+
+          <!-- Step Box Template -->
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/defender_warning.png" alt="SmartScreen Warning">
+            </div>
+            <div class="step-text">
+              <h4>Bypass SmartScreen</h4>
+              <p>Click "More Info" → "Run Anyway" to start setup.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/uac_prompt.png" alt="UAC Prompt">
+            </div>
+            <div class="step-text">
+              <h4>Allow Installer</h4>
+              <p>Windows may ask for permission. Click “Yes”.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/startup_option.png" alt="Startup Option">
+            </div>
+            <div class="step-text">
+              <h4>Enable Auto Start</h4>
+              <p>Let AkServer run on boot — ideal for backup PCs.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/firewall_allow.png" alt="Firewall Prompt">
+            </div>
+            <div class="step-text">
+              <h4>Allow in Firewall</h4>
+              <p>Give permission when asked — this enables local access.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/akserver_main_window.png" alt="AkServer Main Window">
+            </div>
+            <div class="step-text">
+              <h4>First Setup</h4>
+              <p>After firewall approval, AkServer window opens — ready for action.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/connect_click.png" alt="Connect Button">
+            </div>
+            <div class="step-text">
+              <h4>Connect & Scan</h4>
+              <p>Click "Connect" and scan the QR or access the link directly.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/otp_generate.png" alt="OTP Generation">
+            </div>
+            <div class="step-text">
+              <h4>Generate OTP</h4>
+              <p>Click “Gen” to get a one-time code for secure device registration.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/folder_setup.png" alt="Folder Setup">
+            </div>
+            <div class="step-text">
+              <h4>Setup Folder</h4>
+              <p>Select a folder where files from your devices will sync.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/linked_devices.png" alt="Linked Devices">
+            </div>
+            <div class="step-text">
+              <h4>Connect More Devices</h4>
+              <p>Register and link multiple devices — all visible in one place.</p>
+            </div>
+          </div>
+
+          <div class="step-box">
+            <div class="step-image">
+              <img src="images/more_info.png" alt="More Info">
+            </div>
+            <div class="step-text">
+              <h4>Need More Help?</h4>
+              <p>Click “More Info” on main screen to explore advanced options.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="scroll-btn right" id="scrollRight" aria-label="Scroll Right">▶</button>
+      </div>
+    </div>
+  </section>
         <!-- Troubleshooting / FAQ -->
         <section class="panel" id="faq" data-aos="fade-up" data-aos-delay="200" style="margin-top:18px;">
           <h3>Troubleshooting & FAQ</h3>
@@ -343,13 +542,13 @@
 
           <div class="meta" style="margin-top:12px">
             <div>Version: <strong>v1.0.0</strong></div>
-            <div style="margin-top:6px">Size: <strong>~12 MB</strong></div>
+            <div style="margin-top:6px">Size: <strong>~113 MB</strong></div>
           </div>
         </div>
 
         <div class="panel" style="margin-top:14px">
           <h4>Need help?</h4>
-          <p class="small">Contact us at <a href="mailto:support@akserver.example">support@akserver.example</a> or use the Contact form on the main site.</p>
+          <p class="small">Contact us at <a href="mailto:support@akserver.example">akserverstorage@gmail.com</a> or use the Contact form on the main site.</p>
         </div>
       </aside>
 
@@ -369,6 +568,36 @@
       img.addEventListener('click', (e)=> {
         window.open(e.currentTarget.src, '_blank');
       });
+    });
+  </script>
+     <script>
+    const scrollLeftBtn = document.getElementById('scrollLeft');
+    const scrollRightBtn = document.getElementById('scrollRight');
+    const stepsWrapper = document.getElementById('setupScroller'); // <-- FIXED ID
+    scrollLeftBtn.addEventListener('click', () => {
+      stepsWrapper.scrollBy({
+        left: -300,
+        behavior: 'smooth'
+      });
+    });
+    scrollRightBtn.addEventListener('click', () => {
+      stepsWrapper.scrollBy({
+        left: 300,
+        behavior: 'smooth'
+      });
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") {
+        stepsWrapper.scrollBy({
+          left: 300,
+          behavior: 'smooth'
+        });
+      } else if (e.key === "ArrowLeft") {
+        stepsWrapper.scrollBy({
+          left: -300,
+          behavior: 'smooth'
+        });
+      }
     });
   </script>
 </body>
