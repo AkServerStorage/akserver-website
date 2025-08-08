@@ -456,20 +456,17 @@ body {
   padding: 50px 20px;
   font-family: "Segoe UI", sans-serif;
 }
-
 .akserver-usecases-section .section-title {
   text-align: center;
   color: #05445e;
   font-size: 2em;
   margin-bottom: 40px;
 }
-
 .carousel-container {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 10px;
 }
-
 .carousel-track {
   display: flex;
   gap: 20px;
@@ -477,10 +474,18 @@ body {
   scroll-snap-type: x mandatory;
   scroll-padding: 0 10px;
 }
-
+.carousel-card h3 {
+  margin-top: 0;
+  font-size: 1.1em;
+  color: #05445e;
+}
+.carousel-card p {
+  color: #333;
+  font-size: 0.95em;
+  margin-top: 8px;
+}
 .carousel-card {
-  min-width: 260px;
-  flex: 0 0 auto;
+  min-width: auto;
   background-color: #f5f5f5;
   border-radius: 12px;
   padding: 20px;
@@ -488,23 +493,28 @@ body {
   scroll-snap-align: start;
   transition: transform 0.3s ease;
 }
-
-.carousel-card:hover {
-  transform: translateY(-5px);
+/* Mobile view: show smaller width cards so user can swipe */
+@media (max-width: 768px) {
+  .carousel-card {
+    min-width: 80%; /* Adjust so one card mostly fills mobile screen */
+  }
 }
 
-.carousel-card h3 {
-  margin-top: 0;
-  font-size: 1.1em;
-  color: #05445e;
+/* Desktop view: show cards in grid without horizontal scrolling if preferred */
+@media (min-width: 769px) {
+  .carousel-container {
+    overflow-x: hidden;
+  }
+  .carousel-track {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .carousel-card {
+    min-width: 260px; /* Standard card size for desktop */
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: 320px;
+  }
 }
-
-.carousel-card p {
-  color: #333;
-  font-size: 0.95em;
-  margin-top: 8px;
-}
-
 /* ===============================
    Contact Section
 ================================= */
@@ -602,4 +612,3 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
