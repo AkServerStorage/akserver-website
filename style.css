@@ -614,20 +614,21 @@ body {
 }
 
   /* bot placement */
-
 .bot-container {
-  position: absolute;
-  top: -80px; /* adjust so bot rests above heading */
-  right: 600px; /* adjust horizontally */
   display: flex;
-  flex-direction: column;
   align-items: center;
-}
+  gap: 10px;
+  z-index: 5;
+  }
 
 .bot-image {
-  width: 100px;
-  animation: float 3s ease-in-out infinite;
-}  
+  width: 80px;  /* adjust size */
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 6;
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
@@ -637,3 +638,32 @@ body {
   0%, 100% { opacity: 0; }
   50% { opacity: 1; }
 }
+
+@media (max-width: 768px) {
+  .flow-diagram {
+    flex-wrap: wrap; /* allow wrapping on smaller screens */
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .flow-step {
+    width: 45%; /* two items per row for tablets/phones */
+  }
+
+  .flow-arrow {
+    display: flex; /* hide arrows on mobile for cleaner look */
+  }
+}
+
+@media (max-width: 480px) {
+  .flow-step {
+    width: 100%; /* single column on very small screens */
+  }
+}
+@media (max-width: 768px) {
+  .bot-container {
+    right: 20px;
+    top: -60px;
+  }
+}
+
