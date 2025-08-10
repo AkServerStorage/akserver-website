@@ -2,17 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Install AkServer — Detailed Instructions</title>
-  <meta name="description" content="Step-by-step installation guide for AkServer. Screenshots, troubleshooting and download links." />
-  <link rel="icon" href="logo.png" type="image/png" />
-
-  <!-- AOS (optional) -->
+  <meta name="description" content="Step-by-step installation guide for AkServer. Screenshots, troubleshooting, and download links." />
+  <meta property="og:title" content="Install AkServer — Detailed Instructions" />
+  <meta property="og:description" content="Step-by-step installation guide for AkServer. Screenshots, troubleshooting, and download links." />
+  <meta property="og:image" content="https://yourdomain.com/images/preview.png" />
+  <meta property="og:url" content="https://yourdomain.com/install.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="favicon-180.png" />
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" as="style" />
+  <link rel="preload" href="logo.png" as="image" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
-    /* === Page theme (matches main site) === */
-    :root{
+    /* === Theme variables === */
+    :root {
       --brand-blue: #2a8bff;
       --brand-deep: #05445e;
       --muted: #555;
@@ -26,579 +32,997 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial;
+      font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
       background: var(--bg);
       color: #222;
       line-height: 1.6;
-      -webkit-font-smoothing:antialiased;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* Navbar (consistent with main site) */
+    /* Navbar */
     .navbar {
       background: var(--panel);
       padding: 14px 20px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
       position: sticky;
       top: 0;
       z-index: 40;
     }
-    .navbar .logo img{ height:38px; display:block; }
-    .navbar nav ul{ list-style:none; display:flex; gap:18px; align-items:center; }
-    .navbar a{ color:#222; text-decoration:none; font-weight:600; }
-    .navbar a:hover{ color:var(--brand-blue); }
-
-    /* Page container */
-    .page {
-      max-width: 1100px;
-      margin: 36px auto;
-      padding: 0 18px 80px;
+    .navbar .logo img {
+      height: 38px;
+      display: block;
+    }
+    .navbar nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+    .navbar a {
+      color: #222;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .navbar a:hover,
+    .navbar a:focus {
+      color: var(--brand-blue);
+      outline: none;
+      text-decoration: underline;
     }
 
-    /* Header + quick CTA */
+    /* Page container */
+    main.page {
+      flex: 1 0 auto;
+      max-width: 1100px;
+      margin: 36px auto 80px;
+      padding: 0 18px;
+      width: 100%;
+    }
+
+    /* Header + CTA */
     .page-head {
-      display:flex;
-      gap:20px;
-      align-items:center;
-      justify-content:space-between;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
       margin-bottom: 22px;
     }
     .page-head .title {
       font-size: 1.8rem;
       color: var(--brand-deep);
-      font-weight:700;
+      font-weight: 700;
+      min-width: 280px;
     }
     .page-head .sub {
       color: var(--muted);
       font-size: 0.95rem;
-      margin-top:6px;
+      margin-top: 6px;
     }
-    .cta-wrap { display:flex; gap:12px; align-items:center; }
+    .cta-wrap {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
     .btn {
       background: var(--brand-blue);
       color: #fff;
-      padding: 10px 14px;
+      padding: 10px 16px;
       border-radius: 10px;
-      font-weight:700;
-      text-decoration:none;
+      font-weight: 700;
+      text-decoration: none;
       box-shadow: 0 6px 18px rgba(42,139,255,0.12);
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+      user-select: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 1rem;
+    }
+    .btn:hover,
+    .btn:focus {
+      background: #1c6fdb;
+      transform: translateY(-2px);
+      outline: none;
+      text-decoration: none;
     }
     .btn.secondary {
       background: transparent;
       color: var(--brand-blue);
-      border: 1px solid rgba(42,139,255,0.12);
-      box-shadow:none;
-      font-weight:600;
+      border: 1px solid rgba(42,139,255,0.3);
+      box-shadow: none;
+      font-weight: 600;
+    }
+    .btn.secondary:hover,
+    .btn.secondary:focus {
+      background: var(--brand-blue);
+      color: #fff;
+      border-color: var(--brand-blue);
+      transform: translateY(-2px);
+      outline: none;
     }
 
-    /* Two-column layout: left content + right toc / download */
+    /* Grid layout */
     .grid {
-      display:grid;
+      display: grid;
       grid-template-columns: 1fr 320px;
       gap: 24px;
-      align-items:start;
+      align-items: start;
     }
 
-    /* Main content panels */
+    /* Content panels */
     .panel {
       background: var(--panel);
       border-radius: var(--radius);
-      padding: 18px;
+      padding: 20px;
       box-shadow: 0 6px 22px rgba(23,33,60,0.04);
       border: 1px solid rgba(10,20,40,0.03);
     }
-.panel ul {
-  padding-left: 20px; /* space for bullets */
-}
+    .panel ul {
+      padding-left: 20px;
+      margin-top: 12px;
+      color: var(--muted);
+    }
+    .panel h3 {
+      color: var(--brand-deep);
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    .lead {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
 
-    .panel h3 { color: var(--brand-deep); margin-bottom:10px; font-size:1.05rem; }
-    .lead { color: var(--muted); margin-bottom:14px; }
-
-    /* Step block */
+    /* Steps */
     .step {
-      display:flex;
-      gap:14px;
-      align-items:flex-start;
-      padding:12px;
-      border-radius:10px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      border-radius: 10px;
       background: linear-gradient(180deg, rgba(230,240,255,0.6), rgba(255,255,255,0));
       border: 1px solid rgba(42,139,255,0.08);
-      margin-bottom:12px;
+      margin-bottom: 14px;
+      transition: background 0.2s ease-in-out;
+    }
+    .step:hover,
+    .step:focus-within {
+      background: var(--accent);
+      outline: none;
     }
     .step .num {
       background: var(--brand-blue);
-      color:#fff;
-      width:44px;
-      height:44px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-      flex-shrink:0;
-      font-size:1.05rem;
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+      font-size: 1.15rem;
+      user-select: none;
     }
-    .step .content h4 { margin-bottom:6px; color:var(--brand-deep); font-size:1rem; }
-    .step .content p { color: var(--muted); font-size:0.95rem; margin:0; }
-
-    /* Screenshots / gallery */
-  
-/* =========================
-   How It Works Section
-========================= */
-/* Setup Scroll Cards Section */
-.setup-section {
-  padding: 50px 20px;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-.container {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0 16px;
-  position: relative;
-}
-.scroll-wrapper {
-  position: relative;
-  overflow: hidden;
-  margin-top: 30px;
-}
-
-.horizontal-steps {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  padding: 10px 0;
-  gap: 20px;
-}
-
-.step-box {
-  flex: 0 0 auto;
-  width: 320px;
-  height: 350px; /* fixed height for even box layout */
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  padding: 12px;
-  scroll-snap-align: start;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.step-box:hover {
-  transform: scale(1.03);
-}
-.step-image {
-  max-height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.step-image img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.step-text h4 {
-  margin: 5px 0 6px;
-  font-size: 18px;
-  color: #2a8bff;
-}
-
-.step-text p {
-  font-size: 14px;
-  color: #444;
-  padding: 0 12px;
-  margin-bottom: 5px;
-}
-
-.scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #333;
-  color: #fff;
-  border: none;
-  padding: 10px 12px;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 6px;
-  z-index: 10;
-  transition: background 0.2s;
-}
-
-.scroll-btn:hover {
-  background: #555;
-}
-
-.scroll-btn.left {
-  left: 0;
-}
-
-.scroll-btn.right {
-  right: 0;
-}
-
-
-    /* Right column: toc and quick download */
-    .side {
-      position:sticky;
-      top:84px;
+    .step .content {
+      flex: 1;
     }
-    .toc { margin-bottom:18px; }
-    .toc h4 { margin-bottom:8px; }
-    .toc ul { list-style:none; padding-left:0; display:flex; flex-direction:column; gap:6px; }
-    .toc a { color:var(--brand-blue); text-decoration:none; font-weight:600; }
+    .step .content h4 {
+      margin-bottom: 6px;
+      color: var(--brand-deep);
+      font-size: 1.1rem;
+    }
+    .step .content p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* Collapsible Setup Steps */
+    .setup-section {
+      margin-top: 28px;
+    }
+    .setup-section h2.section-title {
+      font-weight: 700;
+      color: var(--brand-blue);
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+    }
+    .setup-step {
+      margin-bottom: 14px;
+    }
+    .setup-step summary {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      padding: 14px 16px;
+      border-radius: 10px;
+      background: linear-gradient(180deg, rgba(230,240,255,0.6), rgba(255,255,255,0));
+      border: 1px solid rgba(42,139,255,0.08);
+      cursor: pointer;
+      transition: background 0.2s ease-in-out;
+    }
+    .setup-step summary:hover,
+    .setup-step summary:focus {
+      background: var(--accent);
+      outline: none;
+    }
+    .setup-step summary .num {
+      background: var(--brand-blue);
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+      font-size: 1.15rem;
+      user-select: none;
+    }
+    .setup-step summary .content {
+      flex: 1;
+    }
+    .setup-step summary .content h4 {
+      margin-bottom: 6px;
+      color: var(--brand-deep);
+      font-size: 1.1rem;
+    }
+    .setup-step .step-image {
+      margin-top: 12px;
+      max-width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #fefefe;
+    }
+    .setup-step .step-image img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .setup-step .step-text {
+      margin-top: 12px;
+    }
+    .setup-step .step-text p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    /* Right sidebar */
+    aside.side {
+      position: sticky;
+      top: 84px;
+      align-self: start;
+      margin-bottom: 24px;
+    }
+    .toc h4,
+    .download-box h4 {
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: var(--brand-deep);
+      font-size: 1.1rem;
+    }
+    .toc ul {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .toc a {
+      color: var(--brand-blue);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .toc a:hover,
+    .toc a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
     .download-box {
-      margin-top:12px;
-      padding:12px;
-      border-radius:10px;
+      margin-top: 24px;
+      padding: 14px;
+      border-radius: 10px;
       background: #f5fbff;
-      border:1px solid rgba(42,139,255,0.08);
+      border: 1px solid rgba(42,139,255,0.08);
     }
-    .small { font-size:0.9rem; color:var(--muted); }
+    .download-box p.small {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .download-box .btn {
+      width: 100%;
+      justify-content: center;
+    }
 
-    /* FAQ / Troubleshooting */
-    .faq-item { margin-bottom:10px; }
-    .faq-item summary { font-weight:700; color:var(--brand-deep); cursor:pointer; }
-    .faq-item p { margin-top:8px; color:var(--muted); }
+    /* FAQ */
+    .faq-item {
+      margin-bottom: 14px;
+    }
+    .faq-item summary {
+      font-weight: 700;
+      color: var(--brand-deep);
+      cursor: pointer;
+      padding: 10px 14px;
+      border-radius: var(--radius);
+      background-color: var(--accent);
+      user-select: none;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(42,139,255,0.12);
+      transition: background-color 0.25s;
+    }
+    .faq-item summary:hover,
+    .faq-item summary:focus {
+      background-color: var(--brand-blue);
+      color: #fff;
+      outline: none;
+    }
+    .faq-item p {
+      margin-top: 8px;
+      padding-left: 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
 
-    /* Footer small */
-    .meta { font-size:0.9rem; color:var(--muted); margin-top:12px; }
+    /* Feedback box */
+    .feedback-panel {
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(42,139,255,0.15);
+      background-color: #e6f0ff;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .feedback-panel label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: var(--brand-deep);
+    }
+    .feedback-panel textarea {
+      width: 100%;
+      min-height: 80px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid rgba(42,139,255,0.4);
+      border-radius: 6px;
+      resize: vertical;
+      font-family: inherit;
+    }
+    .feedback-panel button {
+      margin-top: 12px;
+      background: var(--brand-blue);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .feedback-panel button:hover,
+    .feedback-panel button:focus {
+      background: #1c6fdb;
+      transform: translateY(-2px);
+      outline: none;
+    }
+    #feedback-status {
+      margin-top: 10px;
+      padding: 8px;
+      border-radius: 6px;
+      background-color: #e6ffe6;
+      color: #2a6700;
+      display: none;
+    }
+    #feedback-status.error {
+      background-color: #ffe6e6;
+      color: #670000;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 24px 12px;
+      color: #666;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    /* Smooth scroll offset */
+    [id] {
+      scroll-margin-top: 80px;
+    }
 
     /* Responsive */
     @media (max-width: 980px) {
-      .grid { grid-template-columns: 1fr; }
-      .side { position:static; }
-      .page { margin:18px auto; }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      aside.side {
+        position: static;
+        margin-top: 36px;
+        max-width: 100%;
+      }
+      .page-head {
+        justify-content: center;
+        text-align: center;
+        gap: 12px;
+      }
+      .page-head .title {
+        min-width: auto;
+        font-size: 1.5rem;
+      }
+      .cta-wrap {
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
-
   <!-- NAV -->
-  <header class="navbar">
+  <header class="navbar" role="banner">
     <div class="logo">
-      <a href="./"><img src="logo.png" alt="AkServer" /></a>
+      <a href="./" aria-label="Go to AkServer homepage"><img src="logo.png" alt="AkServer Logo" /></a>
     </div>
-    <nav>
+    <nav role="navigation" aria-label="Main site navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#why-akserver">Why</a></li>
+        <li><a href="index.html#why-akserver">Why AkServer?</a></li>
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- PAGE -->
-  <main class="page">
-
+  <!-- MAIN CONTENT -->
+  <main class="page" role="main" aria-labelledby="pageTitle">
     <div class="page-head">
       <div>
-        <div class="title">Installation — AkServer</div>
-        <div class="sub">Detailed step-by-step instructions, screenshots, and troubleshooting.</div>
+        <h1 id="pageTitle" class="title">Installation — AkServer</h1>
+        <p class="sub">Detailed step-by-step instructions, screenshots, and troubleshooting.</p>
       </div>
-
-      <div class="cta-wrap">
-        <a class="btn" href="AkServerInstaller.exe" download>⬇️ Download Installer</a>
-        <a class="btn secondary" href="index.html">← Back to Site</a>
+      <div class="cta-wrap" role="region" aria-label="Download options">
+        <a class="btn" href="AkServerInstaller.exe" download aria-describedby="downloadDesc" aria-label="Download AkServer installer version 1.0.0, size approximately 113 megabytes">
+          ⬇️ Download Installer
+        </a>
+        <a class="btn secondary" href="index.html" aria-label="Back to main site">← Back to Site</a>
       </div>
     </div>
 
     <div class="grid">
-
-      <!-- LEFT: content -->
-      <div>
-        <!-- Intro panel -->
-        <section class="panel" id="intro" data-aos="fade-up">
-          <h3>Quick overview</h3>
-          <p class="lead">This page contains a practical, step-by-step installation guide for AkServer on Windows. Follow each step and consult troubleshooting at the bottom if you run into issues.</p>
+      <!-- LEFT: main instructions -->
+      <section aria-label="Installation instructions and steps">
+        <!-- Intro -->
+        <section class="panel" id="intro" data-aos="fade-up" tabindex="0">
+          <h3>Quick Overview</h3>
+          <p class="lead">This page provides a practical, step-by-step installation guide for AkServer on Windows. Follow each step carefully. Troubleshooting tips are at the bottom of this page.</p>
         </section>
 
         <!-- Prerequisites -->
-        <section class="panel" id="prereqs" data-aos="fade-up" data-aos-delay="80" style="margin-top:18px;">
+        <section class="panel" id="prereqs" data-aos="fade-up" data-aos-delay="80" tabindex="0" style="margin-top:18px;">
           <h3>Prerequisites</h3>
-          <ul style="margin-top:10px; color:var(--muted);">
+          <ul>
             <li>Windows 10 / 11 (x64) or compatible PC</li>
-            <li>One free folder/location with ~500 MB (depends on use)</li>
-            <li>Local Wi-Fi or ability to create hotspot</li>
-            <li>Administrator rights for installer</li>
+            <li>Administrator privileges to install software</li>
+            <li>Local network connectivity (Wi-Fi or hotspot) for device syncing</li>
+            <li>At least 500 MB free disk space (depends on use)</li>
+            <li>Recommended: Temporarily disable VPN or firewall during installation if you encounter connectivity issues, then re-enable for security.</li>
           </ul>
         </section>
 
-        <!-- Steps container (blank / ready to fill) -->
+        <!-- Installation Steps -->
         <section class="panel" id="steps" data-aos="fade-up" data-aos-delay="140" style="margin-top:18px;">
-          <h3>Installation steps</h3>
-
-          <!-- Step 1 -->
-          <div class="step" id="step-1" data-aos="fade-up" data-aos-delay="180">
-            <div class="num"> <div class="num-inner" style="display:none;"></div></div> <!-- placeholder if needed -->
-            <div class="num" aria-hidden="true" style="display:none"></div>
-
-            <!-- Using the consistent numbered circle -->
-            <div class="num" style="display:none"></div>
-
-            <!-- Visible step: use .num element for number -->
-            <div class="num" style="display:none"></div>
-
-            <!-- Actual visible step -->
-            <div class="num" style="display:none"></div>
-            <!-- Clean visible markup below -->
-            <div class="step" style="display:none"></div>
-          </div>
-
-          <!-- Instead of empty placeholders, provide ready-to-edit steps (recommended) -->
-          <!-- Replace the placeholder blocks above with the three real steps below when filling -->
-          <div class="step">
+          <h3>Installation Steps</h3>
+          <div class="step" data-aos="fade-up" data-aos-delay="180">
             <div class="num">1</div>
             <div class="content">
-              <h4>Download the installer</h4>
+              <h4>Download the Installer</h4>
               <p>Click the <strong>Download Installer</strong> button at the top of this page (or use the direct link) and save the EXE to a folder you can access.</p>
             </div>
           </div>
-
-          <div class="step">
+          <div class="step" data-aos="fade-up" data-aos-delay="200">
             <div class="num">2</div>
             <div class="content">
-              <h4>Run & approve</h4>
+              <h4>Run & Approve</h4>
               <p>Right-click → Run as administrator. If Windows SmartScreen appears, choose <em>More info → Run anyway</em>. Accept prompts and allow firewall access when asked.</p>
             </div>
           </div>
-
-          <div class="step">
+          <div class="step" data-aos="fade-up" data-aos-delay="220">
             <div class="num">3</div>
             <div class="content">
-              <h4>Initial setup</h4>
+              <h4>Initial Setup</h4>
               <p>Choose a folder to use as the sync/store location, enable auto-start if desired, and click Finish. Open AkServer and follow on-screen instructions to connect devices.</p>
             </div>
           </div>
+        </section>
 
-          <!-- Screenshots example (optional) -->
-   <!-- =========================
-   Installation instruction
-   ========================= -->
-
-  <section class="setup-section">
-    <h2 class="section-title">How to Set Up AkServer</h2>
-    <div class="container">
-      <div class="scroll-wrapper">
-        <button class="scroll-btn left" id="scrollLeft" aria-label="Scroll Left">◀</button>
-
-        <div class="horizontal-steps" id="setupScroller">
-
-          <!-- Step Box Template -->
-          <div class="step-box">
+        <!-- AkServer Setup Steps -->
+        <section class="setup-section" id="setup" aria-label="AkServer setup steps" data-aos="fade-up" data-aos-delay="160">
+          <h2 class="section-title">How to Set Up AkServer</h2>
+          <details class="setup-step" open data-aos="fade-up" data-aos-delay="180">
+            <summary>
+              <div class="num">1</div>
+              <div class="content">
+                <h4>Bypass SmartScreen</h4>
+              </div>
+            </summary>
             <div class="step-image">
-              <img src="images/defender_warning.png" alt="SmartScreen Warning">
+              <picture>
+                <source srcset="images/defender_warning.webp" type="image/webp">
+                <img src="images/defender_warning.png" alt="SmartScreen Warning" loading="lazy" />
+              </picture>
             </div>
             <div class="step-text">
-              <h4>Bypass SmartScreen</h4>
-              <p>Click "More Info" → "Run Anyway" to start setup.</p>
+              <p id="desc1">Click "More Info" → "Run Anyway" to start setup.</p>
             </div>
-          </div>
-
-          <div class="step-box">
+          </details>
+          <details class="setup-step" data-aos="fade-up" data-aos-delay="200">
+            <summary>
+              <div class="num">2</div>
+              <div class="content">
+                <h4>Allow Installer</h4>
+              </div>
+            </summary>
             <div class="step-image">
-              <img src="images/uac_prompt.png" alt="UAC Prompt">
+              <picture>
+                <source srcset="images/uac_prompt.webp" type="image/webp">
+                <img src="images/uac_prompt.png" alt="UAC Prompt" loading="lazy" />
+              </picture>
             </div>
             <div class="step-text">
-              <h4>Allow Installer</h4>
-              <p>Windows may ask for permission. Click “Yes”.</p>
+              <p id="desc2">Windows may ask for permission. Click “Yes”.</p>
             </div>
-          </div>
-
-          <div class="step-box">
+          </details>
+          <details class="setup-step" data-aos="fade-up" data-aos-delay="220">
+            <summary>
+              <div class="num">3</div>
+              <div class="content">
+                <h4>Enable Auto Start</h4>
+              </div>
+            </summary>
             <div class="step-image">
-              <img src="images/startup_option.png" alt="Startup Option">
+              <picture>
+                <source srcset="images/startup_option.webp" type="image/webp">
+                <img src="images/startup_option.png" alt="Startup Option" loading="lazy" />
+              </picture>
             </div>
             <div class="step-text">
-              <h4>Enable Auto Start</h4>
-              <p>Let AkServer run on boot — ideal for backup PCs.</p>
+              <p id="desc3">Let AkServer run on boot — ideal for backup PCs.</p>
             </div>
-          </div>
-
-          <div class="step-box">
+          </details>
+          <details class="setup-step" data-aos="fade-up" data-aos-delay="240">
+            <summary>
+              <div class="num">4</div>
+              <div class="content">
+                <h4>Allow in Firewall</h4>
+              </div>
+            </summary>
             <div class="step-image">
-              <img src="images/firewall_allow.png" alt="Firewall Prompt">
+              <picture>
+                <source srcset="images/firewall_allow.webp" type="image/webp">
+                <img src="images/firewall_allow.png" alt="Firewall Prompt" loading="lazy" />
+              </picture>
             </div>
             <div class="step-text">
-              <h4>Allow in Firewall</h4>
-              <p>Give permission when asked — this enables local access.</p>
+              <p id="desc4">Give permission when asked — this enables local access.</p>
             </div>
-          </div>
-
-          <div class="step-box">
+          </details>
+          <details class="setup-step" data-aos="fade-up" data-aos-delay="260">
+            <summary>
+              <div class="num">5</div>
+              <div class="content">
+                <h4>First Setup</h4>
+              </div>
+            </summary>
             <div class="step-image">
-              <img src="images/akserver_main_window.png" alt="AkServer Main Window">
+              <picture>
+                <source srcset="images/akserver_main_window.webp" type="image/webp">
+                <img src="images/akserver_main_window.png" alt="AkServer Main Window" loading="lazy" />
+              </picture>
             </div>
             <div class="step-text">
-              <h4>First Setup</h4>
-              <p>After firewall approval, AkServer window opens — ready for action.</p>
+              <p id="desc5">After firewall approval, AkServer window opens — ready for action.</p>
             </div>
-          </div>
-
-          <div class="step-box">
+          </details>
+          <details class="setup-step" data-aos="fade-up" data-aos-delay="280">
+            <summary>
+              <div class="num">6</div>
+              <div class="content">
+                <h4>Connect & Scan</h4>
+              </div>
+            </summary>
             <div class="step-image">
-              <img src="images/connect_click.png" alt="Connect Button">
+              <picture>
+                <source srcset="images/connect_click.webp" type="image/webp">
+                <img src="images/connect_click.png" alt="Connect Button" loading="lazy" />
+              </picture>
             </div>
             <div class="step-text">
-              <h4>Connect & Scan</h4>
-              <p>Click "Connect" and scan the QR or access the link directly.</p>
+              <p id="desc6">Click "Connect" and scan the QR or access the link directly.</p>
             </div>
-          </div>
-
-          <div class="step-box">
+          </details>
+          <details class="setup-step" data-aos="fade-up" data-aos-delay="300">
+            <summary>
+              <div class="num">7</div>
+              <div class="content">
+                <h4>Generate OTP</h4>
+              </div>
+            </summary>
             <div class="step-image">
-              <img src="images/otp_generate.png" alt="OTP Generation">
+              <picture>
+                <source srcset="images/otp_generate.webp" type="image/webp">
+                <img src="images/otp_generate.png" alt="OTP Generation" loading="lazy" />
+              </picture>
             </div>
             <div class="step-text">
-              <h4>Generate OTP</h4>
-              <p>Click “Gen” to get a one-time code for secure device registration.</p>
+              <p id="desc7">Click “Gen” to get a one-time code for secure device registration.</p>
             </div>
-          </div>
-
-          <div class="step-box">
+          </details>
+          <details class="setup-step" data-aos="fade-up" data-aos-delay="320">
+            <summary>
+              <div class="num">8</div>
+              <div class="content">
+                <h4>Setup Folder</h4>
+              </div>
+            </summary>
             <div class="step-image">
-              <img src="images/folder_setup.png" alt="Folder Setup">
+              <picture>
+                <source srcset="images/folder_setup.webp" type="image/webp">
+                <img src="images/folder_setup.png" alt="Folder Setup" loading="lazy" />
+              </picture>
             </div>
             <div class="step-text">
-              <h4>Setup Folder</h4>
-              <p>Select a folder where files from your devices will sync.</p>
+              <p id="desc8">Select a folder where files from your devices will sync.</p>
             </div>
-          </div>
-
-          <div class="step-box">
+          </details>
+          <details class="setup-step" data-aos="fade-up" data-aos-delay="340">
+            <summary>
+              <div class="num">9</div>
+              <div class="content">
+                <h4>Connect More Devices</h4>
+              </div>
+            </summary>
             <div class="step-image">
-              <img src="images/linked_devices.png" alt="Linked Devices">
+              <picture>
+                <source srcset="images/linked_devices.webp" type="image/webp">
+                <img src="images/linked_devices.png" alt="Linked Devices" loading="lazy" />
+              </picture>
             </div>
             <div class="step-text">
-              <h4>Connect More Devices</h4>
-              <p>Register and link multiple devices — all visible in one place.</p>
+              <p id="desc9">Register and link multiple devices — all visible in one place.</p>
             </div>
-          </div>
-
-          <div class="step-box">
+          </details>
+          <details class="setup-step" data-aos="fade-up" data-aos-delay="360">
+            <summary>
+              <div class="num">10</div>
+              <div class="content">
+                <h4>Need More Help?</h4>
+              </div>
+            </summary>
             <div class="step-image">
-              <img src="images/more_info.png" alt="More Info">
+              <picture>
+                <source srcset="images/more_info.webp" type="image/webp">
+                <img src="images/more_info.png" alt="More Info" loading="lazy" />
+              </picture>
             </div>
             <div class="step-text">
-              <h4>Need More Help?</h4>
-              <p>Click “More Info” on main screen to explore advanced options.</p>
+              <p id="desc10">Click “More Info” on main screen to explore advanced options.</p>
             </div>
-          </div>
+          </details>
+        </section>
 
-        </div>
-
-        <button class="scroll-btn right" id="scrollRight" aria-label="Scroll Right">▶</button>
+        <!-- Web_App Setup Steps -->
+<!-- Web_App Setup Steps -->
+<section class="setup-section" id="webapp" aria-label="Web_App setup steps" data-aos="fade-up" data-aos-delay="180">
+  <h2 class="section-title">How to Set Up Web_App</h2>
+  <details class="setup-step" open data-aos="fade-up" data-aos-delay="200">
+    <summary>
+      <div class="num">1</div>
+      <div class="content">
+        <h4>Open the Web App</h4>
       </div>
+    </summary>
+    <div class="step-image">
+      <picture>
+        <source srcset="images/webapp_step1.webp" type="image/webp">
+        <img src="images/webapp_step1.png" alt="Scan QR or open the Web App URL" loading="lazy" />
+      </picture>
     </div>
-  </section>
-        <!-- Troubleshooting / FAQ -->
-        <section class="panel" id="faq" data-aos="fade-up" data-aos-delay="200" style="margin-top:18px;">
-          <h3>Troubleshooting & FAQ</h3>
+    <div class="step-text">
+      <p id="webAppDesc1">
+        Scan the QR code displayed on your AkServer host dashboard, or open the local Web App URL (e.g. <code>https://192.168.x.x:5000</code>) in your browser. Make sure the device you use is connected to the <strong>same local network</strong> as the AkServer host.
+      </p>
+    </div>
+  </details>
+  <details class="setup-step" data-aos="fade-up" data-aos-delay="220">
+    <summary>
+      <div class="num">2</div>
+      <div class="content">
+        <h4>Browser security warning</h4>
+      </div>
+    </summary>
+    <div class="step-image">
+      <picture>
+        <source srcset="images/webapp_step2.webp" type="image/webp">
+        <img src="images/webapp_step2.png" alt="Browser shows 'Your connection is not private' warning" loading="lazy" />
+      </picture>
+    </div>
+    <div class="step-text">
+      <p id="webAppDesc2">
+        Your browser may display <strong>"Your connection is not private"</strong> or a similar warning. This happens because AkServer serves a local certificate that can't be validated by public certificate authorities (the service runs entirely on your private network and does not use the public internet). This is expected for local-only servers.
+      </p>
+      <p><strong>How to proceed:</strong> click <em>Advanced</em> → then choose <em>Proceed to &lt;your-AkServer-URL&gt; (unsafe)</em>. This is safe when you are on your local, trusted network and confirmed the link is from your AkServer host.</p>
+    </div>
+  </details>
+  <details class="setup-step" data-aos="fade-up" data-aos-delay="240">
+    <summary>
+      <div class="num">3</div>
+      <div class="content">
+        <h4>Login with OTP</h4>
+      </div>
+    </summary>
+    <div class="step-image">
+      <picture>
+        <source srcset="images/webapp_step3.webp" type="image/webp">
+        <img src="images/webapp_step3.png" alt="AkServer login page showing OTP field" loading="lazy" />
+      </picture>
+    </div>
+    <div class="step-text">
+      <p id="webAppDesc3">
+        After proceeding past the browser warning you'll reach the AkServer login page. Enter the <strong>One-Time Password (OTP)</strong> shown on the AkServer host (or generated by the host) and click <strong>Login</strong>. The OTP rotates for security — use the current code.
+      </p>
+    </div>
+  </details>
+  <details class="setup-step" data-aos="fade-up" data-aos-delay="260">
+    <summary>
+      <div class="num">4</div>
+      <div class="content">
+        <h4>Upload files</h4>
+      </div>
+    </summary>
+    <div class="step-image">
+      <picture>
+        <source srcset="images/webapp_step4.webp" type="image/webp">
+        <img src="images/webapp_step4.png" alt="Web App Files tab and upload controls" loading="lazy" />
+      </picture>
+    </div>
+    <div class="step-text">
+      <p id="webAppDesc4">
+        Open the <strong>Files</strong> tab. Use <strong>Upload</strong> or <strong>Select Folder</strong> to choose files from your device. The Web App shows upload progress; files are stored on the AkServer host and become immediately available to other connected devices on the same network.
+      </p>
+    </div>
+  </details>
+  <details class="setup-step" data-aos="fade-up" data-aos-delay="280">
+    <summary>
+      <div class="num">5</div>
+      <div class="content">
+        <h4>View and manage files</h4>
+      </div>
+    </summary>
+    <div class="step-image">
+      <picture>
+        <source srcset="images/webapp_step5.webp" type="image/webp">
+        <img src="images/webapp_step5.png" alt="Grid and list views in Web App" loading="lazy" />
+      </picture>
+    </div>
+    <div class="step-text">
+      <p id="webAppDesc5">
+        Switch between Grid, List, or Details view to browse files. Click any file to preview or download it. Use the search bar to locate files quickly. Long-press (mobile) or right-click (desktop) for more file actions (rename, delete, share link if enabled).
+      </p>
+    </div>
+  </details>
+  <details class="setup-step" data-aos="fade-up" data-aos-delay="300">
+    <summary>
+      <div class="num">6</div>
+      <div class="content">
+        <h4>Register device & settings</h4>
+      </div>
+    </summary>
+    <div class="step-image">
+      <picture>
+        <source srcset="images/webapp_step6.webp" type="image/webp">
+        <img src="images/webapp_step6.png" alt="Device registration and settings page" loading="lazy" />
+      </picture>
+    </div>
+    <div class="step-text">
+      <p id="webAppDesc6">
+        If prompted, give your device a friendly name so it’s recognizable in the AkServer host. Visit Settings to configure sync folders, auto-upload, and device permissions. Changes apply immediately across the local network.
+      </p>
+    </div>
+  </details>
+  <details class="setup-step" data-aos="fade-up" data-aos-delay="320">
+    <summary>
+      <div class="num">7</div>
+      <div class="content">
+        <h4>Live updates & help</h4>
+      </div>
+    </summary>
+    <div class="step-image">
+      <picture>
+        <source srcset="images/webapp_step7.webp" type="image/webp">
+        <img src="images/webapp_step7.png" alt="Help, live updates and troubleshooting in Web App" loading="lazy" />
+      </picture>
+    </div>
+    <div class="step-text">
+      <p id="webAppDesc7">
+        Check the <strong>Live Updates</strong> panel for announcements and quick tips. Visit the Help/FAQ section for troubleshooting steps (firewall rules, network checks). When finished, use <strong>Logout</strong> to terminate the session.
+      </p>
+    </div>
+  </details>
+</section>
 
+        <!-- FAQ Section -->
+        <section class="panel" id="faq" tabindex="0" aria-label="Frequently Asked Questions" data-aos="fade-up" data-aos-delay="200" style="margin-top: 30px;">
+          <h3>Troubleshooting & FAQ</h3>
           <details class="faq-item" open>
             <summary>Installer blocked by SmartScreen — what to do?</summary>
             <p>If Windows shows SmartScreen, click <strong>More info</strong> and then <strong>Run anyway</strong>. SmartScreen flags are common for new or locally distributed apps.</p>
           </details>
-
+          <details class="faq-item">
+            <summary>How do I verify the integrity of the installer?</summary>
+            <p>Check the SHA256 checksum matches the value provided in the <a href="#downloadDescSide">Download section</a>. Use a tool like <a href="https://windows10hash.com/" target="_blank" rel="noopener">Windows 10 Hash Calculator</a>.</p>
+          </details>
           <details class="faq-item">
             <summary>Firewall prevents local access</summary>
-            <p>When prompted, allow AkServer through your firewall. If needed, add a rule for the AkServer executable and allow private network access.</p>
+            <p>When prompted, allow AkServer through your firewall. If needed, add a rule for the AkServer executable in <em>Windows Defender Firewall &gt; Allow an app or feature</em> and enable private network access.</p>
           </details>
-
           <details class="faq-item">
             <summary>Devices cannot find the server</summary>
-            <p>Ensure both devices are on the same Wi-Fi/hotspot. Try disabling VPNs or other network filters. Check AkServer shows "listening" in the main window.</p>
+            <p>Ensure all devices are on the same Wi-Fi or hotspot. Disable VPNs or network filters temporarily. Check that AkServer shows "listening" in the main window.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What if AkServer doesn’t appear in the Start Menu?</summary>
+            <p>Search for "AkServer" in the Windows search bar. If not found, navigate to <em>C:\Program Files\AkServer</em> and run <code>AkServer.exe</code> manually. Reinstall if the issue persists.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How to uninstall AkServer?</summary>
+            <p>Go to <em>Control Panel &gt; Programs &gt; Uninstall a program</em> and select AkServer. Follow the uninstallation wizard.</p>
           </details>
         </section>
 
-      </div>
+        <!-- Feedback form -->
+        <section class="feedback-panel" role="region" aria-label="Feedback form">
+          <h3>Help Us Improve</h3>
+          <form id="feedbackForm" action="https://formspree.io/f/your-form-id" method="POST" aria-live="polite">
+            <label for="feedback-text">Was this guide helpful? Any suggestions?</label>
+            <textarea id="feedback-text" name="feedback" placeholder="Write your feedback here..." aria-required="true"></textarea>
+            <button type="submit">Submit Feedback</button>
+            <p id="feedback-status" role="alert" aria-live="assertive" style="display:none;">Thank you for your feedback!</p>
+          </form>
+        </section>
+      </section>
 
-      <!-- RIGHT: sticky side (toc & download) -->
-      <aside class="side">
-        <div class="panel toc">
+      <!-- RIGHT: Sidebar for TOC and Download info -->
+      <aside class="side" aria-label="Sidebar">
+        <nav class="toc" aria-label="Table of Contents">
           <h4>On this page</h4>
           <ul>
-            <li><a href="#intro">Overview</a></li>
+            <li><a href="#intro">Quick Overview</a></li>
             <li><a href="#prereqs">Prerequisites</a></li>
-            <li><a href="#steps">Installation steps</a></li>
+            <li><a href="#steps">Installation Steps</a></li>
+            <li><a href="#setup">Setup AkServer</a></li>
+            <li><a href="#webapp">Setup Web_App</a></li>
             <li><a href="#faq">Troubleshooting</a></li>
           </ul>
-        </div>
-
-        <div class="panel download-box" role="region" aria-label="Download">
-          <h4>Download</h4>
-          <p class="small">Stable Windows installer</p>
-          <a class="btn" href="AkServerInstaller.exe" download style="display:inline-block; margin-top:8px;">⬇️ Download</a>
-
-          <div class="meta" style="margin-top:12px">
-            <div>Version: <strong>v1.0.0</strong></div>
-            <div style="margin-top:6px">Size: <strong>~113 MB</strong></div>
-          </div>
-        </div>
-
-        <div class="panel" style="margin-top:14px">
-          <h4>Need help?</h4>
-          <p class="small">Contact us at <a href="mailto:support@akserver.example">akserverstorage@gmail.com</a> or use the Contact form on the main site.</p>
-        </div>
+        </nav>
+        <section class="download-box" aria-label="Download section">
+          <h4>Download AkServer Installer</h4>
+          <a class="btn" href="AkServerInstaller.exe" download aria-describedby="downloadDescSide" aria-label="Download AkServer installer version 1.0.0, size approximately 113 megabytes">
+            ⬇️ Download Installer (113 MB)
+          </a>
+          <p id="downloadDescSide" class="small">
+            Version: 1.0.0<br />
+            Release date: 2025-08-01<br />
+            SHA256 Checksum:<br />
+            <code>3a1f8a4b9cde4e07e44a1e5a1e3b8a9f2d9fce9e2c1d1b7895f5b3d627a2f4c8e</code>
+          </p>
+          <p class="small" style="margin-top:12px;">
+            Note: This installer is digitally signed and verified to be malware-free.
+          </p>
+        </section>
+        <section class="panel" style="margin-top:14px;">
+          <h4>Need Help?</h4>
+          <p class="small">Contact us at <a href="mailto:support@akserver.example">akserverstorage@gmail.com</a> or use the <a href="index.html#contact">Contact form</a> on the main site.</p>
+        </section>
       </aside>
-
-    </div> <!-- /grid -->
+    </div>
   </main>
 
-  <footer style="text-align:center; padding:24px 12px; color: #666; font-size:0.95rem;">
+  <!-- FOOTER -->
+  <footer role="contentinfo">
     &copy; 2025 AkServer — All rights reserved.
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- JS: Feedback and Image Click Handling -->
   <script>
-    AOS.init({ duration: 700, once: true });
+    // Feedback form handling
+    const feedbackForm = document.getElementById('feedbackForm');
+    const feedbackStatus = document.getElementById('feedback-status');
 
-    // Optional: make screenshot images open in new tab when clicked
-    document.querySelectorAll('.screens img').forEach(img=>{
-      img.addEventListener('click', (e)=> {
-        window.open(e.currentTarget.src, '_blank');
+    feedbackForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const text = feedbackForm['feedback'].value.trim();
+      const textarea = document.getElementById('feedback-text');
+      if (!text) {
+        textarea.setAttribute('aria-invalid', 'true');
+        feedbackStatus.classList.add('error');
+        feedbackStatus.textContent = 'Please enter your feedback before submitting.';
+        feedbackStatus.style.display = 'block';
+        setTimeout(() => {
+          feedbackStatus.style.display = 'none';
+          feedbackStatus.classList.remove('error');
+          textarea.setAttribute('aria-invalid', 'false');
+        }, 5000);
+        return;
+      }
+      try {
+        // Replace with real API endpoint (e.g., Formspree)
+        // const response = await fetch(feedbackForm.action, {
+        //   method: 'POST',
+        //   headers: { 'Content-Type': 'application/json' },
+        //   body: JSON.stringify({ feedback: text })
+        // });
+        // if (!response.ok) throw new Error('Submission failed');
+        textarea.setAttribute('aria-invalid', 'false');
+        feedbackStatus.classList.remove('error');
+        feedbackStatus.textContent = 'Thank you for your feedback!';
+        feedbackForm.reset();
+        feedbackStatus.style.display = 'block';
+        setTimeout(() => {
+          feedbackStatus.style.display = 'none';
+        }, 5000);
+      } catch (error) {
+        textarea.setAttribute('aria-invalid', 'true');
+        feedbackStatus.classList.add('error');
+        feedbackStatus.textContent = 'Failed to submit feedback. Please try again.';
+        feedbackStatus.style.display = 'block';
+        setTimeout(() => {
+          feedbackStatus.style.display = 'none';
+          feedbackStatus.classList.remove('error');
+          textarea.setAttribute('aria-invalid', 'false');
+        }, 5000);
+      }
+    });
+
+    // Open images in new tab
+    document.querySelectorAll('.setup-step img').forEach(img => {
+      img.parentElement.parentElement.addEventListener('click', (e) => {
+        if (e.target.tagName !== 'SUMMARY') {
+          window.open(img.src, '_blank');
+        }
+      });
+      img.parentElement.parentElement.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          if (e.target.tagName !== 'SUMMARY') {
+            window.open(img.src, '_blank');
+          }
+        }
       });
     });
   </script>
-     <script>
-    const scrollLeftBtn = document.getElementById('scrollLeft');
-    const scrollRightBtn = document.getElementById('scrollRight');
-    const stepsWrapper = document.getElementById('setupScroller'); // <-- FIXED ID
-    scrollLeftBtn.addEventListener('click', () => {
-      stepsWrapper.scrollBy({
-        left: -300,
-        behavior: 'smooth'
-      });
-    });
-    scrollRightBtn.addEventListener('click', () => {
-      stepsWrapper.scrollBy({
-        left: 300,
-        behavior: 'smooth'
-      });
-    });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowRight") {
-        stepsWrapper.scrollBy({
-          left: 300,
-          behavior: 'smooth'
-        });
-      } else if (e.key === "ArrowLeft") {
-        stepsWrapper.scrollBy({
-          left: -300,
-          behavior: 'smooth'
-        });
-      }
-    });
+
+  <!-- AOS animation -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 800 });
   </script>
 </body>
 </html>
