@@ -612,3 +612,28 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+  /* bot placement */
+
+.bot-container {
+  position: absolute;
+  top: -80px; /* adjust so bot rests above heading */
+  right: 600px; /* adjust horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bot-image {
+  width: 100px;
+  animation: float 3s ease-in-out infinite;
+}  
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
