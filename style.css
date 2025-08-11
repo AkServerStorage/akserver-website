@@ -580,13 +580,34 @@ details p {
    Footer
 ================================= */
 .footer {
-  background: #f1f3f6;
-  padding: 1.5rem;
+  background-color: #f1f3f6;
+  padding: 1.5rem 1rem;
   text-align: center;
-  font-size: 0.85rem; /* Adjusted for balance */
-  color: #777;
-  line-height: 1.5;
+  font-size: 0.9rem;
+  color: #000000;
+  border-top: 1px solid #ddd;
+  font-family: "Segoe UI", sans-serif;
 }
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-link {
+  color: #2a8bff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  color: #1a6edd;
+  text-decoration: underline;
+  outline: none;
+}
+
 
 /* ===============================
    Responsive
@@ -686,3 +707,4 @@ details p {
     top: -60px;
   }
 }
+
