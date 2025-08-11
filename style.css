@@ -622,11 +622,15 @@ body {
   }
 
 .bot-image {
-  width: 80px;  /* adjust size */
+  width: 50px;  /* adjust size */
   height: auto;
   display: block;
   position: relative;
   z-index: 6;
+}
+.cloud-text{
+  font-size: 12px;
+  line-height: 1.2;
 }
 
 @keyframes float {
@@ -666,4 +670,3 @@ body {
     top: -60px;
   }
 }
-
