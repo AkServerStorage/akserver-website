@@ -1,4 +1,4 @@
-<!-- =========================
+	<!-- =========================
      AkServer Landing Page (HTML)
      ========================= -->
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
   <link rel="icon" href="logo.png" type="image/png" />
 
   <!-- ===== CSS Imports ===== -->
-  <link rel="stylesheet" href="style.css?v=3.3.3" />
+  <link rel="stylesheet" href="style.css?v=3.3.5" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 
@@ -42,7 +42,9 @@
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
-        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+<li><a href="#features">Features</a></li>
+
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -108,7 +110,7 @@
 
   </section>
 
-  <section id="features" class="akserver-section">
+  <section id="about" class="akserver-section">
     <h2 class="section-title">💡 Why AkServer</h2>
 
     <div class="split-columns">
@@ -131,7 +133,7 @@
 
       </div>
 
-      <!-- Right Column: Features -->
+      <!-- Right Column: About -->
       <div class="right-column">
         <div class="feature-card">
           <h3>🔒 No Cloud. No Leaks.</h3>
@@ -155,6 +157,121 @@
       </div>
     </div>
   </section>
+<section id="features" class="akserver-features-section" aria-labelledby="featuresTitle">
+  <h2 id="featuresTitle" class="section-title">Key Features of AkServer</h2>
+
+  <div class="features-list" role="list">
+
+    <article class="feature-row" role="listitem" tabindex="0" aria-labelledby="f1-title">
+      <div class="feature-icon" aria-hidden="true">🔒</div>
+      <div class="feature-content">
+        <h3 id="f1-title">Complete Data Privacy</h3>
+        <p class="summary">Works entirely offline, ensuring your files never leave your control.</p>
+        <details>
+          <summary>More about privacy</summary>
+          <p>All files and metadata remain inside your LAN. No data leaves your local network.</p>
+        </details>
+      </div>
+    </article>
+
+    <article class="feature-row" role="listitem" tabindex="0" aria-labelledby="f2-title">
+      <div class="feature-icon" aria-hidden="true">🔄</div>
+      <div class="feature-content">
+        <h3 id="f2-title">Seamless Device Sync</h3>
+        <p class="summary">Sync files between your registered devices with zero internet dependency.</p>
+        <details>
+          <summary>How syncing works</summary>
+          <p>Changes propagate instantly on the local network with efficient delta updates.</p>
+        </details>
+      </div>
+    </article>
+
+    <article class="feature-row" role="listitem" tabindex="0" aria-labelledby="f3-title">
+      <div class="feature-icon" aria-hidden="true">🔐</div>
+      <div class="feature-content">
+        <h3 id="f3-title">Secure Login & Device Registration</h3>
+        <p class="summary">Multi-step authentication with OTP input and unique device naming.</p>
+        <details>
+          <summary>Security details</summary>
+          <p>OTP reduces risk during pairing. Devices are registered with unique names for control.</p>
+        </details>
+      </div>
+    </article>
+
+    <article class="feature-row" role="listitem" tabindex="0" aria-labelledby="f4-title">
+      <div class="feature-icon" aria-hidden="true">📁</div>
+      <div class="feature-content">
+        <h3 id="f4-title">Folder-Level Uploads</h3>
+        <p class="summary">Easily upload and manage entire directories with one click.</p>
+        <details>
+          <summary>Upload benefits</summary>
+          <p>Drag-and-drop support and folder uploads simplify file management across devices.</p>
+        </details>
+      </div>
+    </article>
+
+    <article class="feature-row" role="listitem" tabindex="0" aria-labelledby="f5-title">
+      <div class="feature-icon" aria-hidden="true">🖥️</div>
+      <div class="feature-content">
+        <h3 id="f5-title">Modern Dashboard</h3>
+        <p class="summary">Fast, responsive, and consistent design across all screens.</p>
+        <details>
+          <summary>Dashboard highlights</summary>
+          <p>A clean interface with fast navigation and intuitive controls for effortless use.</p>
+        </details>
+      </div>
+    </article>
+
+    <article class="feature-row" role="listitem" tabindex="0" aria-labelledby="f6-title">
+      <div class="feature-icon" aria-hidden="true">⏳</div>
+      <div class="feature-content">
+        <h3 id="f6-title">Trial & Upgrade Management</h3>
+        <p class="summary">Built-in trial tracking with smooth upgrade handling.</p>
+        <details>
+          <summary>Upgrade process</summary>
+          <p>Track trial status easily and upgrade without losing data or settings.</p>
+        </details>
+      </div>
+    </article>
+
+    <article class="feature-row" role="listitem" tabindex="0" aria-labelledby="f7-title">
+      <div class="feature-icon" aria-hidden="true">📡</div>
+      <div class="feature-content">
+        <h3 id="f7-title">Embedded Live Updates</h3>
+        <p class="summary">Receive news, usage tips, and important announcements directly in the app.</p>
+        <details>
+          <summary>Update info</summary>
+          <p>Stay informed without leaving AkServer. Live announcements keep you up-to-date.</p>
+        </details>
+      </div>
+    </article>
+
+    <article class="feature-row" role="listitem" tabindex="0" aria-labelledby="f8-title">
+      <div class="feature-icon" aria-hidden="true">⚙️</div>
+      <div class="feature-content">
+        <h3 id="f8-title">Optimized for Windows</h3>
+        <p class="summary">Lightweight installer for a professional desktop experience.</p>
+        <details>
+          <summary>Installation details</summary>
+          <p>Small footprint, fast setup, and smooth performance on Windows machines.</p>
+        </details>
+      </div>
+    </article>
+
+    <article class="feature-row" role="listitem" tabindex="0" aria-labelledby="f9-title">
+      <div class="feature-icon" aria-hidden="true">🛠️</div>
+      <div class="feature-content">
+        <h3 id="f9-title">Customizable & Expandable</h3>
+        <p class="summary">Designed to adapt to your future needs without breaking existing logic.</p>
+        <details>
+          <summary>Future scope</summary>
+          <p>Built for extensibility — new features and improvements roll out seamlessly.</p>
+        </details>
+      </div>
+    </article>
+
+  </div>
+</section>
 
   <!-- =========================
        How It Works Section
