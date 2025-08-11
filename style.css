@@ -668,7 +668,7 @@ details p {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px; /* space between logo image and bot container */
+  gap: 50px; /* space between logo image and bot container */
 }
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -707,4 +707,5 @@ details p {
     top: -60px;
   }
 }
+
 
