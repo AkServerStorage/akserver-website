@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="AkServer's vision for privacy and data control.">
+  <meta name="keywords" content="AkServer, privacy, data control, secure file sharing">
+  <meta name="author" content="AkServer Team">
   <title>Our Vision - AkServer</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     /* General reset and container styling */
     * {
@@ -25,8 +29,67 @@
       padding: 0 20px;
     }
 
+    /* Navbar Styles */
+    .navbar {
+      background: #ffffff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #2a8bff;
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .navbar a {
+      color: #2a2a2a;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .navbar a:hover {
+      color: #2a8bff;
+    }
+
+    .navbar a.active {
+      color: #2a8bff;
+      font-weight: 600;
+    }
+
+    .navbar a:focus {
+      outline: 2px solid #2a8bff;
+      outline-offset: 2px;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #2a2a2a;
+    }
+
     /* Vision section styling */
     .vision-section {
+      background: -webkit-linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
       background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
       padding: 80px 0;
       text-align: center;
@@ -96,6 +159,44 @@
       opacity: 1;
     }
 
+    /* Bot placement */
+    .bot-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .bot-image {
+      width: 50px;
+      height: auto;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .cloud-text {
+      font-size: 12px;
+      line-height: 1;
+      color: #333;
+      font-weight: 600;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      white-space: nowrap;
+      margin-top: 2px;
+      text-shadow: 0 0 2px rgba(42, 139, 255, 0.3);
+      animation: fadeInOut 4s ease-in-out infinite;
+    }
+
+    /* Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
     /* Responsive design */
     @media (max-width: 768px) {
       .vision-section {
@@ -112,6 +213,36 @@
 
       .icon-image {
         max-width: 120px;
+      }
+
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar.responsive ul {
+        display: flex;
+      }
+
+      .navbar ul li {
+        padding: 10px;
+        text-align: center;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .bot-container {
+        position: absolute;
+        right: 20px;
+        top: -60px;
       }
     }
 
@@ -131,6 +262,33 @@
   </style>
 </head>
 <body>
+  <!-- Top Navigation Section -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="./">
+        <img src="images/logo.png" alt="AkServer Logo" style="height: 40px;" loading="lazy">
+      </a>
+      <div class="bot-container">
+        <img src="images/private_ai_bot.png" alt="Bot" class="bot-image" loading="lazy">
+        <div class="cloud-text">
+          Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
+        </div>
+      </div>
+    </div>
+    <button class="hamburger" aria-label="Toggle menu">☰</button>
+    <nav>
+      <ul>
+        <li><a href="./#home">Home</a></li>
+        <li><a href="./#about">About</a></li>
+        <li><a href="./#features">Features</a></li>
+        <li><a href="install.html">Installation</a></li>
+        <li><a href="vision.html" class="active">Vision</a></li>
+        <li><a href="./#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Vision Section -->
   <section id="vision" class="vision-section">
     <div class="container">
       <div class="vision-content">
@@ -146,9 +304,16 @@
         </p>
       </div>
       <div class="vision-icon">
-        <img src="vision-icon.svg" alt="Vision Icon" class="icon-image" />
+        <img src="images/logo.png" srcset="images/logo-small.png 120px, images/logo.png 150px" alt="Vision Icon" class="icon-image" loading="lazy">
       </div>
     </div>
   </section>
+
+  <!-- JavaScript for Hamburger Menu -->
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      document.querySelector('.navbar').classList.toggle('responsive');
+    });
+  </script>
 </body>
 </html>
