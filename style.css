@@ -1,61 +1,107 @@
 /* ===============================
    Base Reset & Global Styles
 ================================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: #f1f3f6;
-  color: #2a2a2a;
-  line-height: 1.7; /* Increased for better height/spacing */
-}
-
+ /* === Theme variables === */
+ :root {
+   --brand-blue: #2a8bff;
+   --brand-deep: #05445e;
+   --muted: #555;
+   --bg: #f1f3f6;
+   --panel: #ffffff;
+   --accent: #e6f0ff;
+   --radius: 12px;
+ }
 /* ===============================
    Navbar Styles
 ================================= */
-.navbar {
-  background: #ffffff;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.navbar .logo {
-  font-size: 1.4rem; /* Reduced for balance */
-  font-weight: bold;
-  color: #2a8bff;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.navbar a {
-  color: #2a2a2a;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  font-size: 0.95rem; /* Consistent size */
-}
-
-.navbar a:hover {
-  color: #2a8bff;
-}
-
+ /* Reset */
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+ html { scroll-behavior: smooth; }
+ body {
+   font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+   background: var(--bg);
+   color: #222;
+   line-height: 1.6;
+   -webkit-font-smoothing: antialiased;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+ }
+/* Navbar */
+ .navbar {
+   background: var(--panel);
+   padding: 14px 20px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+   position: sticky;
+   top: 0;
+   z-index: 40;
+ }
+ .navbar .logo img {
+   height: 38px;
+   display: block;
+ }
+ .navbar nav ul {
+   list-style: none;
+   display: flex;
+   gap: 18px;
+   align-items: center;
+ }
+ .navbar a {
+   color: #222;
+   text-decoration: none;
+   font-weight: 600;
+   font-size: 0.95rem;
+ }
+ .navbar a:hover,
+ .navbar a:focus {
+   color: var(--brand-blue);
+   outline: none;
+   text-decoration: underline;
+ }
+/* bot placement */
+  .bot-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 5;
+    }
+  
+  .bot-image {
+    width: 50px;  /* adjust size */
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 6;
+    animation: float 3s ease-in-out infinite;
+  }
+  .cloud-text {
+    font-size: 12px;          /* text size */
+    line-height: 1;           /* line height */
+    color: #333;           /* brand blue color */
+    font-weight: 600;         /* semi-bold for emphasis */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    white-space: nowrap;      /* keep on one line */
+    margin-top: 2px;          /* slight vertical alignment tweak */
+    text-shadow: 0 0 2px rgba(42, 139, 255, 0.3); /* subtle glow effect */
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* space between logo image and bot container */
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
 /* ===============================
    Section Wrapper
 ================================= */
@@ -639,47 +685,6 @@ details p {
   }
 }
 
-  /* bot placement */
-.bot-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  z-index: 5;
-  }
-
-.bot-image {
-  width: 50px;  /* adjust size */
-  height: auto;
-  display: block;
-  position: relative;
-  z-index: 6;
-}
-.cloud-text {
-  font-size: 12px;          /* text size */
-  line-height: 1;           /* line height */
-  color: #333;           /* brand blue color */
-  font-weight: 600;         /* semi-bold for emphasis */
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  white-space: nowrap;      /* keep on one line */
-  margin-top: 2px;          /* slight vertical alignment tweak */
-  text-shadow: 0 0 2px rgba(42, 139, 255, 0.3); /* subtle glow effect */
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 50px; /* space between logo image and bot container */
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-@keyframes fadeInOut {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
-}
-
 @media (max-width: 768px) {
   .flow-diagram {
     flex-wrap: wrap; /* allow wrapping on smaller screens */
@@ -707,5 +712,6 @@ details p {
     top: -60px;
   }
 }
+
 
 
