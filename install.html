@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AkServer lets you build your own private file sync system, fully offline and customizable — designed for total control over your data." />
-  <meta name="keywords" content="offline file sync, private cloud, local network sharing, AkServer, secure file sharing" />
-  <meta name="author" content="AkServer Team - Akshay Shinde" />
-<meta name="description" content="Step-by-step installation guide for AkServer. Screenshots, troubleshooting, and download links." />
-  <meta property="og:title" content="Install AkServer — Detailed Instructions" />
-  <meta property="og:description" content="Step-by-step installation guide for AkServer. Screenshots, troubleshooting, and download links." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Step-by-step installation guide for AkServer. Screenshots, troubleshooting, and download links.">
+  <meta name="keywords" content="offline file sync, private cloud, local network sharing, AkServer, secure file sharing">
+  <meta name="author" content="AkServer Team - Akshay Shinde">
+  <meta property="og:title" content="Install AkServer — Detailed Instructions">
+  <meta property="og:description" content="Step-by-step installation guide for AkServer. Screenshots, troubleshooting, and download links.">
+
   <title>Install AkServer — Detailed Instructions</title>
 
-  <!-- ===== Favicon (Logo as Icon) ===== -->
-  <link rel="icon" href="logo.png" type="image/png" />
+  <!-- Favicon -->
+  <link rel="icon" href="logo.png" type="image/png">
 
-  <!-- ===== CSS Imports ===== -->
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" as="style" />
-  <link rel="preload" href="logo.png" as="image" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  
+  <!-- CSS Imports -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" as="style">
+  <link rel="preload" href="logo.png" as="image">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Inline Styles -->
   <style>
-    /* === Theme variables === */
+    /* Theme Variables */
     :root {
       --brand-blue: #2a8bff;
       --brand-deep: #05445e;
@@ -35,10 +34,18 @@
     }
 
     /* Reset */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      font-family: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
       background: var(--bg);
       color: #222;
       line-height: 1.6;
@@ -55,75 +62,98 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       position: sticky;
       top: 0;
       z-index: 40;
     }
+
     .navbar .logo img {
       height: 38px;
       display: block;
     }
+
     .navbar nav ul {
       list-style: none;
       display: flex;
       gap: 18px;
       align-items: center;
     }
+
     .navbar a {
       color: #222;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95rem;
     }
+
     .navbar a:hover,
     .navbar a:focus {
       color: var(--brand-blue);
       outline: none;
       text-decoration: underline;
     }
-  /* bot placement */
-  .bot-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    z-index: 5;
+
+    /* Bot Container */
+    .bot-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 5;
     }
-  
-  .bot-image {
-    width: 50px;  /* adjust size */
-    height: auto;
-    display: block;
-    position: relative;
-    z-index: 6;
-    animation: float 3s ease-in-out infinite;
-  }
-  .cloud-text {
-    font-size: 12px;          /* text size */
-    line-height: 1;           /* line height */
-    color: #333;           /* brand blue color */
-    font-weight: 600;         /* semi-bold for emphasis */
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    white-space: nowrap;      /* keep on one line */
-    margin-top: 2px;          /* slight vertical alignment tweak */
-    text-shadow: 0 0 2px rgba(42, 139, 255, 0.3); /* subtle glow effect */
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 50px; /* space between logo image and bot container */
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-  
-  @keyframes fadeInOut {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 1; }
-  }
-    /* Page container */
+
+    .bot-image {
+      width: 50px;
+      height: auto;
+      display: block;
+      position: relative;
+      z-index: 6;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .cloud-text {
+      font-size: 12px;
+      line-height: 1;
+      color: #333;
+      font-weight: 600;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      white-space: nowrap;
+      margin-top: 2px;
+      text-shadow: 0 0 2px rgba(42, 139, 255, 0.3);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+
+    /* Animations */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @keyframes fadeInOut {
+
+      0%,
+      100% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    /* Page Container */
     main.page {
       flex: 1 0 auto;
       max-width: 1100px;
@@ -141,23 +171,27 @@
       justify-content: space-between;
       margin-bottom: 22px;
     }
+
     .page-head .title {
       font-size: 1.8rem;
       color: var(--brand-deep);
       font-weight: 700;
       min-width: 280px;
     }
+
     .page-head .sub {
       color: var(--muted);
       font-size: 0.95rem;
       margin-top: 6px;
     }
+
     .cta-wrap {
       display: flex;
       gap: 12px;
       align-items: center;
       flex-wrap: wrap;
     }
+
     .btn {
       background: var(--brand-blue);
       color: #fff;
@@ -165,7 +199,7 @@
       border-radius: 10px;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 6px 18px rgba(42,139,255,0.12);
+      box-shadow: 0 6px 18px rgba(42, 139, 255, 0.12);
       transition: background 0.3s, color 0.3s, transform 0.2s;
       user-select: none;
       cursor: pointer;
@@ -174,6 +208,7 @@
       gap: 6px;
       font-size: 1rem;
     }
+
     .btn:hover,
     .btn:focus {
       background: #1c6fdb;
@@ -181,13 +216,15 @@
       outline: none;
       text-decoration: none;
     }
+
     .btn.secondary {
       background: transparent;
       color: var(--brand-blue);
-      border: 1px solid rgba(42,139,255,0.3);
+      border: 1px solid rgba(42, 139, 255, 0.3);
       box-shadow: none;
       font-weight: 600;
     }
+
     .btn.secondary:hover,
     .btn.secondary:focus {
       background: var(--brand-blue);
@@ -197,7 +234,7 @@
       outline: none;
     }
 
-    /* Grid layout */
+    /* Grid Layout */
     .grid {
       display: grid;
       grid-template-columns: 1fr 320px;
@@ -205,24 +242,27 @@
       align-items: start;
     }
 
-    /* Content panels */
+    /* Content Panels */
     .panel {
       background: var(--panel);
       border-radius: var(--radius);
       padding: 20px;
-      box-shadow: 0 6px 22px rgba(23,33,60,0.04);
-      border: 1px solid rgba(10,20,40,0.03);
+      box-shadow: 0 6px 22px rgba(23, 33, 60, 0.04);
+      border: 1px solid rgba(10, 20, 40, 0.03);
     }
+
     .panel ul {
       padding-left: 20px;
       margin-top: 12px;
       color: var(--muted);
     }
+
     .panel h3 {
       color: var(--brand-deep);
       margin-bottom: 10px;
       font-size: 1.2rem;
     }
+
     .lead {
       color: var(--muted);
       margin-bottom: 14px;
@@ -235,16 +275,18 @@
       align-items: flex-start;
       padding: 14px 16px;
       border-radius: 10px;
-      background: linear-gradient(180deg, rgba(230,240,255,0.6), rgba(255,255,255,0));
-      border: 1px solid rgba(42,139,255,0.08);
+      background: linear-gradient(180deg, rgba(230, 240, 255, 0.6), rgba(255, 255, 255, 0));
+      border: 1px solid rgba(42, 139, 255, 0.08);
       margin-bottom: 14px;
       transition: background 0.2s ease-in-out;
     }
+
     .step:hover,
     .step:focus-within {
       background: var(--accent);
       outline: none;
     }
+
     .step .num {
       background: var(--brand-blue);
       color: #fff;
@@ -259,14 +301,17 @@
       font-size: 1.15rem;
       user-select: none;
     }
+
     .step .content {
       flex: 1;
     }
+
     .step .content h4 {
       margin-bottom: 6px;
       color: var(--brand-deep);
       font-size: 1.1rem;
     }
+
     .step .content p {
       color: var(--muted);
       font-size: 0.95rem;
@@ -278,31 +323,36 @@
     .setup-section {
       margin-top: 28px;
     }
+
     .setup-section h2.section-title {
       font-weight: 700;
       color: var(--brand-blue);
       margin-bottom: 20px;
       font-size: 1.6rem;
     }
+
     .setup-step {
       margin-bottom: 14px;
     }
+
     .setup-step summary {
       display: flex;
       gap: 14px;
       align-items: center;
       padding: 14px 16px;
       border-radius: 10px;
-      background: linear-gradient(180deg, rgba(230,240,255,0.6), rgba(255,255,255,0));
-      border: 1px solid rgba(42,139,255,0.08);
+      background: linear-gradient(180deg, rgba(230, 240, 255, 0.6), rgba(255, 255, 255, 0));
+      border: 1px solid rgba(42, 139, 255, 0.08);
       cursor: pointer;
       transition: background 0.2s ease-in-out;
     }
+
     .setup-step summary:hover,
     .setup-step summary:focus {
       background: var(--accent);
       outline: none;
     }
+
     .setup-step summary .num {
       background: var(--brand-blue);
       color: #fff;
@@ -317,14 +367,17 @@
       font-size: 1.15rem;
       user-select: none;
     }
+
     .setup-step summary .content {
       flex: 1;
     }
+
     .setup-step summary .content h4 {
       margin-bottom: 6px;
       color: var(--brand-deep);
       font-size: 1.1rem;
     }
+
     .setup-step .step-image {
       margin-top: 12px;
       max-width: 100%;
@@ -332,28 +385,32 @@
       overflow: hidden;
       background-color: #fefefe;
     }
+
     .setup-step .step-image img {
       width: 50%;
       height: auto;
       object-fit: contain;
       display: block;
     }
+
     .setup-step .step-text {
       margin-top: 12px;
     }
+
     .setup-step .step-text p {
       color: var(--muted);
       font-size: 0.95rem;
       line-height: 1.4;
     }
 
-    /* Right sidebar */
+    /* Right Sidebar */
     aside.side {
       position: sticky;
       top: 84px;
       align-self: start;
       margin-bottom: 24px;
     }
+
     .toc h4,
     .download-box h4 {
       margin-bottom: 10px;
@@ -361,6 +418,7 @@
       color: var(--brand-deep);
       font-size: 1.1rem;
     }
+
     .toc ul {
       list-style: none;
       padding-left: 0;
@@ -368,29 +426,34 @@
       flex-direction: column;
       gap: 8px;
     }
+
     .toc a {
       color: var(--brand-blue);
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95rem;
     }
+
     .toc a:hover,
     .toc a:focus {
       text-decoration: underline;
       outline: none;
     }
+
     .download-box {
       margin-top: 24px;
       padding: 14px;
       border-radius: 10px;
       background: #f5fbff;
-      border: 1px solid rgba(42,139,255,0.08);
+      border: 1px solid rgba(42, 139, 255, 0.08);
     }
+
     .download-box p.small {
       font-size: 0.9rem;
       color: var(--muted);
       margin-top: 6px;
     }
+
     .download-box .btn {
       width: 100%;
       justify-content: center;
@@ -400,6 +463,7 @@
     .faq-item {
       margin-bottom: 14px;
     }
+
     .faq-item summary {
       font-weight: 700;
       color: var(--brand-deep);
@@ -409,15 +473,17 @@
       background-color: var(--accent);
       user-select: none;
       font-size: 1rem;
-      box-shadow: 0 2px 8px rgba(42,139,255,0.12);
+      box-shadow: 0 2px 8px rgba(42, 139, 255, 0.12);
       transition: background-color 0.25s;
     }
+
     .faq-item summary:hover,
     .faq-item summary:focus {
       background-color: var(--brand-blue);
       color: #fff;
       outline: none;
     }
+
     .faq-item p {
       margin-top: 8px;
       padding-left: 14px;
@@ -426,38 +492,41 @@
       line-height: 1.4;
     }
 
-    /* Feedback box */
+    /* Feedback Box */
     .feedback-panel {
       margin-top: 30px;
       padding: 20px;
       border-radius: var(--radius);
-      border: 1px solid rgba(42,139,255,0.15);
-      background-color: #e6f0ff;
+      border: 1px solid rgba(42, 139, 255, 0.15);
+      background-color: var(--accent);
       max-width: 480px;
       margin-left: auto;
       margin-right: auto;
       text-align: center;
     }
+
     .feedback-panel label {
       display: block;
       margin-bottom: 6px;
       font-weight: 600;
       color: var(--brand-deep);
     }
+
     .feedback-panel textarea {
       width: 100%;
       min-height: 80px;
       padding: 10px;
       font-size: 1rem;
-      border: 1px solid rgba(42,139,255,0.4);
+      border: 1px solid rgba(42, 139, 255, 0.4);
       border-radius: 6px;
       resize: vertical;
       font-family: inherit;
     }
+
     .feedback-panel button {
       margin-top: 12px;
       background: var(--brand-blue);
-      color: white;
+      color: #fff;
       border: none;
       padding: 10px 20px;
       font-weight: 700;
@@ -465,12 +534,14 @@
       cursor: pointer;
       transition: background 0.3s, transform 0.2s;
     }
+
     .feedback-panel button:hover,
     .feedback-panel button:focus {
       background: #1c6fdb;
       transform: translateY(-2px);
       outline: none;
     }
+
     #feedback-status {
       margin-top: 10px;
       padding: 8px;
@@ -479,6 +550,7 @@
       color: #2a6700;
       display: none;
     }
+
     #feedback-status.error {
       background-color: #ffe6e6;
       color: #670000;
@@ -493,7 +565,7 @@
       flex-shrink: 0;
     }
 
-    /* Smooth scroll offset */
+    /* Smooth Scroll Offset */
     [id] {
       scroll-margin-top: 80px;
     }
@@ -503,55 +575,58 @@
       .grid {
         grid-template-columns: 1fr;
       }
+
       aside.side {
         position: static;
         margin-top: 36px;
         max-width: 100%;
       }
+
       .page-head {
         justify-content: center;
         text-align: center;
         gap: 12px;
       }
+
       .page-head .title {
         min-width: auto;
         font-size: 1.5rem;
       }
+
       .cta-wrap {
         justify-content: center;
       }
     }
   </style>
 </head>
-<body>
-  <!-- NAV -->
-  <header class="navbar">
- <div class="logo">
-  <a href="./">
-    <img src="logo.png" alt="AkServer Logo" style="height: 40px;" />
-  </a>
-  <div class="bot-container">
-    <img src="https://akserverstorage.github.io/akserver-website/images/private_ai_bot.png" alt="Bot" class="bot-image" />
-    <div class="cloud-text">
-Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
-    </div>
-  </div>
-</div>
 
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="./">
+        <img src="logo.png" alt="AkServer Logo" style="height: 40px;">
+      </a>
+      <div class="bot-container">
+        <img src="https://akserverstorage.github.io/akserver-website/images/private_ai_bot.png" alt="Bot" class="bot-image">
+        <div class="cloud-text">
+          Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
+        </div>
+      </div>
+    </div>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-<li><a href="#features">Features</a></li>
-<li><a href="install.html">Installation</a></li>  <!-- Go to install.html page -->
-<li><a href="vision.html">Vision</a></li>  <!-- Go to vision.html page -->
-
+        <li><a href="#features">Features</a></li>
+        <li><a href="install.html">Installation</a></li>
+        <li><a href="vision.html">Vision</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- Main Content -->
   <main class="page" role="main" aria-labelledby="pageTitle">
     <div class="page-head">
       <div>
@@ -567,7 +642,7 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
     </div>
 
     <div class="grid">
-      <!-- LEFT: main instructions -->
+      <!-- Main Instructions -->
       <section aria-label="Installation instructions and steps">
         <!-- Intro -->
         <section class="panel" id="intro" data-aos="fade-up" tabindex="0">
@@ -576,7 +651,7 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
         </section>
 
         <!-- Prerequisites -->
-        <section class="panel" id="prereqs" data-aos="fade-up" data-aos-delay="80" tabindex="0" style="margin-top:18px;">
+        <section class="panel" id="prereqs" data-aos="fade-up" data-aos-delay="80" style="margin-top: 18px;">
           <h3>Prerequisites</h3>
           <ul>
             <li>Windows 10 / 11 (x64) or compatible PC</li>
@@ -588,7 +663,7 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
         </section>
 
         <!-- Installation Steps -->
-        <section class="panel" id="steps" data-aos="fade-up" data-aos-delay="140" style="margin-top:18px;">
+        <section class="panel" id="steps" data-aos="fade-up" data-aos-delay="140" style="margin-top: 18px;">
           <h3>Installation Steps</h3>
           <div class="step" data-aos="fade-up" data-aos-delay="180">
             <div class="num">1</div>
@@ -626,7 +701,7 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
             <div class="step-image">
               <picture>
                 <source srcset="images/defender_warning.png" type="image/png">
-                <img src="images/defender_warning.png" alt="SmartScreen Warning" loading="lazy" />
+                <img src="images/defender_warning.png" alt="SmartScreen Warning" loading="lazy">
               </picture>
             </div>
             <div class="step-text">
@@ -643,7 +718,7 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
             <div class="step-image">
               <picture>
                 <source srcset="images/uac_prompt.png" type="image/png">
-                <img src="images/uac_prompt.png" alt="UAC Prompt" loading="lazy" />
+                <img src="images/uac_prompt.png" alt="UAC Prompt" loading="lazy">
               </picture>
             </div>
             <div class="step-text">
@@ -660,7 +735,7 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
             <div class="step-image">
               <picture>
                 <source srcset="images/startup_option.png" type="image/png">
-                <img src="images/startup_option.png" alt="Startup Option" loading="lazy" />
+                <img src="images/startup_option.png" alt="Startup Option" loading="lazy">
               </picture>
             </div>
             <div class="step-text">
@@ -677,7 +752,7 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
             <div class="step-image">
               <picture>
                 <source srcset="images/firewall_allow.png" type="image/png">
-                <img src="images/firewall_allow.png" alt="Firewall Prompt" loading="lazy" />
+                <img src="images/firewall_allow.png" alt="Firewall Prompt" loading="lazy">
               </picture>
             </div>
             <div class="step-text">
@@ -694,7 +769,7 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
             <div class="step-image">
               <picture>
                 <source srcset="images/akserver_main_window.png" type="image/png">
-                <img src="images/akserver_main_window.png" alt="AkServer Main Window" loading="lazy" />
+                <img src="images/akserver_main_window.png" alt="AkServer Main Window" loading="lazy">
               </picture>
             </div>
             <div class="step-text">
@@ -711,7 +786,7 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
             <div class="step-image">
               <picture>
                 <source srcset="images/connect_click.png" type="image/png">
-                <img src="images/connect_click.png" alt="Connect Button" loading="lazy" />
+                <img src="images/connect_click.png" alt="Connect Button" loading="lazy">
               </picture>
             </div>
             <div class="step-text">
@@ -728,7 +803,7 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
             <div class="step-image">
               <picture>
                 <source srcset="images/otp_generate.png" type="image/png">
-                <img src="images/otp_generate.png" alt="OTP Generation" loading="lazy" />
+                <img src="images/otp_generate.png" alt="OTP Generation" loading="lazy">
               </picture>
             </div>
             <div class="step-text">
@@ -745,7 +820,7 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
             <div class="step-image">
               <picture>
                 <source srcset="images/folder_setup.png" type="image/png">
-                <img src="images/folder_setup.png" alt="Folder Setup" loading="lazy" />
+                <img src="images/folder_setup.png" alt="Folder Setup" loading="lazy">
               </picture>
             </div>
             <div class="step-text">
@@ -762,7 +837,7 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
             <div class="step-image">
               <picture>
                 <source srcset="images/linked_devices.png" type="image/png">
-                <img src="images/linked_devices.png" alt="Linked Devices" loading="lazy" />
+                <img src="images/linked_devices.png" alt="Linked Devices" loading="lazy">
               </picture>
             </div>
             <div class="step-text">
@@ -779,7 +854,7 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
             <div class="step-image">
               <picture>
                 <source srcset="images/more_info.png" type="image/png">
-                <img src="images/more_info.png" alt="More Info" loading="lazy" />
+                <img src="images/more_info.png" alt="More Info" loading="lazy">
               </picture>
             </div>
             <div class="step-text">
@@ -788,145 +863,144 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
           </details>
         </section>
 
-        <!-- Web_App Setup Steps -->
-<!-- Web_App Setup Steps -->
-<section class="setup-section" id="webapp" aria-label="Web_App setup steps" data-aos="fade-up" data-aos-delay="180">
-  <h2 class="section-title">How to Set Up Web_App</h2>
-  <details class="setup-step" open data-aos="fade-up" data-aos-delay="200">
-    <summary>
-      <div class="num">1</div>
-      <div class="content">
-        <h4>Open the Web App</h4>
-      </div>
-    </summary>
-    <div class="step-image">
-      <picture>
-        <source srcset="images/scan_connect.png" type="image/png">
-        <img src="images/scan_connect.png" alt="Scan QR or open the Web App URL" loading="lazy" />
-      </picture>
-    </div>
-    <div class="step-text">
-      <p id="webAppDesc1">
-        Scan the QR code displayed on your AkServer host dashboard, or open the local Web App URL (e.g. <code>https://192.168.x.x:5000</code>) in your browser. Make sure the device you use is connected to the <strong>same local network</strong> as the AkServer host.
-      </p>
-    </div>
-  </details>
-  <details class="setup-step" data-aos="fade-up" data-aos-delay="220">
-    <summary>
-      <div class="num">2</div>
-      <div class="content">
-        <h4>Browser security warning</h4>
-      </div>
-    </summary>
-    <div class="step-image">
-      <picture>
-        <source srcset="images/login_from_browser.png" type="image/png">
-        <img src="images/login_from_browser.png" alt="Browser shows 'Your connection is not private' warning" loading="lazy" />
-      </picture>
-    </div>
-    <div class="step-text">
-      <p id="webAppDesc2">
-        Your browser may display <strong>"Your connection is not private"</strong> or a similar warning. This happens because AkServer serves a local certificate that can't be validated by public certificate authorities (the service runs entirely on your private network and does not use the public internet). This is expected for local-only servers.
-      </p>
-      <p><strong>How to proceed:</strong> click <em>Advanced</em> → then choose <em>Proceed to &lt;your-AkServer-URL&gt; (unsafe)</em>. This is safe when you are on your local, trusted network and confirmed the link is from your AkServer host.</p>
-    </div>
-  </details>
-  <details class="setup-step" data-aos="fade-up" data-aos-delay="240">
-    <summary>
-      <div class="num">3</div>
-      <div class="content">
-        <h4>Login with OTP</h4>
-      </div>
-    </summary>
-    <div class="step-image">
-      <picture>
-        <source srcset="images/otp_login.png" type="image/png">
-        <img src="images/otp_login.png" alt="AkServer login page showing OTP field" loading="lazy" />
-      </picture>
-    </div>
-    <div class="step-text">
-      <p id="webAppDesc3">
-        After proceeding past the browser warning you'll reach the AkServer login page. Enter the <strong>One-Time Password (OTP)</strong> shown on the AkServer host (or generated by the host) and click <strong>Login</strong>. The OTP rotates for security — use the current code.
-      </p>
-    </div>
-  </details>
-  <details class="setup-step" data-aos="fade-up" data-aos-delay="260">
-    <summary>
-      <div class="num">4</div>
-      <div class="content">
-        <h4>Upload files</h4>
-      </div>
-    </summary>
-    <div class="step-image">
-      <picture>
-        <source srcset="images/web_app.png" type="image/png">
-        <img src="images/web_app.png" alt="Web App Files tab and upload controls" loading="lazy" />
-      </picture>
-    </div>
-    <div class="step-text">
-      <p id="webAppDesc4">
-        Open the <strong>Files</strong> tab. Use <strong>Upload</strong> or <strong>Select Folder</strong> to choose files from your device. The Web App shows upload progress; files are stored on the AkServer host and become immediately available to other connected devices on the same network.
-      </p>
-    </div>
-  </details>
-  <details class="setup-step" data-aos="fade-up" data-aos-delay="280">
-    <summary>
-      <div class="num">5</div>
-      <div class="content">
-        <h4>View and manage files</h4>
-      </div>
-    </summary> 
-    <div class="step-image">
-      <picture>
-        <source srcset="images/View_ manage.png" type="image/png">
-        <img src="images/View_ manage.png" alt="Grid and list views in Web App" loading="lazy" />
-      </picture>
-    </div>
-    <div class="step-text">
-      <p id="webAppDesc5">
-        Switch between Grid, List, or Details view to browse files. Click any file to preview or download it. Use the search bar to locate files quickly. Long-press (mobile) or right-click (desktop) for more file actions (rename, delete, share link if enabled).
-      </p>
-    </div>
-  </details>
-  <details class="setup-step" data-aos="fade-up" data-aos-delay="300">
-    <summary>
-      <div class="num">6</div>
-      <div class="content">
-        <h4>Register device & settings</h4>
-      </div>
-    </summary>
-    <div class="step-image">
-      <picture>
-        <source srcset="images/linked_devices.png" type="image/png">
-        <img src="images/linked_devices.png" alt="Device registration and settings page" loading="lazy" />
-      </picture>
-    </div>
-    <div class="step-text">
-      <p id="webAppDesc6">
-        If prompted, give your device a friendly name so it’s recognizable in the AkServer host. Visit Settings to configure sync folders, auto-upload, and device permissions. Changes apply immediately across the local network.
-      </p>
-    </div>
-  </details>
-  <details class="setup-step" data-aos="fade-up" data-aos-delay="320">
-    <summary>
-      <div class="num">7</div>
-      <div class="content">
-        <h4>Live updates & help</h4>
-      </div>
-    </summary>
-    <div class="step-image">
-      <picture>
-        <source srcset="images/webapp_step7.png" type="image/png">
-        <img src="images/webapp_step7.png" alt="Help, live updates and troubleshooting in Web App" loading="lazy" />
-      </picture>
-    </div>
-    <div class="step-text">
-      <p id="webAppDesc7">
-        Check the <strong>Live Updates</strong> panel for announcements and quick tips. Visit the Help/FAQ section for troubleshooting steps (firewall rules, network checks). When finished, use <strong>Logout</strong> to terminate the session.
-      </p>
-    </div>
-  </details>
-</section>
+        <!-- Web App Setup Steps -->
+        <section class="setup-section" id="webapp" aria-label="Web App setup steps" data-aos="fade-up" data-aos-delay="180">
+          <h2 class="section-title">How to Set Up Web App</h2>
+          <details class="setup-step" open data-aos="fade-up" data-aos-delay="200">
+            <summary>
+              <div class="num">1</div>
+              <div class="content">
+                <h4>Open the Web App</h4>
+              </div>
+            </summary>
+            <div class="step-image">
+              <picture>
+                <source srcset="images/scan_connect.png" type="image/png">
+                <img src="images/scan_connect.png" alt="Scan QR or open the Web App URL" loading="lazy">
+              </picture>
+            </div>
+            <div class="step-text">
+              <p id="webAppDesc1">
+                Scan the QR code displayed on your AkServer host dashboard, or open the local Web App URL (e.g. <code>https://192.168.x.x:5000</code>) in your browser. Make sure the device you use is connected to the <strong>same local network</strong> as the AkServer host.
+              </p>
+            </div>
+          </details>
+          <details class="setup-step" data-aos="fade-up" data-aos-delay="220">
+            <summary>
+              <div class="num">2</div>
+              <div class="content">
+                <h4>Browser Security Warning</h4>
+              </div>
+            </summary>
+            <div class="step-image">
+              <picture>
+                <source srcset="images/login_from_browser.png" type="image/png">
+                <img src="images/login_from_browser.png" alt="Browser shows 'Your connection is not private' warning" loading="lazy">
+              </picture>
+            </div>
+            <div class="step-text">
+              <p id="webAppDesc2">
+                Your browser may display <strong>"Your connection is not private"</strong> or a similar warning. This happens because AkServer serves a local certificate that can't be validated by public certificate authorities (the service runs entirely on your private network and does not use the public internet). This is expected for local-only servers.
+              </p>
+              <p><strong>How to proceed:</strong> click <em>Advanced</em> → then choose <em>Proceed to &lt;your-AkServer-URL&gt; (unsafe)</em>. This is safe when you are on your local, trusted network and confirmed the link is from your AkServer host.</p>
+            </div>
+          </details>
+          <details class="setup-step" data-aos="fade-up" data-aos-delay="240">
+            <summary>
+              <div class="num">3</div>
+              <div class="content">
+                <h4>Login with OTP</h4>
+              </div>
+            </summary>
+            <div class="step-image">
+              <picture>
+                <source srcset="images/otp_login.png" type="image/png">
+                <img src="images/otp_login.png" alt="AkServer login page showing OTP field" loading="lazy">
+              </picture>
+            </div>
+            <div class="step-text">
+              <p id="webAppDesc3">
+                After proceeding past the browser warning you'll reach the AkServer login page. Enter the <strong>One-Time Password (OTP)</strong> shown on the AkServer host (or generated by the host) and click <strong>Login</strong>. The OTP rotates for security — use the current code.
+              </p>
+            </div>
+          </details>
+          <details class="setup-step" data-aos="fade-up" data-aos-delay="260">
+            <summary>
+              <div class="num">4</div>
+              <div class="content">
+                <h4>Upload Files</h4>
+              </div>
+            </summary>
+            <div class="step-image">
+              <picture>
+                <source srcset="images/web_app.png" type="image/png">
+                <img src="images/web_app.png" alt="Web App Files tab and upload controls" loading="lazy">
+              </picture>
+            </div>
+            <div class="step-text">
+              <p id="webAppDesc4">
+                Open the <strong>Files</strong> tab. Use <strong>Upload</strong> or <strong>Select Folder</strong> to choose files from your device. The Web App shows upload progress; files are stored on the AkServer host and become immediately available to other connected devices on the same network.
+              </p>
+            </div>
+          </details>
+          <details class="setup-step" data-aos="fade-up" data-aos-delay="280">
+            <summary>
+              <div class="num">5</div>
+              <div class="content">
+                <h4>View and Manage Files</h4>
+              </div>
+            </summary>
+            <div class="step-image">
+              <picture>
+                <source srcset="images/View_manage.png" type="image/png">
+                <img src="images/View_manage.png" alt="Grid and list views in Web App" loading="lazy">
+              </picture>
+            </div>
+            <div class="step-text">
+              <p id="webAppDesc5">
+                Switch between Grid, List, or Details view to browse files. Click any file to preview or download it. Use the search bar to locate files quickly. Long-press (mobile) or right-click (desktop) for more file actions (rename, delete, share link if enabled).
+              </p>
+            </div>
+          </details>
+          <details class="setup-step" data-aos="fade-up" data-aos-delay="300">
+            <summary>
+              <div class="num">6</div>
+              <div class="content">
+                <h4>Register Device & Settings</h4>
+              </div>
+            </summary>
+            <div class="step-image">
+              <picture>
+                <source srcset="images/linked_devices.png" type="image/png">
+                <img src="images/linked_devices.png" alt="Device registration and settings page" loading="lazy">
+              </picture>
+            </div>
+            <div class="step-text">
+              <p id="webAppDesc6">
+                If prompted, give your device a friendly name so it’s recognizable in the AkServer host. Visit Settings to configure sync folders, auto-upload, and device permissions. Changes apply immediately across the local network.
+              </p>
+            </div>
+          </details>
+          <details class="setup-step" data-aos="fade-up" data-aos-delay="320">
+            <summary>
+              <div class="num">7</div>
+              <div class="content">
+                <h4>Live Updates & Help</h4>
+              </div>
+            </summary>
+            <div class="step-image">
+              <picture>
+                <source srcset="images/webapp_step7.png" type="image/png">
+                <img src="images/webapp_step7.png" alt="Help, live updates and troubleshooting in Web App" loading="lazy">
+              </picture>
+            </div>
+            <div class="step-text">
+              <p id="webAppDesc7">
+                Check the <strong>Live Updates</strong> panel for announcements and quick tips. Visit the Help/FAQ section for troubleshooting steps (firewall rules, network checks). When finished, use <strong>Logout</strong> to terminate the session.
+              </p>
+            </div>
+          </details>
+        </section>
 
         <!-- FAQ Section -->
         <section class="panel" id="faq" tabindex="0" aria-label="Frequently Asked Questions" data-aos="fade-up" data-aos-delay="200" style="margin-top: 30px;">
@@ -957,19 +1031,19 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
           </details>
         </section>
 
-        <!-- Feedback form -->
+        <!-- Feedback Form -->
         <section class="feedback-panel" role="region" aria-label="Feedback form">
           <h3>Help Us Improve</h3>
           <form id="feedbackForm" action="https://formspree.io/f/your-form-id" method="POST" aria-live="polite">
             <label for="feedback-text">Was this guide helpful? Any suggestions?</label>
             <textarea id="feedback-text" name="feedback" placeholder="Write your feedback here..." aria-required="true"></textarea>
             <button type="submit">Submit Feedback</button>
-            <p id="feedback-status" role="alert" aria-live="assertive" style="display:none;">Thank you for your feedback!</p>
+            <p id="feedback-status" role="alert" aria-live="assertive" style="display: none;">Thank you for your feedback!</p>
           </form>
         </section>
       </section>
 
-      <!-- RIGHT: Sidebar for TOC and Download info -->
+      <!-- Sidebar -->
       <aside class="side" aria-label="Sidebar">
         <nav class="toc" aria-label="Table of Contents">
           <h4>On this page</h4>
@@ -978,7 +1052,7 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
             <li><a href="#prereqs">Prerequisites</a></li>
             <li><a href="#steps">Installation Steps</a></li>
             <li><a href="#setup">Setup AkServer</a></li>
-            <li><a href="#webapp">Setup Web_App</a></li>
+            <li><a href="#webapp">Setup Web App</a></li>
             <li><a href="#faq">Troubleshooting</a></li>
           </ul>
         </nav>
@@ -988,14 +1062,14 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
             ⬇️ Download Installer (113 MB)
           </a>
           <p id="downloadDescSide" class="small">
-            Version: 1.0.0<br />
+            Version: 1.0.0<br>
             Release date: 2025-08-01
           </p>
-          <p class="small" style="margin-top:12px;">
+          <p class="small" style="margin-top: 12px;">
             Note: Digital signing of our installer is planned for upcoming releases.
           </p>
         </section>
-        <section class="panel" style="margin-top:14px;">
+        <section class="panel" style="margin-top: 14px;">
           <h4>Need Help?</h4>
           <p class="small">Contact us at <a href="mailto:support@akserver.example">akserverstorage@gmail.com</a> or use the <a href="index.html#contact">Contact form</a> on the main site.</p>
         </section>
@@ -1003,18 +1077,24 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
     </div>
   </main>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer role="contentinfo">
     &copy; 2025 AkServer — All rights reserved.
   </footer>
 
-  <!-- JS: Feedback and Image Click Handling -->
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800
+    });
+  </script>
   <script>
     // Feedback form handling
     const feedbackForm = document.getElementById('feedbackForm');
     const feedbackStatus = document.getElementById('feedback-status');
-
-    feedbackForm.addEventListener('submit', async function (e) {
+    feedbackForm.addEventListener('submit', async function(e) {
       e.preventDefault();
       const text = feedbackForm['feedback'].value.trim();
       const textarea = document.getElementById('feedback-text');
@@ -1058,7 +1138,6 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
         }, 5000);
       }
     });
-
     // Open images in new tab
     document.querySelectorAll('.setup-step img').forEach(img => {
       img.parentElement.parentElement.addEventListener('click', (e) => {
@@ -1075,11 +1154,6 @@ Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
       });
     });
   </script>
-
-  <!-- AOS animation -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ once: true, duration: 800 });
-  </script>
 </body>
+
 </html>
