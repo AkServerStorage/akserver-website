@@ -29,7 +29,7 @@
   <link rel="icon" href="logo.png" type="image/png">
 
   <!-- CSS Imports -->
-  <link rel="stylesheet" href="style.css?v=3.9">
+  <link rel="stylesheet" href="style.css?v=3.8">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
@@ -73,48 +73,53 @@
 
   <!-- Hero Section -->
   <section id="home" class="section hero">
-    <div class="content" style="position: relative; z-index: 2;">
-      <h1 class="main-title" data-aos="fade-up" data-aos-duration="1000">AkServer</h1>
-      <h2 class="tagline" data-aos="fade-up" data-aos-delay="200">
-        Build Your Own Offline Cloud Storage & Private File Sync System
-      </h2>
-      <p class="intro-message" data-aos="fade-up" data-aos-delay="350">
-        AkServer empowers you to run a completely private file storage system, operating entirely on your local network — no cloud, no limits.
-      </p>
-      <p class="strong-line" data-aos="fade-up" data-aos-delay="450">
-        <strong>Your Files. Your Network. Your Control.</strong>
-      </p>
-      <div class="hero-buttons" data-aos="zoom-in" data-aos-delay="600">
-        <a href="#contact" class="btn-primary">Get Your Custom Solution</a>
 
-        <a href="install.html?download=AkServerInstaller.exe" class="btn-primary secondary">⬇️ Download for Windows</a>
+    <div class="content" style="position: relative; z-index: 2;">
+      <div class="akserver-logo">
+        <a href="https://akserverstorage.github.io/akserver-website" target="_blank" aria-label="AkServer" rel="noopener">
+          <img src="logo.png" alt="AkServer" />
+        </a>
+        <h1 class="main-title" data-aos="fade-up" data-aos-duration="1000">AkServer</h1>
+        <h2 class="tagline" data-aos="fade-up" data-aos-delay="200">
+          Build Your Own Offline Cloud Storage & Private File Sync System
+        </h2>
+        <p class="intro-message" data-aos="fade-up" data-aos-delay="350">
+          AkServer empowers you to run a completely private file storage system, operating entirely on your local network — no cloud, no limits.
+        </p>
+        <p class="strong-line" data-aos="fade-up" data-aos-delay="450">
+          <strong>Your Files. Your Network. Your Control.</strong>
+        </p>
+        <div class="hero-buttons" data-aos="zoom-in" data-aos-delay="600">
+          <a href="#contact" class="btn-primary">Get Your Custom Solution</a>
+
+          <a href="install.html?download=AkServerInstaller.exe" class="btn-primary secondary">⬇️ Download for Windows</a>
+        </div>
+        <div class="flow-diagram" data-aos="fade-up" data-aos-delay="800">
+          <div class="flow-step">
+            <div class="flow-icon">💻</div>
+            <p class="flow-title">PC / Laptop</p>
+            <small class="flow-sub">Becomes Your Private Cloud Storage</small>
+          </div>
+          <div class="flow-arrow">➡️</div>
+          <div class="flow-step">
+            <div class="flow-icon">📁🖼️</div>
+            <p class="flow-title">Sync Folders</p>
+            <small class="flow-sub">Docs, Media, Images — Your Choice</small>
+          </div>
+          <div class="flow-arrow">➡️</div>
+          <div class="flow-step">
+            <div class="flow-icon">🛜</div>
+            <p class="flow-title">Local Network</p>
+            <small class="flow-sub">Wi-Fi or Hotspot, No Internet</small>
+          </div>
+          <div class="flow-arrow">➡️</div>
+          <div class="flow-step">
+            <div class="flow-icon">📱🖥️</div>
+            <p class="flow-title">Any Device</p>
+            <small class="flow-sub">Access via browser</small>
+          </div>
+        </div>
       </div>
-      <div class="flow-diagram" data-aos="fade-up" data-aos-delay="800">
-        <div class="flow-step">
-          <div class="flow-icon">💻</div>
-          <p class="flow-title">PC / Laptop</p>
-          <small class="flow-sub">Becomes Your Private Cloud Storage</small>
-        </div>
-        <div class="flow-arrow">➡️</div>
-        <div class="flow-step">
-          <div class="flow-icon">📁🖼️</div>
-          <p class="flow-title">Sync Folders</p>
-          <small class="flow-sub">Docs, Media, Images — Your Choice</small>
-        </div>
-        <div class="flow-arrow">➡️</div>
-        <div class="flow-step">
-          <div class="flow-icon">🛜</div>
-          <p class="flow-title">Local Network</p>
-          <small class="flow-sub">Wi-Fi or Hotspot, No Internet</small>
-        </div>
-        <div class="flow-arrow">➡️</div>
-        <div class="flow-step">
-          <div class="flow-icon">📱🖥️</div>
-          <p class="flow-title">Any Device</p>
-          <small class="flow-sub">Access via browser</small>
-        </div>
-      </div>
-    </div>
   </section>
   <!-- About Section -->
   <section id="about" class="akserver-section">
@@ -157,88 +162,87 @@
       </div>
     </div>
   </section>
-<!-- Features Section -->
-<section id="features"  class="feature-stripe">
-  <h2 class="section-title">💡 AkServer Features</h2>
-  <article class="feature-item" tabindex="0" aria-labelledby="privacy-stripe-title">
-    <div class="feature-icon" aria-hidden="true">🔒</div>
-    <div class="feature-body">
-      <h3 id="privacy-stripe-title">Total Privacy — Your Data Never Leaves Your Control</h3>
-      <p class="summary">AkServer works completely offline, syncing files only within your local network — no cloud or internet required.</p>
-      <details>
-        <summary>Learn more</summary>
-        <p>All files and metadata stay inside your trusted environment, ensuring full control and freedom from spying, leaks, or third-party interference.</p>
-      </details>
-    </div>
-  </article>
-  <article class="feature-item" tabindex="0" aria-labelledby="sync-stripe-title">
-    <div class="feature-icon" aria-hidden="true">🔄</div>
-    <div class="feature-body">
-      <h3 id="sync-stripe-title">Seamless Device Sync</h3>
-      <p class="summary">Effortlessly synchronize files between your registered devices — no internet needed.</p>
-      <details>
-        <summary>Learn more</summary>
-        <p>File changes propagate instantly and efficiently over your local network, ensuring fast and reliable syncing.</p>
-      </details>
-    </div>
-  </article>
-  <article class="feature-item" tabindex="0" aria-labelledby="login-stripe-title">
-    <div class="feature-icon" aria-hidden="true">🔐</div>
-    <div class="feature-body">
-      <h3 id="login-stripe-title">Secure Login & Device Registration</h3>
-      <p class="summary">Protect your network with multi-step authentication using OTP and unique device names.</p>
-      <details>
-        <summary>Learn more</summary>
-        <p>OTP input reduces pairing risks. Each device is registered with a unique name for precise control.</p>
-      </details>
-    </div>
-  </article>
-  <article class="feature-item" tabindex="0" aria-labelledby="folder-stripe-title">
-    <div class="feature-icon" aria-hidden="true">📁</div>
-    <div class="feature-body">
-      <h3 id="folder-stripe-title">Folder-Level Uploads</h3>
-      <p class="summary">Upload entire directories at once — simple and efficient.</p>
-      <details>
-        <summary>Learn more</summary>
-        <p>Use folder upload functionality to easily manage large amounts of files across devices (drag-and-drop is not supported).</p>
-      </details>
-    </div>
-  </article>
-  <article class="feature-item" tabindex="0" aria-labelledby="dashboard-stripe-title">
-    <div class="feature-icon" aria-hidden="true">🖥️</div>
-    <div class="feature-body">
-      <h3 id="dashboard-stripe-title">Modern Dashboard</h3>
-      <p class="summary">Enjoy a clean, fast, and consistent user interface on all screens.</p>
-      <details>
-        <summary>Learn more</summary>
-        <p>Designed for intuitive navigation and smooth control, providing effortless use.</p>
-      </details>
-    </div>
-  </article>
-  <article class="feature-item" tabindex="0" aria-labelledby="liveupdates-stripe-title">
-    <div class="feature-icon" aria-hidden="true">📡</div>
-    <div class="feature-body">
-      <h3 id="liveupdates-stripe-title">Embedded Live Updates</h3>
-      <p class="summary">Stay informed with news and announcements directly inside the app.</p>
-      <details>
-        <summary>Learn more</summary>
-        <p>Receive usage tips and important messages without leaving AkServer.</p>
-      </details>
-    </div>
-  </article>
-  <article class="feature-item" tabindex="0" aria-labelledby="windows-stripe-title">
-    <div class="feature-icon" aria-hidden="true">⚙️</div>
-    <div class="feature-body">
-      <h3 id="windows-stripe-title">Optimized for Windows</h3>
-      <p class="summary">Lightweight installer ensures fast setup and smooth performance on Windows PCs.</p>
-      <details>
-        <summary>Learn more</summary>
-        <p>Small footprint and professional desktop experience for effortless deployment.</p>
-      </details>
-    </div>
-  </article>
-</section>
-
+  <!-- Features Section -->
+  <section id="features" class="feature-stripe">
+    <h2 class="section-title">💡 AkServer Features</h2>
+    <article class="feature-item" tabindex="0" aria-labelledby="privacy-stripe-title">
+      <div class="feature-icon" aria-hidden="true">🔒</div>
+      <div class="feature-body">
+        <h3 id="privacy-stripe-title">Total Privacy — Your Data Never Leaves Your Control</h3>
+        <p class="summary">AkServer works completely offline, syncing files only within your local network — no cloud or internet required.</p>
+        <details>
+          <summary>Learn more</summary>
+          <p>All files and metadata stay inside your trusted environment, ensuring full control and freedom from spying, leaks, or third-party interference.</p>
+        </details>
+      </div>
+    </article>
+    <article class="feature-item" tabindex="0" aria-labelledby="sync-stripe-title">
+      <div class="feature-icon" aria-hidden="true">🔄</div>
+      <div class="feature-body">
+        <h3 id="sync-stripe-title">Seamless Device Sync</h3>
+        <p class="summary">Effortlessly synchronize files between your registered devices — no internet needed.</p>
+        <details>
+          <summary>Learn more</summary>
+          <p>File changes propagate instantly and efficiently over your local network, ensuring fast and reliable syncing.</p>
+        </details>
+      </div>
+    </article>
+    <article class="feature-item" tabindex="0" aria-labelledby="login-stripe-title">
+      <div class="feature-icon" aria-hidden="true">🔐</div>
+      <div class="feature-body">
+        <h3 id="login-stripe-title">Secure Login & Device Registration</h3>
+        <p class="summary">Protect your network with multi-step authentication using OTP and unique device names.</p>
+        <details>
+          <summary>Learn more</summary>
+          <p>OTP input reduces pairing risks. Each device is registered with a unique name for precise control.</p>
+        </details>
+      </div>
+    </article>
+    <article class="feature-item" tabindex="0" aria-labelledby="folder-stripe-title">
+      <div class="feature-icon" aria-hidden="true">📁</div>
+      <div class="feature-body">
+        <h3 id="folder-stripe-title">Folder-Level Uploads</h3>
+        <p class="summary">Upload entire directories at once — simple and efficient.</p>
+        <details>
+          <summary>Learn more</summary>
+          <p>Use folder upload functionality to easily manage large amounts of files across devices (drag-and-drop is not supported).</p>
+        </details>
+      </div>
+    </article>
+    <article class="feature-item" tabindex="0" aria-labelledby="dashboard-stripe-title">
+      <div class="feature-icon" aria-hidden="true">🖥️</div>
+      <div class="feature-body">
+        <h3 id="dashboard-stripe-title">Modern Dashboard</h3>
+        <p class="summary">Enjoy a clean, fast, and consistent user interface on all screens.</p>
+        <details>
+          <summary>Learn more</summary>
+          <p>Designed for intuitive navigation and smooth control, providing effortless use.</p>
+        </details>
+      </div>
+    </article>
+    <article class="feature-item" tabindex="0" aria-labelledby="liveupdates-stripe-title">
+      <div class="feature-icon" aria-hidden="true">📡</div>
+      <div class="feature-body">
+        <h3 id="liveupdates-stripe-title">Embedded Live Updates</h3>
+        <p class="summary">Stay informed with news and announcements directly inside the app.</p>
+        <details>
+          <summary>Learn more</summary>
+          <p>Receive usage tips and important messages without leaving AkServer.</p>
+        </details>
+      </div>
+    </article>
+    <article class="feature-item" tabindex="0" aria-labelledby="windows-stripe-title">
+      <div class="feature-icon" aria-hidden="true">⚙️</div>
+      <div class="feature-body">
+        <h3 id="windows-stripe-title">Optimized for Windows</h3>
+        <p class="summary">Lightweight installer ensures fast setup and smooth performance on Windows PCs.</p>
+        <details>
+          <summary>Learn more</summary>
+          <p>Small footprint and professional desktop experience for effortless deployment.</p>
+        </details>
+      </div>
+    </article>
+  </section>
 
   <!-- How It Works Section -->
   <section id="how-it-works" class="section how-it-works">
@@ -327,7 +331,6 @@
         &nbsp;|&nbsp;
       </p>
 
-
       <nav aria-label="Social media links" style="display: inline-flex; gap: 12px;">
         <a href="https://www.instagram.com/akserverstorage/" target="_blank" rel="noopener" aria-label="Instagram AkServer">
           <img src="icons/Instagram_Glyph_Gradient.svg
@@ -393,24 +396,17 @@
     }
   </script>
   <script>
-  // Toggle summary text on details open/close
-  document.querySelectorAll('details').forEach(details => {
-    const summary = details.querySelector('summary');
-    const openText = "Show less";
-    const closeText = "Learn more";
-
-    summary.textContent = closeText; // initial text
-
-    details.addEventListener('toggle', () => {
-      summary.textContent = details.open ? openText : closeText;
+    // Toggle summary text on details open/close
+    document.querySelectorAll('details').forEach(details => {
+      const summary = details.querySelector('summary');
+      const openText = "Show less";
+      const closeText = "Learn more";
+      summary.textContent = closeText; // initial text
+      details.addEventListener('toggle', () => {
+        summary.textContent = details.open ? openText : closeText;
+      });
     });
-  });
-</script>
+  </script>
 </body>
 
 </html>
-
-
-
-
-
