@@ -272,14 +272,14 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .left-column {
   flex: 1;
   min-width: 280px;
-  padding: 10px;
+  padding: 0;
   color: #333;
   font-size: 0.95rem;
   line-height: 1.7;
@@ -298,6 +298,16 @@ body {
   margin-bottom: 6px;
   font-size: 0.9rem;
   line-height: 1.6;
+}
+.left-column ul,
+.left-column ol {
+  padding-left: 1.2rem;   /* space for bullets */
+  margin-left: 0;        /* optional reset margin */
+}
+
+.problems,
+.benefits {
+  padding-left: 1.2rem;  /* add padding-left if these classes are on the lists */
 }
 
 .benefits {
@@ -336,11 +346,20 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
   transition: transform 0.2s ease;
 }
-
+.featureleft-card {
+  background-color: var(--panel);
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
 .feature-card:hover {
   transform: translateY(-3px);
 }
-
+.featureleft-card:hover {
+  transform: translateY(-3px);
+}
 .feature-card h3 {
   margin-top: 0;
   color: var(--brand-deep);
@@ -348,13 +367,13 @@ body {
   line-height: 1.5;
 }
 
+
 .feature-card p {
   margin: 6px 0 0;
   color: #333;
   font-size: 0.9rem;
   line-height: 1.6;
 }
-
 /* Features Section
 ================================= */
 .akserver-features-section {
@@ -449,6 +468,91 @@ details p {
   color: var(--muted);
   font-size: 0.9rem;
   line-height: 1.6;
+}
+/* New Features Section Layout */
+
+/* Container grid for features */
+.features-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem 1.5rem;
+  /* max-width kept as before */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Each feature as a card */
+.feature-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: var(--panel);
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 1rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+  flex-direction: row;
+  min-height: 140px;
+}
+
+.feature-row:hover,
+.feature-row:focus-within {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+/* Smaller icon, vertically centered */
+.feature-icon {
+  font-size: 2rem; /* slightly smaller */
+  flex-shrink: 0;
+  color: var(--brand-blue);
+  margin-top: 0.3rem;
+  user-select: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Feature content fills remaining space */
+.feature-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Adjust details summary to be smaller */
+details summary {
+  font-size: 0.88rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .features-list {
+    grid-template-columns: 1fr; /* stacked vertically on smaller screens */
+  }
+
+  .feature-row {
+    min-height: auto;
+    flex-direction: row; /* keep row for icon + text */
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-row {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: auto;
+  }
+
+  .feature-icon {
+    margin-bottom: 0.5rem;
+    width: auto;
+    height: auto;
+    font-size: 2.5rem;
+  }
 }
 
 /* How It Works Section
