@@ -13,6 +13,13 @@
   <!-- Favicon -->
   <link rel="icon" href="logo.png" type="image/png">
 
+  <!-- CSS Imports -->
+  <link rel="stylesheet" href="style.css?v=3.0.2">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
   <!-- Inline Styles -->
   <style>
     /* Theme Variables */
@@ -198,9 +205,70 @@
         max-height: none;
       }
     }
+    /* Footer */
+.footer {
+  background-color: var(--bg-light);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  border-top: 1px solid #ddd;
+  font-family: var(--font-family);
+  flex-shrink: 0;
+}
+
+.footer a {
+  color: var(--brand-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover,
+.footer a:focus {
+  color: #1a6edd;
+  text-decoration: underline;
+  outline: none;
+}
   </style>
 </head>
 <body>
+    <!-- Top Navigation Section -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="./">
+        <img src="logo.png" alt="AkServer Logo" style="height: 40px;">
+      </a>
+      <div class="bot-container">
+        <img src="https://akserverstorage.github.io/akserver-website/images/private_ai_bot.png" alt="Bot" class="bot-image">
+        <div class="cloud-text">
+          Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
+        </div>
+      </div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="install.html">Installation</a></li>
+        <li><a href="vision.html">Vision</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <!-- Add social icons container here -->
+      <div class="navbar-social">
+        <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
+          <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" />
+        </a>
+        <a href="https://x.com/akserverstorage" target="_blank" aria-label="Twitter AkServer" rel="noopener">
+          <img src="icons/logo-black.png" alt="Twitter" />
+        </a>
+      </div>
+
+    </nav>
+
+  </header>
   <!-- Header -->
   <header>
     <h1>AkServer Licenses & Privacy Documents</h1>
