@@ -859,7 +859,6 @@ nav ul {
   width: auto;
   display: block;
   vertical-align: middle;
-  filter: grayscale(100%);
   transition: filter 0.3s ease;
 }
 
@@ -867,3 +866,4 @@ nav ul {
 .navbar-social a:focus img {
   filter: grayscale(0%);
 }
+
