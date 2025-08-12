@@ -1,117 +1,142 @@
-/* ===============================
-   Base Reset & Global Styles
+/* Base Reset & Global Styles
 ================================= */
- /* === Theme variables === */
- :root {
-   --brand-blue: #2a8bff;
-   --brand-deep: #05445e;
-   --muted: #555;
-   --bg: #f1f3f6;
-   --panel: #ffffff;
-   --accent: #e6f0ff;
-   --radius: 12px;
- }
-/* ===============================
-   Navbar Styles
+:root {
+  --brand-blue: #2a8bff;
+  --brand-deep: #05445e;
+  --muted: #555;
+  --bg: #f1f3f6;
+  --panel: #ffffff;
+  --accent: #e6f0ff;
+  --radius: 12px;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial,
+    sans-serif;
+  background: var(--bg);
+  color: #222;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar Styles
 ================================= */
- /* Reset */
- * { box-sizing: border-box; margin: 0; padding: 0; }
- html { scroll-behavior: smooth; }
- body {
-   font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-   background: var(--bg);
-   color: #222;
-   line-height: 1.6;
-   -webkit-font-smoothing: antialiased;
-   min-height: 100vh;
-   display: flex;
-   flex-direction: column;
- }
-/* Navbar */
- .navbar {
-   background: var(--panel);
-   padding: 14px 20px;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-   position: sticky;
-   top: 0;
-   z-index: 40;
- }
- .navbar .logo img {
-   height: 38px;
-   display: block;
- }
- .navbar nav ul {
-   list-style: none;
-   display: flex;
-   gap: 18px;
-   align-items: center;
- }
- .navbar a {
-   color: #222;
-   text-decoration: none;
-   font-weight: 600;
-   font-size: 0.95rem;
- }
- .navbar a:hover,
- .navbar a:focus {
-   color: var(--brand-blue);
-   outline: none;
-   text-decoration: underline;
- }
-/* bot placement */
-  .bot-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    z-index: 5;
-    }
-  
-  .bot-image {
-    width: 50px;  /* adjust size */
-    height: auto;
-    display: block;
-    position: relative;
-    z-index: 6;
-    animation: float 3s ease-in-out infinite;
+.navbar {
+  background: var(--panel);
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.navbar .logo img {
+  height: 38px;
+  display: block;
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.navbar a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  color: var(--brand-blue);
+  outline: none;
+  text-decoration: underline;
+}
+
+/* Bot Container */
+.bot-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 5;
+}
+
+.bot-image {
+  width: 50px;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 6;
+  animation: float 3s ease-in-out infinite;
+}
+
+.cloud-text {
+  font-size: 12px;
+  line-height: 1;
+  color: #333;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  white-space: nowrap;
+  margin-top: 2px;
+  text-shadow: 0 0 2px rgba(42, 139, 255, 0.3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
   }
-  .cloud-text {
-    font-size: 12px;          /* text size */
-    line-height: 1;           /* line height */
-    color: #333;           /* brand blue color */
-    font-weight: 600;         /* semi-bold for emphasis */
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    white-space: nowrap;      /* keep on one line */
-    margin-top: 2px;          /* slight vertical alignment tweak */
-    text-shadow: 0 0 2px rgba(42, 139, 255, 0.3); /* subtle glow effect */
+  50% {
+    transform: translateY(-8px);
   }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 50px; /* space between logo image and bot container */
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
   }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+  50% {
+    opacity: 1;
   }
-  
-  @keyframes fadeInOut {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 1; }
-  }
-/* ===============================
-   Section Wrapper
+}
+
+/* Section Wrapper
 ================================= */
 .section {
-  padding: 5rem 1.5rem; /* Increased padding for better placement */
+  padding: 5rem 1.5rem;
   min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f1f3f6;
+  background-color: var(--bg);
 }
 
 .content {
@@ -119,17 +144,16 @@
   text-align: center;
 }
 
-/* ===============================
-   Home Page
+/* Home Page
 ================================= */
 .main-title {
-  font-size: 2.5rem; /* Adjusted size for balance */
-  color: #2a8bff;
-  line-height: 1.3; /* Adjusted height */
+  font-size: 2.5rem;
+  color: var(--brand-blue);
+  line-height: 1.3;
 }
 
 .tagline {
-  font-size: 1.25rem; /* Reduced for better hierarchy */
+  font-size: 1.25rem;
   color: #444;
   margin-top: 1rem;
   font-weight: 500;
@@ -137,26 +161,26 @@
 }
 
 .intro-message {
-  font-size: 1rem; /* Standard body size */
-  color: #555;
+  font-size: 1rem;
+  color: var(--muted);
   margin-top: 1rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.7; /* Improved spacing */
+  line-height: 1.7;
 }
 
 .strong-line {
-  font-size: 1.05rem; /* Slight reduction for balance */
+  font-size: 1.05rem;
   font-weight: 600;
-  color: #2a8bff;
+  color: var(--brand-blue);
   margin-top: 1.2rem;
   line-height: 1.5;
 }
 
 .subtitle {
   font-size: 1rem;
-  color: #555;
+  color: var(--muted);
   margin-top: 1rem;
   line-height: 1.7;
 }
@@ -164,10 +188,10 @@
 .btn-primary {
   display: inline-block;
   margin-top: 2rem;
-  padding: 0.8rem 1.8rem; /* Adjusted for better placement */
+  padding: 0.8rem 1.8rem;
   font-size: 0.95rem;
-  color: #ffffff;
-  background-color: #2a8bff;
+  color: #fff;
+  background-color: var(--brand-blue);
   border: none;
   border-radius: 8px;
   text-decoration: none;
@@ -181,16 +205,15 @@
   transform: translateY(-2px);
 }
 
-/* ===============================
-   AkServer Flow Diagram
+/* AkServer Flow Diagram
 ================================= */
 .flow-diagram {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  gap: 1.2rem; /* Adjusted gap for placement */
-  margin-top: 2.5rem; /* Better spacing */
+  gap: 1.2rem;
+  margin-top: 2.5rem;
   padding: 1.2rem;
   background-color: #f7fafd;
   border-radius: 10px;
@@ -201,34 +224,36 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 120px; /* Adjusted for balance */
+  width: 120px;
   text-align: center;
   padding: 0.5rem;
 }
 
 .flow-icon {
-  font-size: 2.2rem; /* Slight reduction for fit */
+  font-size: 2.2rem;
   margin-bottom: 0.3rem;
 }
 
 .flow-title {
   font-weight: bold;
-  font-size: 0.95rem; /* Consistent size */
+  font-size: 0.95rem;
   color: #333;
   line-height: 1.4;
 }
 
 .flow-sub {
-  font-size: 0.8rem; /* Reduced for subtext */
+  font-size: 0.8rem;
   color: #666;
   line-height: 1.4;
 }
 
 .flow-arrow {
-  font-size: 1.8rem; /* Adjusted for alignment */
+  font-size: 1.8rem;
   color: #999;
 }
 
+/* About Section
+================================= */
 .akserver-section {
   background-color: #f5f5f5;
   padding: 40px 20px;
@@ -237,8 +262,8 @@
 
 .section-title {
   text-align: center;
-  color: #05445e;
-  font-size: 1.75rem; /* Reduced for balance */
+  color: var(--brand-deep);
+  font-size: 1.75rem;
   margin-bottom: 25px;
   line-height: 1.5;
 }
@@ -256,13 +281,13 @@
   min-width: 280px;
   padding: 10px;
   color: #333;
-  font-size: 0.95rem; /* Consistent body size */
+  font-size: 0.95rem;
   line-height: 1.7;
 }
 
 .left-column .intro {
   font-weight: bold;
-  font-size: 1.15rem; /* Slight reduction */
+  font-size: 1.15rem;
   margin-bottom: 15px;
   color: #189ab4;
   line-height: 1.5;
@@ -271,7 +296,7 @@
 .problems li,
 .benefits li {
   margin-bottom: 6px;
-  font-size: 0.9rem; /* Adjusted for list items */
+  font-size: 0.9rem;
   line-height: 1.6;
 }
 
@@ -290,7 +315,7 @@
 .punchline {
   margin-top: 25px;
   font-style: italic;
-  color: #05445e;
+  color: var(--brand-deep);
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -304,7 +329,7 @@
 }
 
 .feature-card {
-  background-color: #ffffff;
+  background-color: var(--panel);
   border: 1px solid #ddd;
   padding: 15px;
   border-radius: 10px;
@@ -318,8 +343,8 @@
 
 .feature-card h3 {
   margin-top: 0;
-  color: #05445e;
-  font-size: 1.1rem; /* Balanced size */
+  color: var(--brand-deep);
+  font-size: 1.1rem;
   line-height: 1.5;
 }
 
@@ -330,8 +355,7 @@
   line-height: 1.6;
 }
 
-/* ===============================
-   Features Section
+/* Features Section
 ================================= */
 .akserver-features-section {
   max-width: 900px;
@@ -351,24 +375,24 @@
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  background-color: #fff;
+  background-color: var(--panel);
   border-radius: 10px;
   border: 1px solid #ddd;
   padding: 1rem 1.2rem;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.3s ease;
 }
 
 .feature-row:hover,
 .feature-row:focus-within {
-  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   outline: none;
 }
 
 .feature-icon {
-  font-size: 2.5rem; /* Slight reduction for fit */
+  font-size: 2.5rem;
   flex-shrink: 0;
-  color: #2a8bff;
+  color: var(--brand-blue);
   margin-top: 0.2rem;
   user-select: none;
 }
@@ -379,15 +403,15 @@
 
 .feature-content h3 {
   margin-bottom: 0.25rem;
-  color: #05445e;
+  color: var(--brand-deep);
   font-weight: 700;
-  font-size: 1.1rem; /* Balanced */
+  font-size: 1.1rem;
   line-height: 1.5;
 }
 
 .summary {
   color: #444;
-  font-size: 0.95rem; /* Consistent body */
+  font-size: 0.95rem;
   margin-bottom: 0.5rem;
   line-height: 1.6;
 }
@@ -395,69 +419,57 @@
 details summary {
   cursor: pointer;
   font-weight: 600;
-  color: #2a8bff;
+  color: var(--brand-blue);
   list-style: none;
   outline: none;
   user-select: none;
   display: inline-flex;
   align-items: center;
-  font-size: 0.9rem; /* Adjusted size */
+  font-size: 0.9rem;
 }
 
 details summary::-webkit-details-marker {
-  display: none; /* Hide default browser marker to avoid double icons */
+  display: none;
 }
 
 details summary::after {
-  content: " ▼"; /* Single custom arrow */
+  content: " ▼";
   font-size: 0.8rem;
-  color: #2a8bff;
+  color: var(--brand-blue);
   transition: transform 0.2s;
 }
 
 details[open] summary::after {
-  content: " ▲"; /* Rotated for open state */
+  content: " ▲";
   color: #1a6edd;
 }
 
 details p {
   margin-top: 0.5rem;
-  color: #555;
+  color: var(--muted);
   font-size: 0.9rem;
   line-height: 1.6;
 }
 
-/* Responsive: stack on small screens */
-@media (max-width: 700px) {
-  .feature-row {
-    flex-direction: column;
-  }
-
-  .feature-icon {
-    margin-top: 0;
-  }
-}
-
-/* ===============================
-   How It Works Section
+/* How It Works Section
 ================================= */
 .how-it-works h2 {
-  font-size: 1.75rem; /* Balanced size */
-  color: #2a8bff;
-  margin-bottom: 2.5rem; /* Better spacing */
+  font-size: 1.75rem;
+  color: var(--brand-blue);
+  margin-bottom: 2.5rem;
   line-height: 1.5;
 }
 
 .steps {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* Adjusted for height */
+  gap: 1.5rem;
   max-width: 800px;
   margin: 0 auto;
 }
 
 .step {
-  background: #ffffff;
+  background: var(--panel);
   padding: 1.2rem;
   border-radius: 10px;
   border: 1px solid #dcdcdc;
@@ -471,8 +483,8 @@ details p {
 }
 
 .step-number {
-  font-size: 1.8rem; /* Adjusted for fit */
-  background: #2a8bff;
+  font-size: 1.8rem;
+  background: var(--brand-blue);
   color: #fff;
   width: 45px;
   height: 45px;
@@ -493,31 +505,33 @@ details p {
 }
 
 .step p {
-  color: #555;
+  color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.6;
 }
 
-/* ===============================
-   Use Case Carousel
+/* Use Case Carousel
 ================================= */
 .akserver-usecases-section {
-  background-color: #ffffff;
+  background-color: var(--panel);
   padding: 40px 20px;
   font-family: "Segoe UI", sans-serif;
 }
+
 .akserver-usecases-section .section-title {
   text-align: center;
-  color: #05445e;
+  color: var(--brand-deep);
   font-size: 1.75rem;
   margin-bottom: 30px;
   line-height: 1.5;
 }
+
 .carousel-container {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 10px;
 }
+
 .carousel-track {
   display: flex;
   gap: 20px;
@@ -525,18 +539,7 @@ details p {
   scroll-snap-type: x mandatory;
   scroll-padding: 0 10px;
 }
-.carousel-card h3 {
-  margin-top: 0;
-  font-size: 1.1rem;
-  color: #05445e;
-  line-height: 1.5;
-}
-.carousel-card p {
-  color: #333;
-  font-size: 0.9rem;
-  margin-top: 8px;
-  line-height: 1.6;
-}
+
 .carousel-card {
   min-width: auto;
   background-color: #f5f5f5;
@@ -546,34 +549,26 @@ details p {
   scroll-snap-align: start;
   transition: transform 0.3s ease;
 }
-/* Mobile view: show smaller width cards so user can swipe */
-@media (max-width: 768px) {
-  .carousel-card {
-    min-width: 80%; /* Adjust so one card mostly fills mobile screen */
-  }
+
+.carousel-card h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: var(--brand-deep);
+  line-height: 1.5;
 }
 
-/* Desktop view: show cards in grid without horizontal scrolling if preferred */
-@media (min-width: 769px) {
-  .carousel-container {
-    overflow-x: hidden;
-  }
-  .carousel-track {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .carousel-card {
-    min-width: 260px; /* Standard card size for desktop */
-    flex: 1 1 calc(33.333% - 20px);
-    max-width: 320px;
-  }
+.carousel-card p {
+  color: #333;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  line-height: 1.6;
 }
-/* ===============================
-   Contact Section
+
+/* Contact Section
 ================================= */
 .contact {
   background: #f9f9f9;
-  padding-bottom: 5rem; /* Adjusted for better height */
+  padding-bottom: 5rem;
 }
 
 .contact-form {
@@ -603,12 +598,12 @@ details p {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #2a8bff;
+  border-color: var(--brand-blue);
   box-shadow: 0 0 5px rgba(42, 139, 255, 0.2);
 }
 
 .contact-form button {
-  background-color: #2a8bff;
+  background-color: var(--brand-blue);
   color: #fff;
   padding: 0.75rem;
   border: none;
@@ -622,15 +617,14 @@ details p {
   background-color: #1a6edd;
 }
 
-/* ===============================
-   Footer
+/* Footer
 ================================= */
 .footer {
-  background-color: #f1f3f6;
+  background-color: var(--bg);
   padding: 1.5rem 1rem;
   text-align: center;
   font-size: 0.9rem;
-  color: #000000;
+  color: #000;
   border-top: 1px solid #ddd;
   font-family: "Segoe UI", sans-serif;
 }
@@ -641,7 +635,7 @@ details p {
 }
 
 .footer-link {
-  color: #2a8bff;
+  color: var(--brand-blue);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
@@ -654,9 +648,7 @@ details p {
   outline: none;
 }
 
-
-/* ===============================
-   Responsive
+/* Responsive Styles
 ================================= */
 @media (max-width: 992px) {
   .section-title {
@@ -681,37 +673,58 @@ details p {
   }
 
   .carousel-card {
-    flex: 0 0 80%;
+    min-width: 80%;
   }
-}
 
-@media (max-width: 768px) {
   .flow-diagram {
-    flex-wrap: wrap; /* allow wrapping on smaller screens */
+    flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem;
   }
 
   .flow-step {
-    width: 45%; /* two items per row for tablets/phones */
+    width: 45%;
   }
 
   .flow-arrow {
-    display: flex; /* hide arrows on mobile for cleaner look */
+    display: flex;
   }
-}
 
-@media (max-width: 480px) {
-  .flow-step {
-    width: 100%; /* single column on very small screens */
-  }
-}
-@media (max-width: 768px) {
   .bot-container {
     right: 20px;
     top: -60px;
   }
 }
 
+@media (max-width: 700px) {
+  .feature-row {
+    flex-direction: column;
+  }
 
+  .feature-icon {
+    margin-top: 0;
+  }
+}
 
+@media (max-width: 480px) {
+  .flow-step {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .carousel-container {
+    overflow-x: hidden;
+  }
+
+  .carousel-track {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .carousel-card {
+    min-width: 260px;
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: 320px;
+  }
+}
