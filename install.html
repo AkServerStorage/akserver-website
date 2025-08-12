@@ -597,6 +597,27 @@
         justify-content: center;
       }
     }
+
+    /* social media icons */
+    .navbar-social {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .navbar-social img {
+      height: 20px;
+      /* smaller, matches text roughly */
+      width: auto;
+      display: block;
+      vertical-align: middle;
+      transition: filter 0.3s ease;
+    }
+
+    .navbar-social a:hover img,
+    .navbar-social a:focus img {
+      filter: grayscale(0%);
+    }
   </style>
 </head>
 
@@ -622,7 +643,18 @@
         <li><a href="install.html">Installation</a></li>
         <li><a href="vision.html" class="active">Vision</a></li>
         <li><a href="./#contact">Contact</a></li>
+        <!-- Add social icons container here -->
+        <div class="navbar-social">
+          <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
+            <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" />
+          </a>
+          <a href="https://x.com/akserverstorage" target="_blank" aria-label="Twitter AkServer" rel="noopener">
+            <img src="icons/logo-black.png" alt="Twitter" />
+          </a>
+        </div>
+
       </ul>
+
     </nav>
   </header>
 
