@@ -1,0 +1,15 @@
+AkServer - Local Secure File Server
+
+AkServer is a local file server designed for personal use, offering secure local file upload and access capabilities.
+
+Copyright (C) 2025 AkServer
+
+This software is proprietary and is licensed, not sold. All rights reserved.
+
+You are granted a non-exclusive, non-transferable, revocable license to use this software in its current form, for evaluation or limited usage purposes as defined by the accompanying EULA.
+
+This software may include third-party libraries that are governed by their respective licenses (see THIRD_PARTY_LICENSES.txt). AkServer does not claim ownership of any third-party packages.
+
+Unauthorized copying, modification, resale, or reverse engineering of this software is strictly prohibited unless explicitly permitted.
+
+For commercial licensing or redistribution inquiries, contact: akserverstorage@gmail.com

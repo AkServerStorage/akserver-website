@@ -1,0 +1,182 @@
+AkServer - Privacy Policy
+
+Effective Date: July 29, 2025
+Last Updated: July 29, 2025
+
+This Privacy Policy describes how AkServer ("we", "us", or "our") collects, uses, and safeguards information in connection with your use of the AkServer desktop software and related services ("Application").
+
+AkServer is a local file-serving software with no default connectivity to external servers. We are committed to protecting your privacy and minimizing data collection.
+
+
+---
+
+1. Information We Collect
+
+AkServer is designed to operate locally, meaning most of the data remains entirely on your system. However, the Application may collect or process the following categories of information:
+
+a. Local Usage and Diagnostic Data
+
+What is collected:
+Timestamps, anonymized device_id, installation time, local system specs (e.g., platform, OS version, timezone, language, screen resolution), license state, and local error logs.
+
+Why it's collected:
+To help improve functionality, monitor trial status, and support user troubleshooting.
+
+Where it’s stored:
+Only on your local device.
+
+Sent externally?
+No.
+
+
+
+---
+
+b. Device Authentication Data
+
+What is collected:
+Locally generated device tokens, OTP (one-time password) session information, and registered device names.
+
+Purpose:
+To authenticate access to your AkServer instance from your trusted devices only.
+
+Where it’s stored:
+Locally, using secure methods such as encryption or hashed storage.
+
+Sent externally?
+No.
+
+
+
+---
+
+c. File and Media Content
+
+What is collected:
+Nothing explicitly collected. You use AkServer to serve files (images, videos, docs) already stored on your device.
+
+How it’s used:
+Files are streamed or accessed within your local network. AkServer does not copy or scan your files.
+
+Sent externally?
+No.
+
+
+
+---
+
+d. Licensing and Payment Information
+
+As of this policy’s date, AkServer does not collect any payment or personal licensing credentials.
+
+If paid licensing is introduced, this policy will be updated, and you will be notified.
+
+
+
+---
+
+2. How We Use Information
+
+All information is used locally and never sent to AkServer servers. Usage includes:
+
+Enabling secure local file serving.
+
+Managing your trial license and unlocking features.
+
+Diagnosing issues using local-only logs.
+
+Preventing unauthorized device access.
+
+Improving performance through aggregated, anonymized local data.
+
+
+We do not use your data for:
+
+Advertising
+
+User profiling
+
+Behavioral tracking
+
+Cloud storage or analytics
+
+
+
+---
+
+3. Data Storage and Security
+
+All data is stored on your device. We implement measures such as:
+
+Local encryption/hashing of sensitive info
+
+Local-only token validation
+
+Clear-text logging disabled by default
+
+
+No internet-based storage or cloud backups are included in the application unless explicitly enabled by you (in future versions).
+
+
+---
+
+4. Data Sharing and Disclosure
+
+AkServer does not share, transmit, or disclose any user data to:
+
+AkServer developers or staff
+
+Third-party analytics companies
+
+Cloud platforms
+
+
+We will only disclose information if legally required, such as:
+
+A valid court order, subpoena, or government regulation
+
+To enforce licensing violations or security incidents
+
+
+
+---
+
+5. Your Rights and Choices
+
+You have full control over your data:
+
+Access or delete local data manually from your system.
+
+Remove all stored data by uninstalling AkServer.
+
+Revoke or reset trusted devices via the local settings UI.
+
+
+As data is stored locally, there is no cloud “account” to delete or recover.
+
+
+---
+
+6. Changes to This Policy
+
+We may revise this policy to reflect new functionality, changes in applicable law, or future licensing models.
+
+All changes will be:
+
+Posted on our official website: https://akserver.in
+
+Displayed on the app interface if relevant
+
+Timestamped at the top of this document
+
+
+You are encouraged to check for updates periodically.
+
+
+---
+
+7. Contact Information
+
+For privacy questions, feedback, or licensing help, contact:
+📧 akserverstorage@gmail.com
+🌐 **https://akserver.in**

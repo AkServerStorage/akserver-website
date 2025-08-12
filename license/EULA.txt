@@ -1,0 +1,83 @@
+WELCOME TO AKSERVER
+====================
+
+AkServer – Your Personal Cloud Storage System
+
+AkServer transforms your PC into a private, secure cloud solution.
+Upload files, manage devices, and access everything locally — no internet required.
+
+Fast. Private. Yours.
+Your Files. Your Network. Your Control.
+
+---
+END USER LICENSE AGREEMENT (EULA) FOR AKSERVER
+Last Updated: 29 July 2025
+
+IMPORTANT — PLEASE READ THIS AGREEMENT CAREFULLY BEFORE INSTALLING OR USING THIS SOFTWARE.
+
+This End User License Agreement ("Agreement") is a legal agreement between you (either an individual or a single entity) and Akshay Ashok Shinde, an individual software developer based in India ("Licensor"), for the software product "AkServer" ("Software").
+
+By installing, copying, or otherwise using the Software, you agree to be bound by the terms of this Agreement.
+
+1. Grant of License
+The Licensor grants you a non-exclusive, non-transferable, revocable license to install and use one copy of the Software on a single computer system owned or controlled by you, for personal or internal business use only.
+
+2. Free, Trial, or Freemium Use
+This Software may be provided as a free, trial, or freemium version with limited features or time-based access. Continued use beyond the trial period or unlocking premium features may require a valid license purchase, if applicable.
+
+3. Intellectual Property Rights
+All rights, title, and interest in and to the Software—including but not limited to its source code, design, branding, and documentation—are owned by the Licensor. This Agreement does not transfer ownership, only limited usage rights as explicitly stated.
+
+4. Restrictions
+You agree not to:
+
+Reverse engineer, decompile, or disassemble the Software;
+
+Modify, adapt, or create derivative works;
+
+Rent, sublicense, sell, or distribute the Software;
+
+Remove or obscure copyright or branding notices.
+
+5. Privacy Policy
+Your use of the Software is subject to the AkServer Privacy Policy, available at:
+👉 [Insert Link to Privacy Policy]
+
+5A. Data Collection & User Consent
+AkServer may collect limited non-personal system data, such as:
+
+Installation time and activity timestamps
+
+System-generated device ID
+
+OS platform, architecture, and language
+
+Trial usage duration and AkServer version
+
+✅ No personal files or identities are collected.
+📌 By using this software, you consent to this data being collected strictly for internal trial validation and product improvement.
+
+6. Third-Party Licenses
+The Software may include third-party libraries, each governed by their own licenses. These can be found in THIRD_PARTY_LICENSES.txt or within the software documentation.
+
+7. Termination
+This Agreement is effective until terminated. If you breach any term of this Agreement, the license will terminate automatically. Upon termination, you must delete all copies of the Software.
+
+8. Warranty Disclaimer
+The Software is provided "as is", without any warranty. The Licensor disclaims all implied warranties, including merchantability and fitness for a particular purpose.
+
+9. Limitation of Liability
+The Licensor shall not be liable for any direct or indirect damages, including data loss, downtime, or business interruption, even if advised of such possibilities.
+
+10. Governing Law
+This Agreement shall be governed by the laws of India. All disputes shall be subject to the exclusive jurisdiction of courts in Hubballi, Karnataka, India.
+
+11. Entire Agreement
+This document constitutes the entire agreement between you and the Licensor regarding the Software.
+
+12. Contact Information
+Licensor: Akshay Ashok Shinde
+Email: akserverstorage@gmail.com
+Address: H No 43, Ravinagar Gokulroad, Hubballi, Karnataka, 580030, India
+
+© 2025 Akshay Ashok Shinde (AkServer). All rights reserved.
