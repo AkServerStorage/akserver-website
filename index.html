@@ -89,25 +89,26 @@
       </div>
     </div>
   </section>
-
   <!-- About Section -->
   <section id="about" class="akserver-section">
     <h2 class="section-title">💡 Why AkServer</h2>
     <div class="split-columns">
       <div class="left-column">
-        <p class="intro">The Cloud Was Never Yours.</p>
-        <ul class="problems">
-          <li>📁 Uploads leave a trail.</li>
-          <li>🖱️ Clicks carry risk.</li>
-          <li>🛡️ Privacy should never be optional.</li>
-        </ul>
-        <p class="solution">AkServer is your private, offline file system — fully under your control.</p>
-        <ul class="benefits">
-          <li>🚫 No Internet</li>
-          <li>💸 No Subscriptions</li>
-          <li>👀 No Spying</li>
-        </ul>
-        <p class="punchline">Just launch AkServer — and you're in control.</p>
+        <div class="featureleft-card">
+          <p class="intro">The Cloud Was Never Yours.</p>
+          <ul class="problems">
+            <li>📁 Uploads leave a trail.</li>
+            <li>🖱️ Clicks carry risk.</li>
+            <li>🛡️ Privacy should never be optional.</li>
+          </ul>
+          <p class="solution">AkServer is your private, offline file system — fully under your control.</p>
+          <ul class="benefits">
+            <li>🚫 No Internet</li>
+            <li>💸 No Subscriptions</li>
+            <li>👀 No Spying</li>
+          </ul>
+          <p class="punchline">Just launch AkServer — and you're in control.</p>
+        </div>
       </div>
       <div class="right-column">
         <div class="feature-card">
@@ -310,17 +311,32 @@
       </form>
     </div>
   </section>
-
   <!-- Footer -->
-  <footer class="footer">
-    <p style="margin: 0;">
-      <img src="logo.png" alt="AkServer Logo" style="height: 20px; vertical-align: middle; margin-right: 6px;">
-      &copy; 2025 AkServer. All rights reserved.
-      &nbsp;|&nbsp;
-      <a href="privacy.html" target="_blank" rel="noopener noreferrer" style="color: #2a8bff; text-decoration: none; font-weight: 500;" aria-label="View Licenses, Privacy Policy, and EULA">
-        Licenses, Privacy & EULA
-      </a>
-    </p>
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container" style="text-align: center;">
+      <p style="margin: 0; display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+        <img src="logo.png" alt="AkServer Logo" style="height: 20px;" />
+        &copy; 2025 AkServer. All rights reserved.
+        &nbsp;|&nbsp;
+        <a href="privacy.html" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: none; font-weight: 500;" aria-label="View Licenses, Privacy Policy, and EULA">
+          Licenses, Privacy & EULA
+        </a>
+      </p>
+
+      <p style="margin-top: 12px; margin-bottom: 0;">Follow us on:</p>
+
+      <nav aria-label="Social media links" style="display: inline-flex; gap: 12px;">
+        <a href="https://www.instagram.com/akserverstorage/" target="_blank" rel="noopener" aria-label="Instagram AkServer">
+          <img src="icons/instagram.svg" alt="Instagram" width="24" height="24" />
+        </a>
+        <a href="https://x.com/akserverstorage" target="_blank" rel="noopener" aria-label="Twitter AkServer">
+          <img src="icons/twitter.svg" alt="Twitter" width="24" height="24" />
+        </a>
+        <a href="https://t.me/akserverstorage" target="_blank" rel="noopener" aria-label="Telegram AkServer">
+          <img src="icons/telegram.svg" alt="Telegram" width="24" height="24" />
+        </a>
+      </nav>
+    </div>
   </footer>
 
   <!-- Scripts -->
