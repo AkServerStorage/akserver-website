@@ -301,13 +301,13 @@ body {
 }
 .left-column ul,
 .left-column ol {
-  padding-left: 1.2rem;   /* space for bullets */
-  margin-left: 0;        /* optional reset margin */
+  padding-left: 1.2rem; /* space for bullets */
+  margin-left: 0; /* optional reset margin */
 }
 
 .problems,
 .benefits {
-  padding-left: 1.2rem;  /* add padding-left if these classes are on the lists */
+  padding-left: 1.2rem; /* add padding-left if these classes are on the lists */
 }
 
 .benefits {
@@ -366,7 +366,6 @@ body {
   font-size: 1.1rem;
   line-height: 1.5;
 }
-
 
 .feature-card p {
   margin: 6px 0 0;
@@ -831,4 +830,40 @@ details summary {
     flex: 1 1 calc(33.333% - 20px);
     max-width: 320px;
   }
+}
+/* social media icons */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px; /* optional spacing */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-social {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.navbar-social img {
+  height: 20px; /* smaller, matches text roughly */
+  width: auto;
+  display: block;
+  vertical-align: middle;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.navbar-social a:hover img,
+.navbar-social a:focus img {
+  filter: grayscale(0%);
 }
