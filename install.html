@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Install AkServer — Detailed Instructions</title>
-  <meta name="description" content="Step-by-step installation guide for AkServer. Screenshots, troubleshooting, and download links." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AkServer lets you build your own private file sync system, fully offline and customizable — designed for total control over your data." />
+  <meta name="keywords" content="offline file sync, private cloud, local network sharing, AkServer, secure file sharing" />
+  <meta name="author" content="AkServer Team - Akshay Shinde" />
+<meta name="description" content="Step-by-step installation guide for AkServer. Screenshots, troubleshooting, and download links." />
   <meta property="og:title" content="Install AkServer — Detailed Instructions" />
   <meta property="og:description" content="Step-by-step installation guide for AkServer. Screenshots, troubleshooting, and download links." />
-  <meta property="og:image" content="https://yourdomain.com/images/preview.png" />
-  <meta property="og:url" content="https://yourdomain.com/install.html" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="favicon-180.png" />
+  <title>Install AkServer — Detailed Instructions</title>
+
+  <!-- ===== Favicon (Logo as Icon) ===== -->
+  <link rel="icon" href="logo.png" type="image/png" />
+
+  <!-- ===== CSS Imports ===== -->
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" as="style" />
   <link rel="preload" href="logo.png" as="image" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
+  
   <style>
     /* === Theme variables === */
     :root {
@@ -76,7 +82,47 @@
       outline: none;
       text-decoration: underline;
     }
-
+  /* bot placement */
+  .bot-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 5;
+    }
+  
+  .bot-image {
+    width: 50px;  /* adjust size */
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 6;
+    animation: float 3s ease-in-out infinite;
+  }
+  .cloud-text {
+    font-size: 12px;          /* text size */
+    line-height: 1;           /* line height */
+    color: #333;           /* brand blue color */
+    font-weight: 600;         /* semi-bold for emphasis */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    white-space: nowrap;      /* keep on one line */
+    margin-top: 2px;          /* slight vertical alignment tweak */
+    text-shadow: 0 0 2px rgba(42, 139, 255, 0.3); /* subtle glow effect */
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* space between logo image and bot container */
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
     /* Page container */
     main.page {
       flex: 1 0 auto;
@@ -479,15 +525,28 @@
 </head>
 <body>
   <!-- NAV -->
-  <header class="navbar" role="banner">
-    <div class="logo">
-      <a href="./" aria-label="Go to AkServer homepage"><img src="logo.png" alt="AkServer Logo" /></a>
+  <header class="navbar">
+ <div class="logo">
+  <a href="./">
+    <img src="logo.png" alt="AkServer Logo" style="height: 40px;" />
+  </a>
+  <div class="bot-container">
+    <img src="https://akserverstorage.github.io/akserver-website/images/private_ai_bot.png" alt="Bot" class="bot-image" />
+    <div class="cloud-text">
+Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
     </div>
-    <nav role="navigation" aria-label="Main site navigation">
+  </div>
+</div>
+
+    <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#why-akserver">Why AkServer?</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="install.html">Installation</a></li>  <!-- Go to install.html page -->
+<li><a href="vision.html">Vision</a></li>  <!-- Go to vision.html page -->
+
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
