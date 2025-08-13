@@ -1,0 +1,430 @@
+/* ==========================================================================
+   Global Variables & Reset
+   ========================================================================== */
+:root {
+  --brand-blue: #2980b9;
+  --brand-deep: #189ab4;
+  --dark-blue: #2c3e50;
+  --text-dark: #222;
+  --text-muted: #666;
+  --muted: #666;
+  --bg-light: #fff;
+  --panel: #f5f5f5;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --bg: var(--bg-light);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-dark);
+  background-color: #f9f9f9;
+  margin: 0;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   Navbar Styles
+   ========================================================================== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  background-color: var(--bg-light);
+  box-shadow: 0 2px 5px var(--shadow-light);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 48px;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.navbar .logo img {
+  height: 32px;
+  display: block;
+}
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar .nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: var(--dark-blue);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar a:hover,
+.navbar a:focus-visible {
+  color: var(--brand-blue);
+  text-decoration: underline;
+  transform: translateY(-2px);
+}
+
+.navbar a.active {
+  color: var(--brand-deep);
+  font-weight: 700;
+}
+
+/* Bot Container */
+.bot-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bot-image {
+  width: 28px;
+  height: auto;
+  display: block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.cloud-text {
+  font-size: 0.7rem;
+  color: #222;
+  font-weight: 600;
+  text-shadow: 0 0 2px rgba(42, 139, 255, 0.2);
+  line-height: 1.2;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  background: none;
+  color: #000;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.2s ease;
+  order: -1;
+}
+
+.hamburger:hover,
+.hamburger:focus {
+  transform: scale(1.1);
+  outline: none;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  background-color: var(--bg-light);
+  position: fixed;
+  top: 48px;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  box-shadow: 0 2px 5px var(--shadow-light);
+  z-index: 999;
+}
+
+.mobile-menu.active {
+  display: block;
+  height: 260px;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.mobile-menu li a {
+  font-size: 1rem;
+  color: var(--dark-blue);
+  text-decoration: none;
+  padding: 0.5rem;
+  display: block;
+}
+
+.mobile-menu li a:hover,
+.mobile-menu li a:focus {
+  color: var(--brand-blue);
+  background-color: #f7fafd;
+  border-radius: 4px;
+}
+
+/* Social Icons */
+.navbar-social {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.navbar-social img {
+  height: 18px;
+  width: auto;
+  transition: filter 0.3s ease;
+}
+
+.navbar-social a:hover img,
+.navbar-social a:focus img {
+  filter: brightness(1.2);
+}
+
+.mobile-menu .navbar-social {
+  padding: 1rem;
+  justify-content: center;
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ==========================================================================
+   Vision Section Styles
+   ========================================================================== */
+.vision-section {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: 48px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.vision-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: #007bff;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vision-text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.highlight {
+  color: #007bff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.highlight:hover {
+  color: #0056b3;
+}
+
+.vision-icon {
+  margin-top: 40px;
+}
+
+.icon-image {
+  max-width: 150px;
+  height: auto;
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icon-image:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Footer Styles
+   ========================================================================== */
+.footer {
+  background-color: var(--bg-light);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  border-top: 1px solid #ddd;
+  font-family: var(--font-family);
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer a {
+  color: var(--brand-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover,
+.footer a:focus {
+  color: #1a6edd;
+  text-decoration: underline;
+  outline: none;
+}
+
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.6rem 1rem;
+    height: 46px;
+    justify-content: space-between;
+  }
+
+  .navbar .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar .logo img {
+    height: 28px;
+  }
+
+  .bot-container {
+    gap: 6px;
+  }
+
+  .bot-image {
+    width: 24px;
+  }
+
+  .cloud-text {
+    font-size: 0.65rem;
+  }
+
+  .vision-section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .vision-text {
+    font-size: 1rem;
+  }
+
+  .icon-image {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.5rem 0.8rem;
+    height: 44px;
+  }
+
+  .navbar .logo img {
+    height: 24px;
+  }
+
+  .bot-image {
+    width: 20px;
+  }
+
+  .cloud-text {
+    font-size: 0.6rem;
+  }
+
+  .mobile-menu.active {
+    height: 240px;
+  }
+
+  .vision-section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .vision-text {
+    font-size: 0.9rem;
+  }
+
+  .icon-image {
+    max-width: 100px;
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar .logo {
+    justify-content: flex-start;
+  }
+}
