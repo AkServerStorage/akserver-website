@@ -1120,8 +1120,10 @@ nav ul {
   }
 }
 .inline-icon {
-  width: 1.2em;
-  height: 1.2em;
-  vertical-align: middle;
-  margin-right: 0.4em;
+  width: 1em;               /* exactly matches text height */
+  height: 1em;
+  vertical-align: -0.125em; /* fine-tuned for bold baseline */
+  margin-left: 0.3em;       /* space after text */
 }
+
+
