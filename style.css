@@ -1,12 +1,12 @@
-/* Base Reset & Global Styles
-================================= */
+/* ==========================================================================
+   Global Variables & Reset
+   ========================================================================== */
 :root {
   --brand-blue: #2980b9;
   --brand-deep: #189ab4;
   --dark-blue: #2c3e50;
   --text-dark: #222;
   --text-muted: #666;
-  --muted: #666;
   --bg-light: #fff;
   --panel: #f5f5f5;
   --shadow-light: rgba(0, 0, 0, 0.1);
@@ -15,7 +15,6 @@
   --bg: var(--bg-light);
 }
 
-/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -35,12 +34,13 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Navbar Styles
-================================= */
+/* ==========================================================================
+   Navbar Styles
+   ========================================================================== */
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Hamburger on left, logo centered, nav-links on right */
+  justify-content: space-between;
   padding: 0.8rem 1rem;
   background-color: var(--bg-light);
   box-shadow: 0 2px 5px var(--shadow-light);
@@ -48,15 +48,17 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000;
-  height: 48px; /* Compact, matches Lenovo */
+  height: 48px;
 }
 
 .navbar .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-grow: 1;
-  justify-content: center; /* Center logo and bot-container */
+  margin-left: auto;
+  margin-right: auto;
+  flex-grow: 0;
+  max-width: 70%;
 }
 
 .navbar .logo img {
@@ -117,15 +119,15 @@ body {
 
 /* Hamburger Button */
 .hamburger {
-  display: none; /* Hidden on desktop */
-  background: none; /* No background, like Lenovo */
-  color: #000; /* Black icon */
+  display: none;
+  background: none;
+  color: #000;
   border: none;
-  font-size: 1.5rem; /* Slightly larger for clarity */
+  font-size: 1.5rem;
   cursor: pointer;
   padding: 0.5rem;
   transition: transform 0.2s ease;
-  order: -1; /* Places hamburger before logo */
+  order: -1;
 }
 
 .hamburger:hover,
@@ -139,7 +141,7 @@ body {
   display: none;
   background-color: var(--bg-light);
   position: fixed;
-  top: 48px; /* Below navbar */
+  top: 48px;
   left: 0;
   width: 100%;
   height: 0;
@@ -185,8 +187,10 @@ body {
 }
 
 .navbar-social img {
-  height: 18px;
+  height: 20px;
   width: auto;
+  display: block;
+  vertical-align: middle;
   transition: filter 0.3s ease;
 }
 
@@ -202,69 +206,18 @@ body {
 
 /* Animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0.6rem 1rem;
-    height: 46px;
-    justify-content: space-between; /* Keep hamburger on left, logo centered */
+  0%,
+  100% {
+    transform: translateY(0);
   }
-
-  .navbar .nav-links {
-    display: none; /* Hide desktop links */
-  }
-
-  .hamburger {
-    display: block; /* Show hamburger on mobile */
-  }
-
-  .navbar .logo img {
-    height: 28px;
-  }
-
-  .bot-container {
-    gap: 6px;
-  }
-
-  .bot-image {
-    width: 24px;
-  }
-
-  .cloud-text {
-    font-size: 0.65rem;
+  50% {
+    transform: translateY(-5px);
   }
 }
 
-@media (max-width: 480px) {
-  .navbar {
-    padding: 0.5rem 0.8rem;
-    height: 44px;
-  }
-
-  .navbar .logo img {
-    height: 24px;
-  }
-
-  .bot-image {
-    width: 20px;
-  }
-
-  .cloud-text {
-    font-size: 0.6rem;
-  }
-
-  .mobile-menu.active {
-    height: 240px;
-  }
-}
-
-
-/* Section Wrapper
-================================= */
+/* ==========================================================================
+   Section Wrapper
+   ========================================================================== */
 .section {
   padding: 5rem 1.5rem;
   min-height: 80vh;
@@ -272,7 +225,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--bg);
-  scroll-margin-top: 48px; /* Matches navbar height */
+  scroll-margin-top: 48px;
 }
 
 .content {
@@ -280,14 +233,16 @@ body {
   text-align: center;
 }
 
-/* Home Page
-================================= */
+/* ==========================================================================
+   Home Page Styles
+   ========================================================================== */
 .main-title {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--brand-blue);
   line-height: 1.2;
 }
+
 .tagline {
   font-size: 1.5rem;
   font-weight: 500;
@@ -297,7 +252,7 @@ body {
 
 .intro-message {
   font-size: 1rem;
-  color: var(--muted);
+  color: var(--text-muted);
   margin-top: 1rem;
   max-width: 700px;
   margin-left: auto;
@@ -315,7 +270,7 @@ body {
 
 .subtitle {
   font-size: 1rem;
-  color: var(--muted);
+  color: var(--text-muted);
   margin-top: 1rem;
   line-height: 1.7;
 }
@@ -336,7 +291,8 @@ body {
   cursor: pointer;
 }
 
-.btn-primary:hover, .btn-primary:focus {
+.btn-primary:hover,
+.btn-primary:focus {
   background: linear-gradient(135deg, #1a6edd 0%, #0f8299 100%);
   transform: translateY(-3px);
   box-shadow: 0 6px 18px rgba(42, 139, 255, 0.4);
@@ -346,36 +302,33 @@ body {
   background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
 }
 
-.btn-primary.secondary:hover, .btn-primary.secondary:focus {
+.btn-primary.secondary:hover,
+.btn-primary.secondary:focus {
   background: linear-gradient(135deg, #2980b9 0%, #1a6edd 100%);
 }
 
-/* Ensure contrast in Windows High Contrast Mode */
+/* High Contrast Mode */
 @media (forced-colors: active) {
-  .btn-primary, .btn-primary.secondary {
+  .btn-primary,
+  .btn-primary.secondary {
     background-color: ButtonFace !important;
     color: ButtonText !important;
     border: 2px solid ButtonBorder !important;
   }
 }
 
-/* Responsive adjustments */
+/* Responsive Button Adjustments */
 @media (max-width: 768px) {
-  .btn-primary, .btn-primary.secondary {
+  .btn-primary,
+  .btn-primary.secondary {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
   }
 }
 
-/* Root Variables */
-:root {
-  --brand-blue: #2980b9;
-  --brand-deep: #189ab4;
-  --dark-blue: #2c3e50;
-  --text-muted: #666;
-  --bg-light: #fff;
-}
-
+/* ==========================================================================
+   Flow Diagram Styles
+   ========================================================================== */
 .flow-diagram {
   display: flex;
   align-items: center;
@@ -402,16 +355,39 @@ body {
   margin-bottom: 0.3rem;
 }
 
+.flow-icon-dual {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
 .flow-icon-img {
   width: 32px;
   height: 32px;
   fill: var(--dark-blue);
 }
 
-.flow-step:nth-child(1) .flow-icon-img { fill: var(--brand-blue); } /* PC / Laptop */
-.flow-step:nth-child(3) .flow-icon-img { fill: var(--brand-deep); } /* Sync Folders */
-.flow-step:nth-child(5) .flow-icon-img { fill: #1a6edd; } /* Local Network */
-.flow-step:nth-child(7) .flow-icon-img { fill: var(--dark-blue); } /* Any Device */
+.flow-icon-img-left,
+.flow-icon-img-right {
+  width: 28px;
+  height: 28px;
+}
+
+.flow-step:nth-child(1) .flow-icon-img {
+  fill: var(--brand-blue);
+} /* PC / Laptop */
+.flow-step:nth-child(3) .flow-icon-img {
+  fill: var(--brand-deep);
+} /* Sync Folders */
+.flow-step:nth-child(5) .flow-icon-img-left {
+  fill: #1a6edd;
+} /* Mobile Hotspot */
+.flow-step:nth-child(5) .flow-icon-img-right {
+  fill: #3498db;
+} /* Wi-Fi */
+.flow-step:nth-child(7) .flow-icon-img {
+  fill: var(--dark-blue);
+} /* Any Device */
 
 .flow-title {
   font-weight: bold;
@@ -437,6 +413,7 @@ body {
   fill: #999;
 }
 
+/* Responsive Flow Diagram */
 @media (max-width: 768px) {
   .flow-diagram {
     flex-direction: column;
@@ -448,7 +425,7 @@ body {
 
   .flow-step {
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -458,6 +435,17 @@ body {
   .flow-icon-img {
     width: 28px;
     height: 28px;
+  }
+
+  .flow-icon-img-left,
+  .flow-icon-img-right {
+    width: 22px;
+    height: 22px;
+  }
+
+  .flow-icon-dual {
+    flex-direction: column;
+    gap: 6px;
   }
 
   .flow-title {
@@ -491,6 +479,12 @@ body {
     height: 24px;
   }
 
+  .flow-icon-img-left,
+  .flow-icon-img-right {
+    width: 20px;
+    height: 20px;
+  }
+
   .flow-title {
     font-size: 0.85rem;
   }
@@ -504,8 +498,10 @@ body {
     height: 18px;
   }
 }
-/* About Section
-================================= */
+
+/* ==========================================================================
+   About Section Styles
+   ========================================================================== */
 .akserver-section {
   background-color: var(--panel);
   padding: 5rem 1.5rem;
@@ -515,7 +511,7 @@ body {
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--brand-deep);
   margin-bottom: 2rem;
@@ -623,13 +619,11 @@ body {
   line-height: 1.6;
 }
 
-/* Features Section
-================================= */
-.feature-alt,
-.feature-minimal,
-.feature-bold,
+/* ==========================================================================
+   Features Section Styles
+   ========================================================================== */
 .feature-stripe {
-  max-width: 850px;
+  max-width: 1000px;
   margin: 3rem auto;
   font-family: var(--font-family);
   color: var(--text-dark);
@@ -675,13 +669,6 @@ body {
   color: var(--dark-blue);
 }
 
-.feature-stripe {
-  max-width: 1000px;
-  margin: 3rem auto;
-  font-family: var(--font-family);
-  color: var(--text-dark);
-}
-
 .summary {
   margin: 0 0 0.5rem 0;
   font-size: 0.9rem;
@@ -720,15 +707,16 @@ details p {
   margin-bottom: 1.5rem;
 }
 
-/* How It Works Section
-================================= */
+/* ==========================================================================
+   How It Works Section Styles
+   ========================================================================== */
 .how-it-works {
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .how-it-works h2 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--brand-deep);
   margin-bottom: 2.5rem;
@@ -781,13 +769,14 @@ details p {
 }
 
 .step p {
-  color: var(--muted);
+  color: var(--text-muted);
   font-size: 0.95rem;
   line-height: 1.6;
 }
 
-/* Use Case Carousel
-================================= */
+/* ==========================================================================
+   Use Cases Section Styles
+   ========================================================================== */
 .akserver-usecases-section {
   background-color: var(--panel);
   padding: 5rem 1.5rem;
@@ -796,7 +785,7 @@ details p {
 }
 
 .akserver-usecases-section .section-title {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--brand-deep);
   margin-bottom: 2rem;
@@ -842,15 +831,35 @@ details p {
   line-height: 1.6;
 }
 
-/* Contact Section
-================================= */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--brand-blue);
+}
+
+/* ==========================================================================
+   Contact Section Styles
+   ========================================================================== */
 .contact {
   background: #f9f9f9;
   padding-bottom: 5rem;
 }
 
 .contact .section-title {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--brand-deep);
   margin-bottom: 2rem;
@@ -887,7 +896,8 @@ details p {
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: var(--brand-blue);
-  box-shadow: 0 0 5px rgba(42, 139, 255, 0.2);
+  box-shadow: 0 0 5px rgba(42, 139, 255, 0.3);
+  outline: 2px solid var(--brand-blue);
 }
 
 .contact-form button {
@@ -905,8 +915,9 @@ details p {
   background-color: #1a6edd;
 }
 
-/* Footer
-================================= */
+/* ==========================================================================
+   Footer Styles
+   ========================================================================== */
 .footer {
   background-color: var(--bg-light);
   padding: 1.5rem 1rem;
@@ -926,21 +937,6 @@ details p {
   gap: 0.5rem;
 }
 
-.footer-link {
-  color: var(--brand-blue);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.footer-link:hover,
-.footer-link:focus {
-  color: #1a6edd;
-  text-decoration: underline;
-  outline: none;
-}
-
-/* Social Media Icons in Footer */
 .footer-container nav {
   display: flex;
   justify-content: center;
@@ -959,34 +955,64 @@ details p {
   filter: brightness(1.2);
 }
 
-/* Responsive Footer Adjustments */
 @media (max-width: 768px) {
   .footer-container p {
-    display: flex;           /* stack items */
-    flex-direction: column;  /* vertical layout */
-    align-items: center;     /* center horizontally */
-    text-align: center;      /* center text */
-    gap: 6px;                /* spacing between logo, text, and link */
-    color: #000;             /* black for mobile text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+    color: #000;
   }
 
   .footer-container nav {
-    order: -1;               /* move social icons above text */
-    justify-content: center; /* center icons */
+    order: -1;
+    justify-content: center;
   }
 
   .footer-container nav a img {
-    height: 28px;            /* larger for mobile tap */
+    height: 28px;
     width: auto;
   }
 
   .footer-container {
-    gap: 12px;               /* breathing room for stacked items */
+    gap: 12px;
   }
 }
 
-/* Responsive Styles
-================================= */
+/* ==========================================================================
+   Icon Styles
+   ========================================================================== */
+.inline-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: text-bottom;
+  margin-right: 0.4em;
+  display: inline-block;
+}
+
+.inline-icon img,
+.inline-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.akserver-section .inline-icon,
+.feature-item .inline-icon {
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .inline-icon {
+    width: 0.9em;
+    height: 0.9em;
+  }
+}
+
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
 @media (max-width: 992px) {
   .section-title {
     font-size: 1.5rem;
@@ -994,6 +1020,35 @@ details p {
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    padding: 0.6rem 1rem;
+    height: 46px;
+  }
+
+  .navbar .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar .logo img {
+    height: 28px;
+  }
+
+  .bot-container {
+    gap: 6px;
+  }
+
+  .bot-image {
+    width: 24px;
+  }
+
+  .cloud-text {
+    font-size: 0.65rem;
+  }
+
   .main-title {
     font-size: 2rem;
   }
@@ -1017,14 +1072,6 @@ details p {
   .flow-step {
     width: 45%;
   }
-
-  .flow-arrow {
-    display: flex;
-  }
-
-  .bot-container {
-    gap: 6px;
-  }
 }
 
 @media (max-width: 700px) {
@@ -1038,9 +1085,25 @@ details p {
 }
 
 @media (max-width: 480px) {
-  .navbar nav ul {
-    flex-direction: column;
-    gap: 0.8rem;
+  .navbar {
+    padding: 0.5rem 0.8rem;
+    height: 44px;
+  }
+
+  .navbar .logo img {
+    height: 24px;
+  }
+
+  .bot-image {
+    width: 20px;
+  }
+
+  .cloud-text {
+    font-size: 0.6rem;
+  }
+
+  .mobile-menu.active {
+    height: 240px;
   }
 
   .main-title {
@@ -1052,7 +1115,9 @@ details p {
   }
 }
 
-/* Social media icons */
+/* ==========================================================================
+   Social Media Icons
+   ========================================================================== */
 nav {
   display: flex;
   align-items: center;
@@ -1069,26 +1134,9 @@ nav ul {
   padding: 0;
 }
 
-.navbar-social {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.navbar-social img {
-  height: 20px;
-  width: auto;
-  display: block;
-  vertical-align: middle;
-  transition: filter 0.3s ease;
-}
-
-.navbar-social a:hover img,
-.navbar-social a:focus img {
-  filter: grayscale(0%);
-}
-
-/* Scrollbar styles for WebKit browsers */
+/* ==========================================================================
+   Scrollbar Styles
+   ========================================================================== */
 .carousel-container::-webkit-scrollbar {
   height: 8px;
 }
@@ -1102,7 +1150,9 @@ nav ul {
   border-radius: 10px;
 }
 
-/* Accessibility helper */
+/* ==========================================================================
+   Accessibility Helper
+   ========================================================================== */
 .sr-only {
   position: absolute !important;
   width: 1px !important;
@@ -1116,13 +1166,6 @@ nav ul {
 
 @media (min-width: 769px) {
   .navbar .logo {
-    justify-content: flex-start; /* Move logo + bot to the left */
+    justify-content: flex-start;
   }
 }
-.inline-icon {
-  width: 1.2em;
-  height: 1.2em;
-  vertical-align: middle;
-  margin-right: 0.4em;
-}
-
