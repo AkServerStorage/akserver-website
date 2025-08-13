@@ -202,8 +202,13 @@ body {
 
 /* Animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 /* Responsive Styles */
@@ -335,7 +340,8 @@ body {
   cursor: pointer;
 }
 
-.btn-primary:hover, .btn-primary:focus {
+.btn-primary:hover,
+.btn-primary:focus {
   background: linear-gradient(135deg, #1a6edd 0%, #0f8299 100%);
   transform: translateY(-3px);
   box-shadow: 0 6px 18px rgba(42, 139, 255, 0.4);
@@ -345,13 +351,15 @@ body {
   background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
 }
 
-.btn-primary.secondary:hover, .btn-primary.secondary:focus {
+.btn-primary.secondary:hover,
+.btn-primary.secondary:focus {
   background: linear-gradient(135deg, #2980b9 0%, #1a6edd 100%);
 }
 
 /* Ensure contrast in Windows High Contrast Mode */
 @media (forced-colors: active) {
-  .btn-primary, .btn-primary.secondary {
+  .btn-primary,
+  .btn-primary.secondary {
     background-color: ButtonFace !important;
     color: ButtonText !important;
     border: 2px solid ButtonBorder !important;
@@ -360,7 +368,8 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .btn-primary, .btn-primary.secondary {
+  .btn-primary,
+  .btn-primary.secondary {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
   }
@@ -407,10 +416,18 @@ body {
   fill: var(--dark-blue);
 }
 
-.flow-step:nth-child(1) .flow-icon-img { fill: var(--brand-blue); } /* PC / Laptop */
-.flow-step:nth-child(3) .flow-icon-img { fill: var(--brand-deep); } /* Sync Folders */
-.flow-step:nth-child(5) .flow-icon-img { fill: #1a6edd; } /* Local Network */
-.flow-step:nth-child(7) .flow-icon-img { fill: var(--dark-blue); } /* Any Device */
+.flow-step:nth-child(1) .flow-icon-img {
+  fill: var(--brand-blue);
+} /* PC / Laptop */
+.flow-step:nth-child(3) .flow-icon-img {
+  fill: var(--brand-deep);
+} /* Sync Folders */
+.flow-step:nth-child(5) .flow-icon-img {
+  fill: #1a6edd;
+} /* Local Network */
+.flow-step:nth-child(7) .flow-icon-img {
+  fill: var(--dark-blue);
+} /* Any Device */
 
 .flow-title {
   font-weight: bold;
@@ -934,6 +951,12 @@ details p {
   text-decoration: underline;
   outline: none;
 }
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 /* Responsive Styles
 ================================= */
@@ -1062,4 +1085,9 @@ nav ul {
   overflow: hidden !important;
   clip: rect(0, 0, 0, 0) !important;
   border: 0 !important;
+}
+@media (min-width: 769px) {
+  .navbar .logo {
+    justify-content: flex-start; /* Move logo + bot to the left */
+  }
 }
