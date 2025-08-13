@@ -49,20 +49,79 @@
   }
   </script>
 
+  <!-- Preload key resources -->
+  <link rel="preload" href="images/akserver-logo.png" as="image">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" as="script">
+
+  <!-- Inline critical CSS -->
+  <style>
+    :root {
+      --brand-blue: #2980b9;
+      --brand-deep: #189ab4;
+      --dark-blue: #2c3e50;
+      --text-dark: #1a1a1a;
+      --text-muted: #4a4a4a;
+      --bg-light: #ffffff;
+      --panel: #f5f5f5;
+      --shadow-light: rgba(0, 0, 0, 0.1);
+      --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      font-family: var(--font-family);
+      color: var(--text-dark);
+      background-color: #f9f9f9;
+      margin: 0;
+      line-height: 1.5;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: var(--bg-light);
+      box-shadow: 0 2px 5px var(--shadow-light);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .main-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.2;
+    }
+    .btn-primary {
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-deep) 100%);
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(42, 139, 255, 0.3);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary.secondary {
+      background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    }
+  </style>
+
   <title>AkServer | Private Offline File Sync & Cloud Storage</title>
   <link rel="icon" href="images/akserver-logo.png" type="image/png">
-  <link rel="stylesheet" href="style.css?v=3.0.2">
+  <link rel="stylesheet" href="style.css?v=3.0.3">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-</head>
+  </head>
 <body>
-  <!-- Top Navigation Section -->
+  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">
       <a href="./">
-        <img src="images/akserver-logo.png" alt="AkServer Logo" style="height: 40px;">
+        <img src="images/akserver-logo.png" alt="AkServer Logo" style="height: 40px;" loading="lazy">
       </a>
       <div class="bot-container">
-        <img src="images/akserver-ai-bot.png" alt="AkServer Private AI Bot" class="bot-image">
+        <img src="images/akserver-ai-bot.png" alt="AkServer Private AI Bot" class="bot-image" loading="lazy">
         <div class="cloud-text">
           Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
         </div>
@@ -79,10 +138,10 @@
       </ul>
       <div class="navbar-social">
         <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
-          <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" />
+          <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" loading="lazy" />
         </a>
         <a href="https://x.com/akserverstorage" target="_blank" aria-label="Twitter AkServer" rel="noopener">
-          <img src="icons/logo-black.png" alt="Twitter" />
+          <img src="icons/logo-black.png" alt="Twitter" loading="lazy" />
         </a>
       </div>
     </nav>
@@ -334,7 +393,7 @@
   <footer class="footer" role="contentinfo">
     <div class="footer-container" style="text-align: center;">
       <p style="margin: 0; display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap;">
-        <img src="images/akserver-logo.png" alt="AkServer Logo" style="height: 20px;" />
+        <img src="images/akserver-logo.png" alt="AkServer Logo" style="height: 20px;" loading="lazy" />
         &copy; 2025 AkServer. All rights reserved.
         &nbsp;|&nbsp;
         <a href="privacy.html" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: none; font-weight: 500;" aria-label="View Licenses, Privacy Policy, and EULA">
@@ -343,10 +402,10 @@
       </p>
       <nav aria-label="Social media links" style="display: inline-flex; gap: 12px;">
         <a href="https://www.instagram.com/akserverstorage/" target="_blank" rel="noopener" aria-label="Instagram AkServer">
-          <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" width="24" height="24" />
+          <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" width="24" height="24" loading="lazy" />
         </a>
         <a href="https://x.com/akserverstorage" target="_blank" rel="noopener" aria-label="Twitter AkServer">
-          <img src="icons/logo-black.png" alt="Twitter" width="24" height="24" />
+          <img src="icons/logo-black.png" alt="Twitter" width="24" height="24" loading="lazy" />
         </a>
       </nav>
     </div>
@@ -380,7 +439,33 @@
       }
     });
   </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
+    AOS.init();
+  </script>
+  <script defer>
+    // Smooth scroll with navbar offset
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 70,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Ensure page loads at top if no hash
+    window.addEventListener('load', () => {
+      if (!location.hash) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
     // Carousel functionality
     const carouselTrack = document.querySelector('.carousel-track');
     const carouselDots = document.querySelectorAll('.carousel-dots .dot');
@@ -448,8 +533,7 @@
 
       carouselTrack.addEventListener('scroll', updateDots);
     }
-  </script>
-  <script>
+
     // Toggle summary text on details open/close
     document.querySelectorAll('details').forEach(details => {
       const summary = details.querySelector('summary');
@@ -460,6 +544,31 @@
         summary.textContent = details.open ? openText : closeText;
       });
     });
+
+    // Contact form submission feedback
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const button = contactForm.querySelector('button');
+        button.textContent = 'Sending...';
+        button.disabled = true;
+        setTimeout(() => {
+          alert('Thank you for your enquiry! We’ll get back to you soon.');
+          contactForm.reset();
+          button.textContent = 'Send Enquiry';
+          button.disabled = false;
+        }, 1000);
+      });
+    }
+
+    // Download button feedback
+    const downloadBtn = document.querySelector('.btn-primary.secondary');
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', () => {
+        alert('Starting download for AkServerInstaller.exe...');
+      });
+    }
   </script>
 </body>
 </html>
