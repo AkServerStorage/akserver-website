@@ -1,0 +1,9 @@
+Credits
+-------
+
+Icon Assets:
+- Certain icons in this application are provided by UXWing (https://uxwing.com).
+- These icons are used under UXWing’s free license for personal and commercial projects with attribution.
+
+Acknowledgment:
+We gratefully acknowledge UXWing for providing high-quality, free icons that enhance the visual appeal and usability of this application.
