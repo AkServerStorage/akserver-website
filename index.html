@@ -80,7 +80,7 @@
 
   <title>AkServer | Private Offline File Sync & Cloud Storage</title>
   <link rel="icon" href="images/akserver-logo.png" type="image/png">
-  <link rel="stylesheet" href="style.css?v=3.0.7">
+  <link rel="stylesheet" href="style.css?v=3.0.8">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
@@ -620,9 +620,37 @@
       });
     }
   </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".hamburger"); // your hamburger button
+  const menu = document.querySelector(".nav-menu"); // your mobile menu
+
+  // Toggle menu when hamburger is clicked
+  hamburger.addEventListener("click", function (e) {
+    e.stopPropagation(); // Prevent this click from triggering the outside click handler
+    menu.classList.toggle("active"); // Show/hide menu
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", function (e) {
+    if (menu.classList.contains("active") && !menu.contains(e.target)) {
+      menu.classList.remove("active");
+    }
+  });
+
+  // Optional: close when pressing ESC
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      menu.classList.remove("active");
+    }
+  });
+});
+</script>
+
 </body>
 
 </html>
+
 
 
 
