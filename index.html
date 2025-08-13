@@ -115,50 +115,49 @@
   </head>
 <body>
   <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">
-      <a href="./">
-        <img src="images/akserver-logo.png" alt="AkServer Logo" style="height: 40px;" loading="lazy">
-      </a>
-      <div class="bot-container">
-        <img src="images/akserver-ai-bot.png" alt="AkServer Private AI Bot" class="bot-image" loading="lazy">
-        <div class="cloud-text">
-          Coming soon: <br>AI Without the Cloud. Powered by AkServer.<br>
-        </div>
-      </div>
+<header class="navbar">
+  <div class="logo">
+    <a href="./">
+      <img src="images/akserver-logo.png" alt="AkServer Logo" style="height: 32px;" loading="lazy">
+    </a>
+    <div class="bot-container">
+      <img src="images/akserver-ai-bot.png" alt="AkServer Private AI Bot" class="bot-image" loading="lazy">
+      <span class="cloud-text">Coming soon: AI Without the Cloud</span>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="install.html">Installation</a></li>
-        <li><a href="vision.html">Vision</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="navbar-social">
-        <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
-          <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" loading="lazy" />
-        </a>
-        <a href="https://x.com/akserverstorage" target="_blank" aria-label="Twitter AkServer" rel="noopener">
-          <img src="icons/logo-black.png" alt="Twitter" loading="lazy" />
-        </a>
-      </div>
-    </nav>
-  </header>
+  </div>
+  <nav class="nav-links">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="install.html">Installation</a></li>
+      <li><a href="vision.html">Vision</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="navbar-social">
+      <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
+        <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" loading="lazy" />
+      </a>
+      <a href="https://x.com/akserverstorage" target="_blank" aria-label="Twitter AkServer" rel="noopener">
+        <img src="icons/logo-black.png" alt="Twitter" loading="lazy" />
+      </a>
+    </div>
+  </nav>
+  <button class="scroll-top" aria-label="Scroll to top">↑</button>
+</header>
 
   <!-- Hero Section -->
   <section id="home" class="section hero">
     <div class="content" style="position: relative; z-index: 2;">
       <h1 class="main-title" data-aos="fade-up" data-aos-duration="1000">AkServer</h1>
       <h2 class="tagline" data-aos="fade-up" data-aos-delay="200">
-        Private Offline File Sync & Cloud Storage System
+        Private Offline File Sync & Self-hosted Storage 
       </h2>
       <p class="intro-message" data-aos="fade-up" data-aos-delay="350">
-        AkServer empowers you to create a secure, private cloud storage and offline file sync system on your local network — no internet, no subscriptions, full control.
+        Run your own secure storage and file sync system on your local network — no internet, no subscriptions, complete control.
       </p>
       <p class="strong-line" data-aos="fade-up" data-aos-delay="450">
-        <strong>Your Files. Your Network. Total Privacy.</strong>
+        <strong>Your Files. Your Network. Your Privacy.</strong>
       </p>
       <div class="hero-buttons" data-aos="zoom-in" data-aos-delay="600">
         <a href="#contact" class="btn-primary">Get Your Custom Solution</a>
@@ -569,6 +568,17 @@
         alert('Starting download for AkServerInstaller.exe...');
       });
     }
+    // Scroll to Top Button
+const scrollTopBtn = document.querySelector('.scroll-top');
+if (scrollTopBtn) {
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
   </script>
+  
 </body>
 </html>
