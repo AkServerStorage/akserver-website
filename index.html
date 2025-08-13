@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,25 +29,25 @@
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "AkServer",
-    "operatingSystem": "Windows",
-    "applicationCategory": "File Management",
-    "description": "AkServer is a private, offline file sync and cloud storage system that runs on your local network with no internet required.",
-    "url": "https://akserverstorage.github.io/akserver-website/",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "creator": {
-      "@type": "Organization",
-      "name": "AkServer Team",
-      "url": "https://akserverstorage.github.io/akserver-website/"
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "AkServer",
+      "operatingSystem": "Windows",
+      "applicationCategory": "File Management",
+      "description": "AkServer is a private, offline file sync and cloud storage system that runs on your local network with no internet required.",
+      "url": "https://akserverstorage.github.io/akserver-website/",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "AkServer Team",
+        "url": "https://akserverstorage.github.io/akserver-website/"
+      }
     }
-  }
   </script>
 
   <!-- Preload key resources -->
@@ -67,6 +68,7 @@
       --shadow-light: rgba(0, 0, 0, 0.1);
       --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
+
     body {
       font-family: var(--font-family);
       color: var(--text-dark);
@@ -74,6 +76,7 @@
       margin: 0;
       line-height: 1.5;
     }
+
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -87,12 +90,14 @@
       z-index: 1000;
       height: 48px;
     }
+
     .main-title {
       font-size: 3.5rem;
       font-weight: 700;
       color: var(--text-dark);
       line-height: 1.2;
     }
+
     .btn-primary {
       padding: 0.8rem 1.8rem;
       font-size: 0.95rem;
@@ -106,15 +111,20 @@
       display: inline-block;
       transition: all 0.3s ease;
     }
+
     .btn-primary.secondary {
       background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
     }
-    .btn-primary:hover, .btn-primary:focus {
+
+    .btn-primary:hover,
+    .btn-primary:focus {
       background: linear-gradient(135deg, #1a6edd 0%, #0f8299 100%);
       transform: translateY(-3px);
       box-shadow: 0 6px 18px rgba(42, 139, 255, 0.4);
     }
-    .btn-primary.secondary:hover, .btn-primary.secondary:focus {
+
+    .btn-primary.secondary:hover,
+    .btn-primary.secondary:focus {
       background: linear-gradient(135deg, #2980b9 0%, #1a6edd 100%);
     }
   </style>
@@ -124,6 +134,7 @@
   <link rel="stylesheet" href="style.css?v=3.0.4">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
   <!-- Navbar -->
   <header class="navbar">
@@ -173,7 +184,7 @@
         </a>
       </div>
     </div>
-    
+
   </header>
 
   <!-- Hero Section -->
@@ -181,7 +192,7 @@
     <div class="content" style="position: relative; z-index: 2;">
       <h1 class="main-title" data-aos="fade-up" data-aos-duration="1000">AkServer</h1>
       <h2 class="tagline" data-aos="fade-up" data-aos-delay="200">
-        Private Offline File Sync & Self-hosted Storage 
+        Private Offline File Sync & Self-hosted Storage
       </h2>
       <p class="intro-message" data-aos="fade-up" data-aos-delay="350">
         Run your own secure storage and file sync system on your local network — no internet, no subscriptions, complete control.
@@ -194,45 +205,45 @@
         <a href="install.html?download=AkServerInstaller.exe" class="btn-primary secondary">⬇️ Download for Windows</a>
       </div>
       <div class="flow-diagram" data-aos="fade-up" data-aos-delay="800">
-  <div class="flow-step">
-    <div class="flow-icon">
-      <img src="icons/laptop.svg" alt="Laptop" class="flow-icon-img">
-    </div>
-    <p class="flow-title">PC / Laptop</p>
-    <small class="flow-sub">Becomes Your Private Cloud Storage</small>
-  </div>
-  <div class="flow-arrow">
-    <img src="icons/arrow-right-icon.svg" alt="Arrow Right" class="flow-arrow-img">
-  </div>
-  <div class="flow-step">
-    <div class="flow-icon">
-      <img src="icons/folder-sync.svg" alt="Folder Sync" class="flow-icon-img">
-    </div>
-    <p class="flow-title">Sync Folders</p>
-    <small class="flow-sub">Docs, Media, Images — Your Choice</small>
-  </div>
-  <div class="flow-arrow">
-    <img src="icons/arrow-right-icon.svg" alt="Arrow Right" class="flow-arrow-img">
-  </div>
-  <div class="flow-step">
-    <div class="flow-icon flow-icon-dual">
-      <img src="icons/mobile-hotspot-icon.svg" alt="Mobile Hotspot" class="flow-icon-img flow-icon-img-left">
-      <img src="icons/wifi.svg" alt="Wi-Fi" class="flow-icon-img flow-icon-img-right">
-    </div>
-    <p class="flow-title">Local Network</p>
-    <small class="flow-sub">Wi-Fi or Hotspot, No Internet</small>
-  </div>
-  <div class="flow-arrow">
-    <img src="icons/arrow-right-icon.svg" alt="Arrow Right" class="flow-arrow-img">
-  </div>
-  <div class="flow-step">
-    <div class="flow-icon">
-      <img src="icons/devices.svg" alt="Devices" class="flow-icon-img">
-    </div>
-    <p class="flow-title">Any Device</p>
-    <small class="flow-sub">Access via browser</small>
-  </div>
-</div>
+        <div class="flow-step">
+          <div class="flow-icon">
+            <img src="icons/laptop.svg" alt="Laptop" class="flow-icon-img">
+          </div>
+          <p class="flow-title">PC / Laptop</p>
+          <small class="flow-sub">Becomes Your Private Cloud Storage</small>
+        </div>
+        <div class="flow-arrow">
+          <img src="icons/arrow-right-icon.svg" alt="Arrow Right" class="flow-arrow-img">
+        </div>
+        <div class="flow-step">
+          <div class="flow-icon">
+            <img src="icons/folder-sync.svg" alt="Folder Sync" class="flow-icon-img">
+          </div>
+          <p class="flow-title">Sync Folders</p>
+          <small class="flow-sub">Docs, Media, Images — Your Choice</small>
+        </div>
+        <div class="flow-arrow">
+          <img src="icons/arrow-right-icon.svg" alt="Arrow Right" class="flow-arrow-img">
+        </div>
+        <div class="flow-step">
+          <div class="flow-icon flow-icon-dual">
+            <img src="icons/mobile-hotspot-icon.svg" alt="Mobile Hotspot" class="flow-icon-img flow-icon-img-left">
+            <img src="icons/wifi.svg" alt="Wi-Fi" class="flow-icon-img flow-icon-img-right">
+          </div>
+          <p class="flow-title">Local Network</p>
+          <small class="flow-sub">Wi-Fi or Hotspot, No Internet</small>
+        </div>
+        <div class="flow-arrow">
+          <img src="icons/arrow-right-icon.svg" alt="Arrow Right" class="flow-arrow-img">
+        </div>
+        <div class="flow-step">
+          <div class="flow-icon">
+            <img src="icons/devices.svg" alt="Devices" class="flow-icon-img">
+          </div>
+          <p class="flow-title">Any Device</p>
+          <small class="flow-sub">Access via browser</small>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -438,15 +449,9 @@
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="footer-container" style="text-align: center;">
-      <p style="margin: 0; display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap;">
-        <img src="images/akserver-logo.png" alt="AkServer Logo" style="height: 20px;" loading="lazy" />
-        &copy; 2025 AkServer. All rights reserved.
-        &nbsp;|&nbsp;
-        <a href="privacy.html" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: none; font-weight: 500;" aria-label="View Licenses, Privacy Policy, and EULA">
-          Licenses, Privacy & EULA
-        </a>
-      </p>
-      <nav aria-label="Social media links" style="display: inline-flex; gap: 12px;">
+
+      <!-- Social Media Icons -->
+      <nav aria-label="Social media links" style="display: inline-flex; gap: 12px; margin-bottom: 0.6rem; justify-content: center;">
         <a href="https://www.instagram.com/akserverstorage/" target="_blank" rel="noopener" aria-label="Instagram AkServer">
           <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" width="24" height="24" loading="lazy" />
         </a>
@@ -454,6 +459,17 @@
           <img src="icons/logo-black.png" alt="Twitter" width="24" height="24" loading="lazy" />
         </a>
       </nav>
+
+      <!-- Footer Text -->
+      <p style="margin: 0; display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: center; color: #000;">
+        <img src="images/akserver-logo.png" alt="AkServer Logo" style="height: 20px;" loading="lazy" />
+        &copy; 2025 AkServer. All rights reserved.
+        &nbsp;|&nbsp;
+        <a href="privacy.html" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: none; font-weight: 500;" aria-label="View Licenses, Privacy Policy, and EULA">
+          Licenses, Privacy & EULA
+        </a>
+      </p>
+
     </div>
   </footer>
 
@@ -461,10 +477,9 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init();
-
     // Smooth scroll with navbar offset
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+      anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
@@ -476,14 +491,15 @@
         }
       });
     });
-
     // Ensure page loads at top if no hash
     window.addEventListener('load', () => {
       if (!location.hash) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       }
     });
-
     // Hamburger Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const mobileMenu = document.querySelector('.mobile-menu');
@@ -498,38 +514,49 @@
         });
       });
     }
-
     // Carousel functionality
     const carouselTrack = document.querySelector('.carousel-track');
     const carouselDots = document.querySelectorAll('.carousel-dots .dot');
     const scrollLeftBtn = document.querySelector('.carousel-btn.left');
     const scrollRightBtn = document.querySelector('.carousel-btn.right');
-
     if (carouselTrack && scrollLeftBtn && scrollRightBtn && carouselDots) {
       scrollLeftBtn.addEventListener('click', () => {
-        carouselTrack.scrollBy({ left: -300, behavior: 'smooth' });
+        carouselTrack.scrollBy({
+          left: -300,
+          behavior: 'smooth'
+        });
         updateDots();
       });
       scrollRightBtn.addEventListener('click', () => {
-        carouselTrack.scrollBy({ left: 300, behavior: 'smooth' });
+        carouselTrack.scrollBy({
+          left: 300,
+          behavior: 'smooth'
+        });
         updateDots();
       });
-
       document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowRight') {
-          carouselTrack.scrollBy({ left: 300, behavior: 'smooth' });
+          carouselTrack.scrollBy({
+            left: 300,
+            behavior: 'smooth'
+          });
           updateDots();
         } else if (e.key === 'ArrowLeft') {
-          carouselTrack.scrollBy({ left: -300, behavior: 'smooth' });
+          carouselTrack.scrollBy({
+            left: -300,
+            behavior: 'smooth'
+          });
           updateDots();
         }
       });
-
       carouselDots.forEach(dot => {
         dot.addEventListener('click', () => {
           const index = parseInt(dot.dataset.index);
           const cardWidth = carouselTrack.querySelector('.carousel-card').offsetWidth + 24;
-          carouselTrack.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+          carouselTrack.scrollTo({
+            left: index * cardWidth,
+            behavior: 'smooth'
+          });
           updateDots();
         });
       });
@@ -540,33 +567,41 @@
         carouselDots.forEach(dot => dot.classList.remove('active'));
         carouselDots[scrollIndex]?.classList.add('active');
       }
-
       let autoScroll = setInterval(() => {
         const cardWidth = carouselTrack.querySelector('.carousel-card').offsetWidth + 24;
         if (carouselTrack.scrollLeft + carouselTrack.offsetWidth >= carouselTrack.scrollWidth) {
-          carouselTrack.scrollTo({ left: 0, behavior: 'smooth' });
+          carouselTrack.scrollTo({
+            left: 0,
+            behavior: 'smooth'
+          });
         } else {
-          carouselTrack.scrollBy({ left: cardWidth, behavior: 'smooth' });
+          carouselTrack.scrollBy({
+            left: cardWidth,
+            behavior: 'smooth'
+          });
         }
         updateDots();
       }, 5000);
-
       carouselTrack.addEventListener('mouseenter', () => clearInterval(autoScroll));
       carouselTrack.addEventListener('mouseleave', () => {
         autoScroll = setInterval(() => {
           const cardWidth = carouselTrack.querySelector('.carousel-card').offsetWidth + 24;
           if (carouselTrack.scrollLeft + carouselTrack.offsetWidth >= carouselTrack.scrollWidth) {
-            carouselTrack.scrollTo({ left: 0, behavior: 'smooth' });
+            carouselTrack.scrollTo({
+              left: 0,
+              behavior: 'smooth'
+            });
           } else {
-            carouselTrack.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            carouselTrack.scrollBy({
+              left: cardWidth,
+              behavior: 'smooth'
+            });
           }
           updateDots();
         }, 5000);
       });
-
       carouselTrack.addEventListener('scroll', updateDots);
     }
-
     // Toggle summary text on details open/close
     document.querySelectorAll('details').forEach(details => {
       const summary = details.querySelector('summary');
@@ -577,7 +612,6 @@
         summary.textContent = details.open ? openText : closeText;
       });
     });
-
     // Contact form submission feedback
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
@@ -594,7 +628,6 @@
         }, 1000);
       });
     }
-
     // Download button feedback
     const downloadBtn = document.querySelector('.btn-primary.secondary');
     if (downloadBtn) {
@@ -604,4 +637,5 @@
     }
   </script>
 </body>
+
 </html>
