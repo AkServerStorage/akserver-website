@@ -1119,3 +1119,10 @@ nav ul {
     justify-content: flex-start; /* Move logo + bot to the left */
   }
 }
+.inline-icon {
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: middle;
+  margin-right: 0.4em;
+}
+
