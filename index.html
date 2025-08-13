@@ -78,12 +78,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      padding: 0.8rem 1rem;
       background-color: var(--bg-light);
       box-shadow: 0 2px 5px var(--shadow-light);
-      position: sticky;
+      position: fixed;
       top: 0;
+      width: 100%;
       z-index: 1000;
+      height: 48px;
     }
     .main-title {
       font-size: 3.5rem;
@@ -92,59 +94,87 @@
       line-height: 1.2;
     }
     .btn-primary {
-      padding: 1rem 2.5rem;
-      font-size: 1.1rem;
+      padding: 0.8rem 1.8rem;
+      font-size: 0.95rem;
       background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-deep) 100%);
       border: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(42, 139, 255, 0.3);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(42, 139, 255, 0.2);
       color: #fff;
       font-weight: 600;
       text-decoration: none;
       display: inline-block;
+      transition: all 0.3s ease;
     }
     .btn-primary.secondary {
-      background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    }
+    .btn-primary:hover, .btn-primary:focus {
+      background: linear-gradient(135deg, #1a6edd 0%, #0f8299 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(42, 139, 255, 0.4);
+    }
+    .btn-primary.secondary:hover, .btn-primary.secondary:focus {
+      background: linear-gradient(135deg, #2980b9 0%, #1a6edd 100%);
     }
   </style>
 
   <title>AkServer | Private Offline File Sync & Cloud Storage</title>
   <link rel="icon" href="images/akserver-logo.png" type="image/png">
-  <link rel="stylesheet" href="style.css?v=3.0.3">
+  <link rel="stylesheet" href="style.css?v=3.0.4">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  </head>
+</head>
 <body>
   <!-- Navbar -->
-<header class="navbar">
-  <div class="logo">
-    <a href="./">
-      <img src="images/akserver-logo.png" alt="AkServer Logo" style="height: 32px;" loading="lazy">
-    </a>
-    <div class="bot-container">
-      <img src="images/akserver-ai-bot.png" alt="AkServer Private AI Bot" class="bot-image" loading="lazy">
-      <span class="cloud-text">Coming soon: AI Without the Cloud</span>
-    </div>
-  </div>
-  <nav class="nav-links">
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="install.html">Installation</a></li>
-      <li><a href="vision.html">Vision</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="navbar-social">
-      <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
-        <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" loading="lazy" />
+  <header class="navbar">
+    <button class="hamburger" aria-label="Toggle menu">☰</button>
+    <div class="logo">
+      <a href="./">
+        <img src="images/akserver-logo.png" alt="AkServer Logo" style="height: 32px;" loading="lazy">
       </a>
-      <a href="https://x.com/akserverstorage" target="_blank" aria-label="Twitter AkServer" rel="noopener">
-        <img src="icons/logo-black.png" alt="Twitter" loading="lazy" />
-      </a>
+      <div class="bot-container">
+        <img src="images/akserver-ai-bot.png" alt="AkServer Private AI Bot" class="bot-image" loading="lazy">
+        <span class="cloud-text">Coming soon: AI Without the Cloud</span>
+      </div>
     </div>
-  </nav>
-  <button class="scroll-top" aria-label="Scroll to top">↑</button>
-</header>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="install.html">Installation</a></li>
+        <li><a href="vision.html">Vision</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="navbar-social">
+        <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
+          <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" loading="lazy" />
+        </a>
+        <a href="https://x.com/akserverstorage" target="_blank" aria-label="Twitter AkServer" rel="noopener">
+          <img src="icons/logo-black.png" alt="Twitter" loading="lazy" />
+        </a>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="install.html">Installation</a></li>
+        <li><a href="vision.html">Vision</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="navbar-social mobile-social">
+        <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
+          <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" loading="lazy" />
+        </a>
+        <a href="https://x.com/akserverstorage" target="_blank" aria-label="Twitter AkServer" rel="noopener">
+          <img src="icons/logo-black.png" alt="Twitter" loading="lazy" />
+        </a>
+      </div>
+    </div>
+    
+  </header>
 
   <!-- Hero Section -->
   <section id="home" class="section hero">
@@ -164,30 +194,44 @@
         <a href="install.html?download=AkServerInstaller.exe" class="btn-primary secondary">⬇️ Download for Windows</a>
       </div>
       <div class="flow-diagram" data-aos="fade-up" data-aos-delay="800">
-        <div class="flow-step">
-          <div class="flow-icon">💻</div>
-          <p class="flow-title">PC / Laptop</p>
-          <small class="flow-sub">Becomes Your Private Cloud Storage</small>
-        </div>
-        <div class="flow-arrow">➡️</div>
-        <div class="flow-step">
-          <div class="flow-icon">📁🖼️</div>
-          <p class="flow-title">Sync Folders</p>
-          <small class="flow-sub">Docs, Media, Images — Your Choice</small>
-        </div>
-        <div class="flow-arrow">➡️</div>
-        <div class="flow-step">
-          <div class="flow-icon">🛜</div>
-          <p class="flow-title">Local Network</p>
-          <small class="flow-sub">Wi-Fi or Hotspot, No Internet</small>
-        </div>
-        <div class="flow-arrow">➡️</div>
-        <div class="flow-step">
-          <div class="flow-icon">📱🖥️</div>
-          <p class="flow-title">Any Device</p>
-          <small class="flow-sub">Access via browser</small>
-        </div>
-      </div>
+  <div class="flow-step">
+    <div class="flow-icon">
+      <img src="icons/laptop.svg" alt="Laptop" class="flow-icon-img">
+    </div>
+    <p class="flow-title">PC / Laptop</p>
+    <small class="flow-sub">Becomes Your Private Cloud Storage</small>
+  </div>
+  <div class="flow-arrow">
+    <img src="icons/arrow-right-icon.svg" alt="Arrow Right" class="flow-arrow-img">
+  </div>
+  <div class="flow-step">
+    <div class="flow-icon">
+      <img src="icons/folder-sync.svg" alt="Folder Sync" class="flow-icon-img">
+    </div>
+    <p class="flow-title">Sync Folders</p>
+    <small class="flow-sub">Docs, Media, Images — Your Choice</small>
+  </div>
+  <div class="flow-arrow">
+    <img src="icons/arrow-right-icon.svg" alt="Arrow Right" class="flow-arrow-img">
+  </div>
+  <div class="flow-step">
+    <div class="flow-icon">
+      <img src="icons/mobile-hotspot-icon.svg" alt="Mobile Hotspot" class="flow-icon-img">
+    </div>
+    <p class="flow-title">Local Network</p>
+    <small class="flow-sub">Wi-Fi or Hotspot, No Internet</small>
+  </div>
+  <div class="flow-arrow">
+    <img src="icons/arrow-right-icon.svg" alt="Arrow Right" class="flow-arrow-img">
+  </div>
+  <div class="flow-step">
+    <div class="flow-icon">
+      <img src="icons/devices.svg" alt="Devices" class="flow-icon-img">
+    </div>
+    <p class="flow-title">Any Device</p>
+    <small class="flow-sub">Access via browser</small>
+  </div>
+</div>
     </div>
   </section>
 
@@ -314,43 +358,44 @@
       </div>
     </article>
   </section>
-<!-- How It Works Section -->
-<section id="how-it-works" class="section how-it-works">
-  <div class="content">
-    <h2 class="section-title" data-aos="fade-up">How AkServer Works</h2>
-    <div class="steps">
-      <div class="step" data-aos="fade-up" data-aos-delay="200">
-        <div class="step-inner">
-          <div class="step-number">1</div>
-          <div class="step-text">
-            <h3>Install & Launch</h3>
-            <p>Run AkServer on any old PC or laptop. No setup headaches. Just install and go.</p>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="section how-it-works">
+    <div class="content">
+      <h2 class="section-title" data-aos="fade-up">How AkServer Works</h2>
+      <div class="steps">
+        <div class="step" data-aos="fade-up" data-aos-delay="200">
+          <div class="step-inner">
+            <div class="step-number">1</div>
+            <div class="step-text">
+              <h3>Install & Launch</h3>
+              <p>Run AkServer on any old PC or laptop. No setup headaches. Just install and go.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="step" data-aos="fade-up" data-aos-delay="400">
-        <div class="step-inner">
-          <div class="step-number">2</div>
-          <div class="step-text">
-            <h3>Create Local Network</h3>
-            <p>Either connect via local Wi-Fi or let AkServer create its own hotspot — no router needed.</p>
+        <div class="step" data-aos="fade-up" data-aos-delay="400">
+          <div class="step-inner">
+            <div class="step-number">2</div>
+            <div class="step-text">
+              <h3>Create Local Network</h3>
+              <p>Either connect via local Wi-Fi or let AkServer create its own hotspot — no router needed.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="step" data-aos="fade-up" data-aos-delay="600">
-        <div class="step-inner">
-          <div class="step-number">3</div>
-          <div class="step-text">
-            <h3>Access & Sync Securely</h3>
-            <p>Sync folders instantly. Access via browser. No cloud. No spying. Just you and your files.</p>
+        <div class="step" data-aos="fade-up" data-aos-delay="600">
+          <div class="step-inner">
+            <div class="step-number">3</div>
+            <div class="step-text">
+              <h3>Access & Sync Securely</h3>
+              <p>Sync folders instantly. Access via browser. No cloud. No spying. Just you and your files.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Use Cases Section -->
+  <!-- Use Cases Section -->
   <section id="use-cases" class="akserver-usecases-section">
     <h2 class="section-title">🌍 Real-World Use Cases</h2>
     <div class="carousel-container">
@@ -374,19 +419,20 @@
       </div>
     </div>
   </section>
-<!-- Contact Section -->
-<section id="contact" class="section contact">
-  <div class="content">
-    <h2 class="section-title" data-aos="fade-up">Get in Touch</h2>
-    <p class="subtitle" data-aos="fade-up" data-aos-delay="200">Interested in a custom solution? Let's talk.</p>
-    <form class="contact-form" data-aos="fade-up" data-aos-delay="400">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Enquiry</button>
-    </form>
-  </div>
-</section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact">
+    <div class="content">
+      <h2 class="section-title" data-aos="fade-up">Get in Touch</h2>
+      <p class="subtitle" data-aos="fade-up" data-aos-delay="200">Interested in a custom solution? Let's talk.</p>
+      <form class="contact-form" data-aos="fade-up" data-aos-delay="400">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Enquiry</button>
+      </form>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
@@ -414,8 +460,7 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init();
-  </script>
-  <script>
+
     // Smooth scroll with navbar offset
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -424,7 +469,7 @@
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
           window.scrollTo({
-            top: targetElement.offsetTop - 70, // Offset for navbar
+            top: targetElement.offsetTop - 48, // Match navbar height
             behavior: 'smooth'
           });
         }
@@ -437,33 +482,21 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <script defer>
-    // Smooth scroll with navbar offset
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 70,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
 
-    // Ensure page loads at top if no hash
-    window.addEventListener('load', () => {
-      if (!location.hash) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    });
+    // Hamburger Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+      });
+      // Close menu when clicking a link
+      document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+        });
+      });
+    }
 
     // Carousel functionality
     const carouselTrack = document.querySelector('.carousel-track');
@@ -568,17 +601,6 @@
         alert('Starting download for AkServerInstaller.exe...');
       });
     }
-    // Scroll to Top Button
-const scrollTopBtn = document.querySelector('.scroll-top');
-if (scrollTopBtn) {
-  scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-}
   </script>
-  
 </body>
 </html>
