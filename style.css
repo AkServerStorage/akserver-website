@@ -202,13 +202,8 @@ body {
 
 /* Animations */
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 
 /* Responsive Styles */
@@ -266,6 +261,7 @@ body {
     height: 240px;
   }
 }
+
 
 /* Section Wrapper
 ================================= */
@@ -340,8 +336,7 @@ body {
   cursor: pointer;
 }
 
-.btn-primary:hover,
-.btn-primary:focus {
+.btn-primary:hover, .btn-primary:focus {
   background: linear-gradient(135deg, #1a6edd 0%, #0f8299 100%);
   transform: translateY(-3px);
   box-shadow: 0 6px 18px rgba(42, 139, 255, 0.4);
@@ -351,15 +346,13 @@ body {
   background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
 }
 
-.btn-primary.secondary:hover,
-.btn-primary.secondary:focus {
+.btn-primary.secondary:hover, .btn-primary.secondary:focus {
   background: linear-gradient(135deg, #2980b9 0%, #1a6edd 100%);
 }
 
 /* Ensure contrast in Windows High Contrast Mode */
 @media (forced-colors: active) {
-  .btn-primary,
-  .btn-primary.secondary {
+  .btn-primary, .btn-primary.secondary {
     background-color: ButtonFace !important;
     color: ButtonText !important;
     border: 2px solid ButtonBorder !important;
@@ -368,8 +361,7 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .btn-primary,
-  .btn-primary.secondary {
+  .btn-primary, .btn-primary.secondary {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
   }
@@ -416,18 +408,10 @@ body {
   fill: var(--dark-blue);
 }
 
-.flow-step:nth-child(1) .flow-icon-img {
-  fill: var(--brand-blue);
-} /* PC / Laptop */
-.flow-step:nth-child(3) .flow-icon-img {
-  fill: var(--brand-deep);
-} /* Sync Folders */
-.flow-step:nth-child(5) .flow-icon-img {
-  fill: #1a6edd;
-} /* Local Network */
-.flow-step:nth-child(7) .flow-icon-img {
-  fill: var(--dark-blue);
-} /* Any Device */
+.flow-step:nth-child(1) .flow-icon-img { fill: var(--brand-blue); } /* PC / Laptop */
+.flow-step:nth-child(3) .flow-icon-img { fill: var(--brand-deep); } /* Sync Folders */
+.flow-step:nth-child(5) .flow-icon-img { fill: #1a6edd; } /* Local Network */
+.flow-step:nth-child(7) .flow-icon-img { fill: var(--dark-blue); } /* Any Device */
 
 .flow-title {
   font-weight: bold;
@@ -936,6 +920,10 @@ details p {
 .footer-container {
   max-width: 1100px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .footer-link {
@@ -951,10 +939,49 @@ details p {
   text-decoration: underline;
   outline: none;
 }
+
+/* Social Media Icons in Footer */
+.footer-container nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 0.6rem;
+}
+
+.footer-container nav a img {
+  width: 24px;
+  height: 24px;
+  transition: filter 0.3s ease;
+}
+
+.footer-container nav a:hover img,
+.footer-container nav a:focus img {
+  filter: brightness(1.2);
+}
+
+/* Responsive Footer Adjustments */
 @media (max-width: 768px) {
-  .footer {
-    flex-direction: column;
-    align-items: center;
+  .footer-container p {
+    display: flex;           /* stack items */
+    flex-direction: column;  /* vertical layout */
+    align-items: center;     /* center horizontally */
+    text-align: center;      /* center text */
+    gap: 6px;                /* spacing between logo, text, and link */
+    color: #000;             /* black for mobile text */
+  }
+
+  .footer-container nav {
+    order: -1;               /* move social icons above text */
+    justify-content: center; /* center icons */
+  }
+
+  .footer-container nav a img {
+    height: 28px;            /* larger for mobile tap */
+    width: auto;
+  }
+
+  .footer-container {
+    gap: 12px;               /* breathing room for stacked items */
   }
 }
 
@@ -1086,6 +1113,7 @@ nav ul {
   clip: rect(0, 0, 0, 0) !important;
   border: 0 !important;
 }
+
 @media (min-width: 769px) {
   .navbar .logo {
     justify-content: flex-start; /* Move logo + bot to the left */
