@@ -35,14 +35,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Link & Button focus outline */
-a:focus,
-button:focus,
-summary:focus {
-  outline: 3px solid var(--brand-blue);
-  outline-offset: 3px;
-}
-
 /* Navbar Styles
 ================================= */
 .navbar {
@@ -860,3 +852,4 @@ nav ul {
   clip: rect(0, 0, 0, 0) !important;
   border: 0 !important;
 }
+
