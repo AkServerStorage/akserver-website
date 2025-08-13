@@ -1125,5 +1125,11 @@ nav ul {
   vertical-align: -0.125em; /* fine-tuned for bold baseline */
   margin-left: 0.3em;       /* space after text */
 }
+.download-icon {
+  width: 1em;         /* Matches font size */
+  height: 1em;        /* Keeps it square */
+  vertical-align: -0.15em; /* Adjusts vertical alignment */
+  margin-right: 0.4em; /* Space between icon & text */
+}
 
 
