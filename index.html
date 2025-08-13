@@ -76,57 +76,6 @@
       margin: 0;
       line-height: 1.5;
     }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.8rem 1rem;
-      background-color: var(--bg-light);
-      box-shadow: 0 2px 5px var(--shadow-light);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      height: 48px;
-    }
-
-    .main-title {
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: var(--text-dark);
-      line-height: 1.2;
-    }
-
-    .btn-primary {
-      padding: 0.8rem 1.8rem;
-      font-size: 0.95rem;
-      background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-deep) 100%);
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(42, 139, 255, 0.2);
-      color: #fff;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.3s ease;
-    }
-
-    .btn-primary.secondary {
-      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-    }
-
-    .btn-primary:hover,
-    .btn-primary:focus {
-      background: linear-gradient(135deg, #1a6edd 0%, #0f8299 100%);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(42, 139, 255, 0.4);
-    }
-
-    .btn-primary.secondary:hover,
-    .btn-primary.secondary:focus {
-      background: linear-gradient(135deg, #2980b9 0%, #1a6edd 100%);
-    }
   </style>
 
   <title>AkServer | Private Offline File Sync & Cloud Storage</title>
@@ -138,7 +87,7 @@
 <body>
   <!-- Navbar -->
   <header class="navbar">
-    <button class="hamburger" aria-label="Toggle menu">☰</button>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
     <div class="logo">
       <a href="./">
         <img src="images/akserver-logo.png" alt="AkServer Logo" style="height: 32px;" loading="lazy">
@@ -162,7 +111,7 @@
           <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" loading="lazy" />
         </a>
         <a href="https://x.com/akserverstorage" target="_blank" aria-label="Twitter AkServer" rel="noopener">
-          <img src="icons/x-logo.svg" alt="Twitter" loading="lazy" />
+          <img src="icons/twitter.svg" alt="Twitter" loading="lazy" />
         </a>
       </div>
     </nav>
@@ -180,11 +129,10 @@
           <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" loading="lazy" />
         </a>
         <a href="https://x.com/akserverstorage" target="_blank" aria-label="Twitter AkServer" rel="noopener">
-          <img src="icons/logo-black.svg" alt="Twitter" loading="lazy" />
+          <img src="icons/twitter.svg" alt="Twitter" loading="lazy" />
         </a>
       </div>
     </div>
-
   </header>
 
   <!-- Hero Section -->
@@ -233,7 +181,7 @@
           </div>
           <p class="flow-title">Any Device</p>
           <small class="flow-sub">Access via browser</small>
-        </div>        
+        </div>
         <div class="flow-arrow">
           <img src="icons/arrow-right-icon.svg" alt="Arrow Right" class="flow-arrow-img">
         </div>
@@ -244,7 +192,7 @@
           </div>
           <p class="flow-title">Sync Folders</p>
           <small class="flow-sub">Docs, Media, Images — Your Choice</small>
-        </div>        
+        </div>
       </div>
     </div>
   </section>
@@ -328,7 +276,7 @@
   <section id="features" class="feature-stripe">
     <h2 class="section-title">AkServer Features <img src="icons/features.svg" alt="features" class="inline-icon"></h2>
     <article class="feature-item" tabindex="0" aria-labelledby="privacy-stripe-title">
-      <div class="feature-icon" aria-hidden="true"><img src="icons/total-privacy.svg" alt="total-privacy" class="inline-icon"></h2></div>
+      <div class="feature-icon" aria-hidden="true"><img src="icons/total-privacy.svg" alt="total-privacy" class="inline-icon"></div>
       <div class="feature-body">
         <h3 id="privacy-stripe-title">Total Privacy — Your Data Never Leaves Your Control</h3>
         <p class="summary">AkServer works completely offline, syncing files only within your local network — no cloud or internet required.</p>
@@ -464,6 +412,12 @@
           <p>Wirelessly transfer files in remote, internet-free zones.</p>
         </div>
       </div>
+      <div class="carousel-dots">
+        <span class="dot" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+      </div>
     </div>
   </section>
 
@@ -483,19 +437,15 @@
 
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
-    <div class="footer-container" style="text-align: center;">
-
-      <!-- Social Media Icons -->
+    <div class="footer-container">
       <nav aria-label="Social media links" style="display: inline-flex; gap: 12px; margin-bottom: 0.6rem; justify-content: center;">
         <a href="https://www.instagram.com/akserverstorage/" target="_blank" rel="noopener" aria-label="Instagram AkServer">
           <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" width="24" height="24" loading="lazy" />
         </a>
         <a href="https://x.com/akserverstorage" target="_blank" rel="noopener" aria-label="Twitter AkServer">
-          <img src="icons/logo-black.png" alt="Twitter" width="24" height="24" loading="lazy" />
+          <img src="icons/twitter.svg" alt="Twitter" width="24" height="24" loading="lazy" />
         </a>
       </nav>
-
-      <!-- Footer Text -->
       <p style="margin: 0; display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: center; color: #000;">
         &copy; 2025 AkServer. All rights reserved.
         &nbsp;|&nbsp;
@@ -503,7 +453,6 @@
           Licenses & Privacy Policy
         </a>
       </p>
-
     </div>
   </footer>
 
@@ -519,7 +468,7 @@
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
           window.scrollTo({
-            top: targetElement.offsetTop - 48, // Match navbar height
+            top: targetElement.offsetTop - 48,
             behavior: 'smooth'
           });
         }
@@ -539,12 +488,13 @@
     const mobileMenu = document.querySelector('.mobile-menu');
     if (hamburger && mobileMenu) {
       hamburger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
+        const expanded = mobileMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', expanded);
       });
-      // Close menu when clicking a link
       document.querySelectorAll('.mobile-menu a').forEach(link => {
         link.addEventListener('click', () => {
           mobileMenu.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', false);
         });
       });
     }
@@ -553,15 +503,15 @@
     const carouselDots = document.querySelectorAll('.carousel-dots .dot');
     const scrollLeftBtn = document.querySelector('.carousel-btn.left');
     const scrollRightBtn = document.querySelector('.carousel-btn.right');
-    if (carouselTrack && scrollLeftBtn && scrollRightBtn && carouselDots) {
-      scrollLeftBtn.addEventListener('click', () => {
+    if (carouselTrack && carouselDots) {
+      scrollLeftBtn?.addEventListener('click', () => {
         carouselTrack.scrollBy({
           left: -300,
           behavior: 'smooth'
         });
         updateDots();
       });
-      scrollRightBtn.addEventListener('click', () => {
+      scrollRightBtn?.addEventListener('click', () => {
         carouselTrack.scrollBy({
           left: 300,
           behavior: 'smooth'
@@ -615,7 +565,7 @@
           });
         }
         updateDots();
-      }, 5000);
+      }, 8000); // Increased to 8 seconds
       carouselTrack.addEventListener('mouseenter', () => clearInterval(autoScroll));
       carouselTrack.addEventListener('mouseleave', () => {
         autoScroll = setInterval(() => {
@@ -632,7 +582,7 @@
             });
           }
           updateDots();
-        }, 5000);
+        }, 8000);
       });
       carouselTrack.addEventListener('scroll', updateDots);
     }
@@ -673,14 +623,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
