@@ -210,9 +210,35 @@ summary:focus {
   cursor: pointer;
 }
 
-.btn-primary:hover {
-  background-color: #1a6edd;
-  transform: translateY(-2px);
+.btn-primary:hover, .btn-primary:focus {
+  background: linear-gradient(135deg, #1a6edd 0%, #0f8299 100%); /* Darker blue for hover */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(42, 139, 255, 0.4);
+}
+
+.btn-primary.secondary {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); /* Lighter blue for download button */
+}
+
+.btn-primary.secondary:hover, .btn-primary.secondary:focus {
+  background: linear-gradient(135deg, #2980b9 0%, #1a6edd 100%); /* Slightly darker for hover */
+}
+
+/* Ensure contrast in Windows High Contrast Mode */
+@media (forced-colors: active) {
+  .btn-primary, .btn-primary.secondary {
+    background-color: ButtonFace !important;
+    color: ButtonText !important;
+    border: 2px solid ButtonBorder !important;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .btn-primary, .btn-primary.secondary {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
 }
 
 /* AkServer Flow Diagram
