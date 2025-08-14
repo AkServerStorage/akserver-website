@@ -15,12 +15,5 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   if (window.AOS) {
-    AOS.init({
-      duration: 800,
-      once: true,
-      mirror: false
-    });
-  } else {
-    console.warn("AOS library not loaded. Scroll animations will not work.");
-  }
+    AOS.init();
 });
