@@ -39,17 +39,18 @@
       "applicationCategory": "File Management",
       "description": "AkServer is a private, offline file sync and cloud storage system that runs on your local network with no internet required.",
       "url": "https://akserverstorage.github.io/akserver-website/",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "INR"
-      }
-    ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        }
+      ]
     "creator": {
       "@type": "Organization",
       "name": "AkServer Team",
@@ -72,12 +73,68 @@
   <link rel="stylesheet" href="style.css?v=1.0.0">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+  <!-- Global variables and reset -->
+  <link rel="stylesheet" href="css/global.css">
+
+  <!-- Navbar -->
+  <link rel="stylesheet" href="css/navbar.css">
+
+    <!-- Footer -->
+  <link rel="stylesheet" href="css/footer.css">
+  
   <title>AkServer | Private Offline File Sync & Self-hosted Storage</title>
 </head>
 
 <body>
   <!-- Navbar -->
-  <link rel="stylesheet" href="css/navbar.css">
+  <header class="navbar">
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <div class="logo">
+      <a href="./">
+        <img src="images/akserver-logo.png" alt="AkServer Logo" style="height: 32px;" loading="lazy">
+      </a>
+      <div class="bot-container">
+        <img src="images/akserver-ai-bot.png" alt="AkServer Private AI Bot" class="bot-image" loading="lazy">
+        <span class="cloud-text">Coming soon: AI Without the Cloud</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="install.html">Installation</a></li>
+        <li><a href="vision.html">Vision</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="navbar-social">
+        <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
+          <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" loading="lazy" />
+        </a>
+        <a href="https://x.com/akserverstorage" target="_blank" aria-label="Twitter AkServer" rel="noopener">
+          <img src="icons/x-logo.png" alt="Twitter" loading="lazy" />
+        </a>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="install.html">Installation</a></li>
+        <li><a href="vision.html">Vision</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="navbar-social mobile-social">
+        <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
+          <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" loading="lazy" />
+        </a>
+        <a href="https://x.com/akserverstorage" target="_blank" aria-label="Twitter AkServer" rel="noopener">
+          <img src="icons/x-logo.png" alt="Twitter" loading="lazy" />
+        </a>
+      </div>
+    </div>
+  </header>
 
   <!-- Hero Section -->
   <section id="home" class="section hero">
@@ -380,11 +437,27 @@
     </div>
   </section>
 
-  <!-- Footer HTML -->
-  <link rel="stylesheet" href="html/footer.html">
-
-  <!-- Footer CSS -->
-  <link rel="stylesheet" href="css/footer.css">
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <nav aria-label="Social media links" style="display: inline-flex; gap: 12px; margin-bottom: 0.6rem; justify-content: center;">
+        <a href="https://www.instagram.com/akserverstorage/" target="_blank" rel="noopener" aria-label="Instagram AkServer">
+          <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" width="24" height="24" loading="lazy" />
+        </a>
+        <a href="https://x.com/akserverstorage" target="_blank" rel="noopener" aria-label="Twitter AkServer">
+          <img src="icons/x-logo.png" alt="Twitter" width="24" height="24" loading="lazy" />
+        </a>
+      </nav>
+      <p style="margin: 0; display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: center; color: #000;">
+        &copy; 2025 AkServer. All rights reserved.
+        &nbsp;|&nbsp;
+        <a href="privacy.html" style="color: var(--brand-blue); text-decoration: none; font-weight: 500;" aria-label="View Licenses, Privacy Policy, and EULA">
+          Licenses & Privacy Policy <span style="color: #000;">|</span>
+        </a>
+        <span style="font-style: italic; color: #555;">Designed by AkshAy S.</span>
+      </p>
+    </div>
+  </footer>
 
   <!-- Hamburger Menu CSS -->
   <link rel="stylesheet" href="js/hamburger_menu.css">
@@ -404,3 +477,4 @@
 </body>
 
 </html>
+
