@@ -1,4 +1,3 @@
-<script>
 document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.querySelector(".hamburger");
   const menu = document.querySelector(".mobile-menu"); // your actual mobile menu
@@ -37,4 +36,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-</script>
