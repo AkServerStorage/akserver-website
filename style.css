@@ -166,7 +166,7 @@ body {
   font-size: 1rem;
   color: var(--dark-blue);
   text-decoration: none;
-  padding: 0.5rem;
+  padding: 0;
   display: block;
 }
 
@@ -1131,4 +1131,5 @@ nav ul {
   vertical-align: -0.15em; /* Adjusts vertical alignment */
   margin-right: 0.4em; /* Space between icon & text */
 }
+
 
