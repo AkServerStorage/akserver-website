@@ -104,16 +104,6 @@
     font-size: 1rem;
   }
 }
-
-/* Root Variables */
-:root {
-  --brand-blue: #2980b9;
-  --brand-deep: #189ab4;
-  --dark-blue: #2c3e50;
-  --text-muted: #666;
-  --bg-light: #fff;
-}
-
 .flow-diagram {
   display: flex;
   align-items: center;
@@ -756,5 +746,6 @@ details p {
   vertical-align: -0.15em; /* Adjusts vertical alignment */
   margin-right: 0.4em; /* Space between icon & text */
 }
+
 
 
