@@ -1,13 +1,17 @@
 /**
  * hamburger_menu.js
- * ----------------
- * Handles the mobile hamburger menu toggle.
- * - Toggles menu visibility on hamburger click.
+ * -----------------
+ * Controls mobile hamburger menu toggle.
+ *
+ * Purpose:
+ * - Toggles mobile menu visibility on hamburger click.
  * - Closes menu when clicking/tapping outside.
- * - Closes menu when a link inside the menu is clicked.
- * 
+ * - Closes menu when a menu link is clicked.
+ *
  * Usage:
- * Include on all pages that have the navbar with a hamburger menu.
+ * Include on pages with a mobile hamburger menu.
+ * Example:
+ * <script src="js/hamburger_menu.js"></script>
  */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -21,12 +25,14 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger.setAttribute("aria-expanded", "false");
   };
 
+  // Toggle menu on hamburger click
   hamburger.addEventListener("click", (e) => {
     e.stopPropagation();
     const isOpen = menu.classList.toggle("active");
     hamburger.setAttribute("aria-expanded", isOpen);
   });
 
+  // Close menu when clicking/tapping outside
   document.addEventListener("click", (e) => {
     if (!menu.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
   });
@@ -35,5 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!menu.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
   });
 
+  // Close menu on link click
   menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
 });
