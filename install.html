@@ -1,19 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Install AkServer on Windows for secure offline file sync and private cloud storage. Easy setup, no internet required.">
-  <meta name="keywords" content="AkServer installation, offline file sync setup, private cloud storage Windows, secure file sharing">
+  <meta name="description" content="AkServer: Build your private offline file sync system. Secure, customizable cloud storage with no internet required.">
+  <meta name="keywords" content="offline file sync, private cloud storage, secure file sharing, AkServer, local network sync, private AI">
   <meta name="author" content="AkServer Team - Akshay Shinde">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://akserverstorage.github.io/akserver-website/install.html">
-  <link rel="alternate" hreflang="en" href="https://akserverstorage.github.io/akserver-website/install.html">
-  <title>AkServer | Install Private File Sync for Windows</title>
+  <link rel="canonical" href="https://akserverstorage.github.io/akserver-website/">
+  <link rel="alternate" hreflang="en" href="https://akserverstorage.github.io/akserver-website/">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="AkServer – Private Offline File Sync & Cloud Storage" />
+  <meta property="og:description" content="AkServer offers secure, offline file syncing and private cloud storage with a modern dashboard and no subscriptions." />
+  <meta property="og:url" content="https://akserverstorage.github.io/akserver-website/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://akserverstorage.github.io/akserver-website/images/akserver-og-image.png" />
+  <meta property="og:site_name" content="AkServer" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@akserverstorage" />
+  <meta name="twitter:creator" content="@akserverstorage" />
+  <meta name="twitter:title" content="AkServer – Private Offline File Sync & Cloud Storage" />
+  <meta name="twitter:description" content="Secure offline file sync with no cloud or subscriptions. Powered by AkServer." />
+  <meta name="twitter:image" content="https://akserverstorage.github.io/akserver-website/images/akserver-twitter-card.png" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "AkServer",
+      "operatingSystem": "Windows",
+      "applicationCategory": "File Management",
+      "description": "AkServer is a private, offline file sync and cloud storage system that runs on your local network with no internet required.",
+      "url": "https://akserverstorage.github.io/akserver-website/",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "AkServer Team",
+        "url": "https://akserverstorage.github.io/akserver-website/"
+      }
+    }
+  </script>
+
+  <!-- Preload key resources -->
+  <link rel="preload" href="images/akserver-logo.png" as="image">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" as="script">
+
+  <!-- Inline critical CSS -->
+  <style>
+    :root {
+      --brand-blue: #2980b9;
+      --brand-deep: #189ab4;
+      --dark-blue: #2c3e50;
+      --text-dark: #1a1a1a;
+      --text-muted: #4a4a4a;
+      --bg-light: #ffffff;
+      --panel: #f5f5f5;
+      --shadow-light: rgba(0, 0, 0, 0.1);
+      --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--text-dark);
+      background-color: #f9f9f9;
+      margin: 0;
+      line-height: 1.5;
+    }
+  </style>
+
+  <title>AkServer | Private Offline File Sync & Self-hosted Storage</title>
   <link rel="icon" href="images/akserver-logo.png" type="image/png">
   <link rel="stylesheet" href="install.css?v=3.0.8">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
   <!-- Navbar -->
   <header class="navbar">
@@ -23,18 +93,18 @@
         <img src="images/akserver-logo.png" alt="AkServer Logo" style="height: 32px;" loading="lazy">
       </a>
       <div class="bot-container">
-        <img src="https://akserverstorage.github.io/akserver-website/images/private_ai_bot.png" alt="AkServer Private AI Bot" class="bot-image" loading="lazy">
+        <img src="images/akserver-ai-bot.png" alt="AkServer Private AI Bot" class="bot-image" loading="lazy">
         <span class="cloud-text">Coming soon: AI Without the Cloud</span>
       </div>
     </div>
     <nav class="nav-links">
       <ul>
-        <li><a href="./#home">Home</a></li>
-        <li><a href="./#about">About</a></li>
-        <li><a href="./#features">Features</a></li>
-        <li><a href="install.html" aria-current="page">Installation</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="install.html">Installation</a></li>
         <li><a href="vision.html">Vision</a></li>
-        <li><a href="./#contact">Contact</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="navbar-social">
         <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
@@ -47,12 +117,12 @@
     </nav>
     <div class="mobile-menu">
       <ul>
-        <li><a href="./#home">Home</a></li>
-        <li><a href="./#about">About</a></li>
-        <li><a href="./#features">Features</a></li>
-        <li><a href="install.html" aria-current="page">Installation</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="install.html">Installation</a></li>
         <li><a href="vision.html">Vision</a></li>
-        <li><a href="./#contact">Contact</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="navbar-social mobile-social">
         <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
@@ -518,7 +588,7 @@
     </div>
   </main>
 
-  <!-- Footer -->
+<!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="footer-container">
       <nav aria-label="Social media links" style="display: inline-flex; gap: 12px; margin-bottom: 0.6rem; justify-content: center;">
@@ -530,148 +600,109 @@
         </a>
       </nav>
       <p style="margin: 0; display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: center; color: #000;">
-        <img src="images/akserver-logo.png" alt="AkServer Logo" style="height: 20px; vertical-align: middle; margin-right: 6px;">
         &copy; 2025 AkServer. All rights reserved.
         &nbsp;|&nbsp;
-        <a href="privacy.html" style="color: var(--brand-blue); text-decoration: none; font-weight: 500;" aria-label="View Licenses, Privacy Policy, and EULA">
-          Licenses & Privacy Policy
-        </a>
+      <a href="privacy.html" style="color: var(--brand-blue); text-decoration: none; font-weight: 500;" aria-label="View Licenses, Privacy Policy, and EULA">
+        Licenses & Privacy Policy
+      </a>
       </p>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="scripts.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // AOS Initialization
-      AOS.init({
-        once: true,
-        duration: 800
-      });
-
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href').substring(1);
-          const targetElement = document.getElementById(targetId);
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 48,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-
-      // Ensure page loads at top if no hash
-      window.addEventListener('load', () => {
-        if (!location.hash) {
+    AOS.init();
+    // Smooth scroll with navbar offset
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
           window.scrollTo({
-            top: 0,
+            top: targetElement.offsetTop - 48,
             behavior: 'smooth'
           });
         }
       });
-
-      // Hamburger Menu Toggle
-      const hamburger = document.querySelector('.hamburger');
-      const mobileMenu = document.querySelector('.mobile-menu');
-      if (hamburger && mobileMenu) {
-        hamburger.addEventListener('click', function(e) {
-          e.stopPropagation();
-          const expanded = mobileMenu.classList.toggle('active');
-          hamburger.setAttribute('aria-expanded', expanded);
-        });
-
-        document.querySelectorAll('.mobile-menu a').forEach(link => {
-          link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', false);
-          });
-        });
-
-        document.addEventListener('click', function(e) {
-          if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
-            mobileMenu.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', false);
-          }
-        });
-
-        document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape') {
-            mobileMenu.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', false);
-          }
+    });
+    // Ensure page loads at top if no hash
+    window.addEventListener('load', () => {
+      if (!location.hash) {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
         });
       }
-
-      // Feedback Form Handling
-      const feedbackForm = document.getElementById('feedbackForm');
-      const feedbackStatus = document.getElementById('feedback-status');
-      if (feedbackForm && feedbackStatus) {
-        feedbackForm.addEventListener('submit', async function(e) {
-          e.preventDefault();
-          const text = feedbackForm['feedback'].value.trim();
-          const textarea = document.getElementById('feedback-text');
-          if (!text) {
-            textarea.setAttribute('aria-invalid', 'true');
-            feedbackStatus.classList.add('error');
-            feedbackStatus.textContent = 'Please enter your feedback before submitting.';
-            feedbackStatus.style.display = 'block';
-            setTimeout(() => {
-              feedbackStatus.style.display = 'none';
-              feedbackStatus.classList.remove('error');
-              textarea.setAttribute('aria-invalid', 'false');
-            }, 5000);
-            return;
-          }
-          try {
-            const response = await fetch(feedbackForm.action, {
-              method: 'POST',
-              body: new FormData(feedbackForm)
-            });
-            if (!response.ok) throw new Error('Submission failed');
-            textarea.setAttribute('aria-invalid', 'false');
-            feedbackStatus.classList.remove('error');
-            feedbackStatus.textContent = 'Thank you for your feedback!';
-            feedbackForm.reset();
-            feedbackStatus.style.display = 'block';
-            setTimeout(() => {
-              feedbackStatus.style.display = 'none';
-            }, 5000);
-          } catch (error) {
-            textarea.setAttribute('aria-invalid', 'true');
-            feedbackStatus.classList.add('error');
-            feedbackStatus.textContent = 'Failed to submit feedback. Please try again.';
-            feedbackStatus.style.display = 'block';
-            setTimeout(() => {
-              feedbackStatus.style.display = 'none';
-              feedbackStatus.classList.remove('error');
-              textarea.setAttribute('aria-invalid', 'false');
-            }, 5000);
-          }
-        });
-      }
-
-      // Open images in new tab
-      document.querySelectorAll('.setup-step img').forEach(img => {
-        img.parentElement.parentElement.addEventListener('click', (e) => {
-          if (e.target.tagName !== 'SUMMARY') {
-            window.open(img.src, '_blank');
-          }
-        });
-        img.parentElement.parentElement.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            if (e.target.tagName !== 'SUMMARY') {
-              window.open(img.src, '_blank');
-            }
-          }
+    });
+    // Hamburger Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const expanded = mobileMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', expanded);
+      });
+      document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', false);
         });
       });
-    });
+    }
+
+    // Contact form submission feedback
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const button = contactForm.querySelector('button');
+        button.textContent = 'Sending...';
+        button.disabled = true;
+        setTimeout(() => {
+          alert('Thank you for your enquiry! We’ll get back to you soon.');
+          contactForm.reset();
+          button.textContent = 'Send Enquiry';
+          button.disabled = false;
+        }, 1000);
+      });
+    }
+    // Download button feedback
+    const downloadBtn = document.querySelector('.btn-primary.secondary');
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', () => {
+        alert('Starting download for AkServerInstaller.exe...');
+      });
+    }
   </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".hamburger"); // your hamburger button
+  const menu = document.querySelector(".nav-menu"); // your mobile menu
+
+  // Toggle menu when hamburger is clicked
+  hamburger.addEventListener("click", function (e) {
+    e.stopPropagation(); // Prevent this click from triggering the outside click handler
+    menu.classList.toggle("active"); // Show/hide menu
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", function (e) {
+    if (menu.classList.contains("active") && !menu.contains(e.target)) {
+      menu.classList.remove("active");
+    }
+  });
+
+  // Optional: close when pressing ESC
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      menu.classList.remove("active");
+    }
+  });
+});
+</script>
+
 </body>
+
 </html>
