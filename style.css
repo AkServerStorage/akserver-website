@@ -74,7 +74,8 @@
   cursor: pointer;
 }
 
-.btn-primary:hover, .btn-primary:focus {
+.btn-primary:hover,
+.btn-primary:focus {
   background: linear-gradient(135deg, #1a6edd 0%, #0f8299 100%);
   transform: translateY(-3px);
   box-shadow: 0 6px 18px rgba(42, 139, 255, 0.4);
@@ -84,26 +85,11 @@
   background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
 }
 
-.btn-primary.secondary:hover, .btn-primary.secondary:focus {
+.btn-primary.secondary:hover,
+.btn-primary.secondary:focus {
   background: linear-gradient(135deg, #2980b9 0%, #1a6edd 100%);
 }
 
-/* Ensure contrast in Windows High Contrast Mode */
-@media (forced-colors: active) {
-  .btn-primary, .btn-primary.secondary {
-    background-color: ButtonFace !important;
-    color: ButtonText !important;
-    border: 2px solid ButtonBorder !important;
-  }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .btn-primary, .btn-primary.secondary {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-  }
-}
 .flow-diagram {
   display: flex;
   align-items: center;
@@ -136,10 +122,18 @@
   fill: var(--dark-blue);
 }
 
-.flow-step:nth-child(1) .flow-icon-img { fill: var(--brand-blue); } /* PC / Laptop */
-.flow-step:nth-child(3) .flow-icon-img { fill: var(--brand-deep); } /* Sync Folders */
-.flow-step:nth-child(5) .flow-icon-img { fill: #1a6edd; } /* Local Network */
-.flow-step:nth-child(7) .flow-icon-img { fill: var(--dark-blue); } /* Any Device */
+.flow-step:nth-child(1) .flow-icon-img {
+  fill: var(--brand-blue);
+} /* PC / Laptop */
+.flow-step:nth-child(3) .flow-icon-img {
+  fill: var(--brand-deep);
+} /* Sync Folders */
+.flow-step:nth-child(5) .flow-icon-img {
+  fill: #1a6edd;
+} /* Local Network */
+.flow-step:nth-child(7) .flow-icon-img {
+  fill: var(--dark-blue);
+} /* Any Device */
 
 .flow-title {
   font-weight: bold;
@@ -165,73 +159,6 @@
   fill: #999;
 }
 
-@media (max-width: 768px) {
-  .flow-diagram {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    align-items: center;
-  }
-
-  .flow-step {
-    width: 100%;
-    max-width: 300px;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .flow-icon-img {
-    width: 28px;
-    height: 28px;
-  }
-
-  .flow-title {
-    font-size: 0.9rem;
-  }
-
-  .flow-sub {
-    font-size: 0.75rem;
-    max-width: 90%;
-  }
-
-  .flow-arrow-img {
-    width: 20px;
-    height: 20px;
-    transform: rotate(90deg);
-  }
-}
-
-@media (max-width: 480px) {
-  .flow-diagram {
-    padding: 1rem;
-    gap: 1.2rem;
-  }
-
-  .flow-step {
-    padding: 0.8rem;
-  }
-
-  .flow-icon-img {
-    width: 24px;
-    height: 24px;
-  }
-
-  .flow-title {
-    font-size: 0.85rem;
-  }
-
-  .flow-sub {
-    font-size: 0.7rem;
-  }
-
-  .flow-arrow-img {
-    width: 18px;
-    height: 18px;
-  }
-}
 /* About Section
 ================================= */
 .akserver-section {
@@ -636,72 +563,9 @@ details p {
 /*----footer.css-----*/
 
 /* Responsive Footer Adjustments */
-@media (max-width: 768px) {
-  .footer-container p {
-    display: flex;           /* stack items */
-    flex-direction: column;  /* vertical layout */
-    align-items: center;     /* center horizontally */
-    text-align: center;      /* center text */
-    gap: 6px;                /* spacing between logo, text, and link */
-    color: #000;             /* black for mobile text */
-  }
-
-  .footer-container nav {
-    order: -1;               /* move social icons above text */
-    justify-content: center; /* center icons */
-  }
-
-  .footer-container nav a img {
-    height: 28px;            /* larger for mobile tap */
-    width: auto;
-  }
-
-  .footer-container {
-    gap: 12px;               /* breathing room for stacked items */
-  }
-}
 
 /* Responsive Styles
 ================================= */
-@media (max-width: 992px) {
-  .section-title {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .main-title {
-    font-size: 2rem;
-  }
-
-  .step-number {
-    width: 40px;
-    height: 40px;
-    font-size: 1.5rem;
-  }
-
-  .carousel-card {
-    min-width: 80%;
-  }
-
-  .flow-diagram {
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1rem;
-  }
-
-  .flow-step {
-    width: 45%;
-  }
-
-  .flow-arrow {
-    display: flex;
-  }
-
-  .bot-container {
-    gap: 6px;
-  }
-}
 
 /* Scrollbar styles for WebKit browsers */
 .carousel-container::-webkit-scrollbar {
@@ -728,24 +592,167 @@ details p {
   clip: rect(0, 0, 0, 0) !important;
   border: 0 !important;
 }
-
-@media (min-width: 769px) {
-  .navbar .logo {
-    justify-content: flex-start; /* Move logo + bot to the left */
-  }
-}
 .inline-icon {
-  width: 1em;               /* exactly matches text height */
+  width: 1em; /* exactly matches text height */
   height: 1em;
   vertical-align: -0.125em; /* fine-tuned for bold baseline */
-  margin-left: 0.3em;       /* space after text */
+  margin-left: 0.3em; /* space after text */
 }
 .download-icon {
-  width: 1em;         /* Matches font size */
-  height: 1em;        /* Keeps it square */
+  width: 1em; /* Matches font size */
+  height: 1em; /* Keeps it square */
   vertical-align: -0.15em; /* Adjusts vertical alignment */
   margin-right: 0.4em; /* Space between icon & text */
 }
 
+/* Ensure contrast in Windows High Contrast Mode */
+@media (forced-colors: active) {
+  .btn-primary,
+  .btn-primary.secondary {
+    background-color: ButtonFace !important;
+    color: ButtonText !important;
+    border: 2px solid ButtonBorder !important;
+  }
+}
 
+/* Tablet adjustments */
+@media (max-width: 992px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
 
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  /* Buttons */
+  .btn-primary,
+  .btn-primary.secondary {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* Main title */
+  .main-title {
+    font-size: 2rem;
+  }
+
+  /* Step numbers */
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  /* Flow diagram */
+  .flow-diagram {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+  }
+
+  .flow-step {
+    width: 45%;
+    max-width: 300px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flow-icon-img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .flow-title {
+    font-size: 0.9rem;
+  }
+
+  .flow-sub {
+    font-size: 0.75rem;
+    max-width: 90%;
+  }
+
+  .flow-arrow-img {
+    width: 20px;
+    height: 20px;
+    transform: rotate(90deg);
+  }
+
+  .flow-arrow {
+    display: flex;
+  }
+
+  /* Carousel cards */
+  .carousel-card {
+    min-width: 80%;
+  }
+
+  /* Footer adjustments */
+  .footer-container p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+    color: #000;
+  }
+
+  .footer-container nav {
+    order: -1;
+    justify-content: center;
+  }
+
+  .footer-container nav a img {
+    height: 28px;
+    width: auto;
+  }
+
+  .footer-container {
+    gap: 12px;
+  }
+
+  /* Bot container */
+  .bot-container {
+    gap: 6px;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+  .flow-diagram {
+    padding: 1rem;
+    gap: 1.2rem;
+  }
+
+  .flow-step {
+    padding: 0.8rem;
+  }
+
+  .flow-icon-img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .flow-title {
+    font-size: 0.85rem;
+  }
+
+  .flow-sub {
+    font-size: 0.7rem;
+  }
+
+  .flow-arrow-img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 769px) {
+  .navbar .logo {
+    justify-content: flex-start;
+  }
+}
