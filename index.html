@@ -80,60 +80,60 @@
 
   <title>AkServer | Private Offline File Sync & Self-hosted Storage</title>
   <link rel="icon" href="images/akserver-logo.png" type="image/png">
-  <link rel="stylesheet" href="style.css?v=4.0.9">
+  <link rel="stylesheet" href="style.css?v=5.0.9">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    <div class="logo">
-      <a href="./">
-        <img src="images/akserver-logo.png" alt="AkServer Logo" style="height: 32px;" loading="lazy">
+ <!-- Navbar -->
+<header class="navbar">
+  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  <div class="logo">
+    <a href="./">
+      <img src="images/akserver-logo.png" alt="AkServer Logo" style="height: 32px;" loading="lazy">
+    </a>
+    <div class="bot-container">
+      <img src="images/akserver-ai-bot.png" alt="AkServer Private AI Bot" class="bot-image" loading="lazy">
+      <span class="cloud-text">Coming soon: AI Without the Cloud</span>
+    </div>
+  </div>
+  <nav class="nav-links">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="install.html">Installation</a></li>
+      <li><a href="vision.html">Vision</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="navbar-social">
+      <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
+        <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" loading="lazy" />
       </a>
-      <div class="bot-container">
-        <img src="images/akserver-ai-bot.png" alt="AkServer Private AI Bot" class="bot-image" loading="lazy">
-        <span class="cloud-text">Coming soon: AI Without the Cloud</span>
-      </div>
+      <a href="https://x.com/akserverstorage" target="_blank" aria-label="Twitter AkServer" rel="noopener">
+        <img src="icons/x-logo.png" alt="Twitter" loading="lazy" />
+      </a>
     </div>
-    <nav class="nav-links">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="install.html">Installation</a></li>
-        <li><a href="vision.html">Vision</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="navbar-social">
-        <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
-          <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" loading="lazy" />
-        </a>
-        <a href="https://x.com/akserverstorage" target="_blank" aria-label="Twitter AkServer" rel="noopener">
-          <img src="icons/x-logo.png" alt="Twitter" loading="lazy" />
-        </a>
-      </div>
-    </nav>
-    <div class="mobile-menu">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="install.html">Installation</a></li>
-        <li><a href="vision.html">Vision</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="navbar-social mobile-social">
-        <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
-          <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" loading="lazy" />
-        </a>
-        <a href="https://x.com/akserverstorage" target="_blank" aria-label="Twitter AkServer" rel="noopener">
-          <img src="icons/x-logo.png" alt="Twitter" loading="lazy" />
-        </a>
-      </div>
+  </nav>
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="install.html">Installation</a></li>
+      <li><a href="vision.html">Vision</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="navbar-social mobile-social">
+      <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
+        <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" loading="lazy" />
+      </a>
+      <a href="https://x.com/akserverstorage" target="_blank" aria-label="Twitter AkServer" rel="noopener">
+        <img src="icons/x-logo.png" alt="Twitter" loading="lazy" />
+      </a>
     </div>
-  </header>
+  </div>
+</header>
 
   <!-- Hero Section -->
   <section id="home" class="section hero">
@@ -485,21 +485,7 @@
         });
       }
     });
-    // Hamburger Menu Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    if (hamburger && mobileMenu) {
-      hamburger.addEventListener('click', () => {
-        const expanded = mobileMenu.classList.toggle('active');
-        hamburger.setAttribute('aria-expanded', expanded);
-      });
-      document.querySelectorAll('.mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.remove('active');
-          hamburger.setAttribute('aria-expanded', false);
-        });
-      });
-    }
+
     // Carousel functionality
     const carouselTrack = document.querySelector('.carousel-track');
     const carouselDots = document.querySelectorAll('.carousel-dots .dot');
@@ -623,30 +609,39 @@
     }
   </script>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const hamburger = document.querySelector(".hamburger"); // your hamburger button
-      const menu = document.querySelector(".nav-menu"); // your mobile menu
-      // Toggle menu when hamburger is clicked
-      hamburger.addEventListener("click", function(e) {
-        e.stopPropagation(); // Prevent this click from triggering the outside click handler
-        menu.classList.toggle("active"); // Show/hide menu
-      });
-      // Close menu when clicking outside
-      document.addEventListener("click", function(e) {
-        if (menu.classList.contains("active") && !menu.contains(e.target)) {
-          menu.classList.remove("active");
-        }
-      });
-      // Optional: close when pressing ESC
-      document.addEventListener("keydown", function(e) {
-        if (e.key === "Escape") {
-          menu.classList.remove("active");
-        }
-      });
-    });
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".hamburger");
+  const menu = document.querySelector(".mobile-menu");
+
+  if (!hamburger || !menu) return;
+
+  const closeMenu = () => {
+    menu.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+  };
+
+  // Toggle menu on hamburger click
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = menu.classList.toggle("active");
+    hamburger.setAttribute("aria-expanded", isOpen);
+  });
+
+  // Close menu when clicking/tapping outside
+  document.addEventListener("click", (e) => {
+    if (!menu.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
+  });
+
+  document.addEventListener("touchstart", (e) => {
+    if (!menu.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
+  });
+
+  // Close menu on mobile menu link click
+  menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+});
+
   </script>
 
 </body>
 
 </html>
-
