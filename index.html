@@ -69,7 +69,7 @@
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" as="script">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css?v=3.0.9">
+  <link rel="stylesheet" href="style.css?v=1.0.0">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <title>AkServer | Private Offline File Sync & Self-hosted Storage</title>
@@ -380,163 +380,28 @@
     </div>
   </section>
 
-<!-- Footer -->
-  <link rel="stylesheet" href="css/footer.css">
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-    // Smooth scroll with navbar offset
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 48,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-    // Ensure page loads at top if no hash
-    window.addEventListener('load', () => {
-      if (!location.hash) {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }
-    });
-    // Hamburger Menu Toggle
-  <link rel="stylesheet" href="js/hamburger_menu.css">
-    // Carousel functionality
-    const carouselTrack = document.querySelector('.carousel-track');
-    const carouselDots = document.querySelectorAll('.carousel-dots .dot');
-    const scrollLeftBtn = document.querySelector('.carousel-btn.left');
-    const scrollRightBtn = document.querySelector('.carousel-btn.right');
-    if (carouselTrack && carouselDots) {
-      scrollLeftBtn?.addEventListener('click', () => {
-        carouselTrack.scrollBy({
-          left: -300,
-          behavior: 'smooth'
-        });
-        updateDots();
-      });
-      scrollRightBtn?.addEventListener('click', () => {
-        carouselTrack.scrollBy({
-          left: 300,
-          behavior: 'smooth'
-        });
-        updateDots();
-      });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') {
-          carouselTrack.scrollBy({
-            left: 300,
-            behavior: 'smooth'
-          });
-          updateDots();
-        } else if (e.key === 'ArrowLeft') {
-          carouselTrack.scrollBy({
-            left: -300,
-            behavior: 'smooth'
-          });
-          updateDots();
-        }
-      });
-      carouselDots.forEach(dot => {
-        dot.addEventListener('click', () => {
-          const index = parseInt(dot.dataset.index);
-          const cardWidth = carouselTrack.querySelector('.carousel-card').offsetWidth + 24;
-          carouselTrack.scrollTo({
-            left: index * cardWidth,
-            behavior: 'smooth'
-          });
-          updateDots();
-        });
-      });
+<!-- Footer CSS -->
+<link rel="stylesheet" href="css/footer.css">
 
-      function updateDots() {
-        const cardWidth = carouselTrack.querySelector('.carousel-card').offsetWidth + 24;
-        const scrollIndex = Math.round(carouselTrack.scrollLeft / cardWidth);
-        carouselDots.forEach(dot => dot.classList.remove('active'));
-        carouselDots[scrollIndex]?.classList.add('active');
-      }
-      let autoScroll = setInterval(() => {
-        const cardWidth = carouselTrack.querySelector('.carousel-card').offsetWidth + 24;
-        if (carouselTrack.scrollLeft + carouselTrack.offsetWidth >= carouselTrack.scrollWidth) {
-          carouselTrack.scrollTo({
-            left: 0,
-            behavior: 'smooth'
-          });
-        } else {
-          carouselTrack.scrollBy({
-            left: cardWidth,
-            behavior: 'smooth'
-          });
-        }
-        updateDots();
-      }, 8000); // Increased to 8 seconds
-      carouselTrack.addEventListener('mouseenter', () => clearInterval(autoScroll));
-      carouselTrack.addEventListener('mouseleave', () => {
-        autoScroll = setInterval(() => {
-          const cardWidth = carouselTrack.querySelector('.carousel-card').offsetWidth + 24;
-          if (carouselTrack.scrollLeft + carouselTrack.offsetWidth >= carouselTrack.scrollWidth) {
-            carouselTrack.scrollTo({
-              left: 0,
-              behavior: 'smooth'
-            });
-          } else {
-            carouselTrack.scrollBy({
-              left: cardWidth,
-              behavior: 'smooth'
-            });
-          }
-          updateDots();
-        }, 8000);
-      });
-      carouselTrack.addEventListener('scroll', updateDots);
-    }
-    // Toggle summary text on details open/close
-    document.querySelectorAll('details').forEach(details => {
-      const summary = details.querySelector('summary');
-      const openText = "Show less";
-      const closeText = "Learn more";
-      summary.textContent = closeText;
-      details.addEventListener('toggle', () => {
-        summary.textContent = details.open ? openText : closeText;
-      });
-    });
-    // Contact form submission feedback
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const button = contactForm.querySelector('button');
-        button.textContent = 'Sending...';
-        button.disabled = true;
-        setTimeout(() => {
-          alert('Thank you for your enquiry! We’ll get back to you soon.');
-          contactForm.reset();
-          button.textContent = 'Send Enquiry';
-          button.disabled = false;
-        }, 1000);
-      });
-    }
-    // Download button feedback
-    const downloadBtn = document.querySelector('.btn-primary.secondary');
-    if (downloadBtn) {
-      downloadBtn.addEventListener('click', () => {
-        alert('Starting download for AkServerInstaller.exe...');
-      });
-    }
-  </script>
+<!-- Hamburger Menu CSS -->
+<link rel="stylesheet" href="js/hamburger_menu.css">
+
+<!-- AOS Library for Scroll Animations -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<!-- Modular JS Files -->
+<script src="js/animations.js"></script>        <!-- Handles AOS.init() safely -->
+<script src="js/smooth_scroll.js"></script>     <!-- Smooth scroll with navbar offset -->
+<script src="js/carousel.js"></script>          <!-- Carousel functionality -->
+<script src="js/details_toggle.js"></script>    <!-- Toggle 'Learn more / Show less' -->
+<script src="js/contact_form.js"></script>      <!-- Contact form submission feedback -->
+<script src="js/download_btn.js"></script>      <!-- Download button feedback -->
+<script src="js/hamburger_menu.js"></script>    <!-- Hamburger toggle for mobile menu -->
 
 </body>
 
 </html>
+
 
 
 
