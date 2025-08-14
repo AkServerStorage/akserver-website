@@ -8,13 +8,13 @@
   <meta name="keywords" content="offline file sync, private cloud storage, secure file sharing, AkServer, local network sync, private AI">
   <meta name="author" content="AkServer Team - Akshay Shinde">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://akserverstorage.github.io/akserver-website/vision.html">
-  <link rel="alternate" hreflang="en" href="https://akserverstorage.github.io/akserver-website/vision.html">
+  <link rel="canonical" href="https://akserverstorage.github.io/akserver-website/">
+  <link rel="alternate" hreflang="en" href="https://akserverstorage.github.io/akserver-website/">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="AkServer – Our Vision for Privacy" />
-  <meta property="og:description" content="Learn about AkServer's vision for secure, offline file syncing and private cloud storage." />
-  <meta property="og:url" content="https://akserverstorage.github.io/akserver-website/vision.html" />
+  <meta property="og:title" content="AkServer – Private Offline File Sync & Cloud Storage" />
+  <meta property="og:description" content="AkServer offers secure, offline file syncing and private cloud storage with a modern dashboard and no subscriptions." />
+  <meta property="og:url" content="https://akserverstorage.github.io/akserver-website/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://akserverstorage.github.io/akserver-website/images/akserver-og-image.png" />
   <meta property="og:site_name" content="AkServer" />
@@ -23,19 +23,26 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@akserverstorage" />
   <meta name="twitter:creator" content="@akserverstorage" />
-  <meta name="twitter:title" content="AkServer – Our Vision for Privacy" />
-  <meta name="twitter:description" content="Discover AkServer's commitment to privacy and offline file sync." />
+  <meta name="twitter:title" content="AkServer – Private Offline File Sync & Cloud Storage" />
+  <meta name="twitter:description" content="Secure offline file sync with no cloud or subscriptions. Powered by AkServer." />
   <meta name="twitter:image" content="https://akserverstorage.github.io/akserver-website/images/akserver-twitter-card.png" />
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "AkServer Vision",
-      "description": "AkServer's vision for private, offline file sync and cloud storage.",
-      "url": "https://akserverstorage.github.io/akserver-website/vision.html",
-      "publisher": {
+      "@type": "SoftwareApplication",
+      "name": "AkServer",
+      "operatingSystem": "Windows",
+      "applicationCategory": "File Management",
+      "description": "AkServer is a private, offline file sync and cloud storage system that runs on your local network with no internet required.",
+      "url": "https://akserverstorage.github.io/akserver-website/",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
         "@type": "Organization",
         "name": "AkServer Team",
         "url": "https://akserverstorage.github.io/akserver-website/"
@@ -48,9 +55,33 @@
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" as="script">
 
-  <title>AkServer | Vision for Private Offline Storage</title>
+  <!-- Inline critical CSS -->
+  <style>
+    :root {
+      --brand-blue: #2980b9;
+      --brand-deep: #189ab4;
+      --dark-blue: #2c3e50;
+      --text-dark: #1a1a1a;
+      --text-muted: #4a4a4a;
+      --bg-light: #ffffff;
+      --panel: #f5f5f5;
+      --shadow-light: rgba(0, 0, 0, 0.1);
+      --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--text-dark);
+      background-color: #f9f9f9;
+      margin: 0;
+      line-height: 1.5;
+    }
+  </style>
+
+  <title>AkServer | Private Offline File Sync & Self-hosted Storage</title>
   <link rel="icon" href="images/akserver-logo.png" type="image/png">
-  <link rel="stylesheet" href="install.css?v=3.0.9">
+  <link rel="stylesheet" href="style.css?v=1.0.0">
+  <link rel="stylesheet" href="install.css?v=1.0.0">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
@@ -69,12 +100,12 @@
     </div>
     <nav class="nav-links">
       <ul>
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#features">Features</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
         <li><a href="install.html">Installation</a></li>
-        <li><a href="vision.html" class="active">Vision</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="vision.html">Vision</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="navbar-social">
         <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
@@ -87,12 +118,12 @@
     </nav>
     <div class="mobile-menu">
       <ul>
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#features">Features</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
         <li><a href="install.html">Installation</a></li>
         <li><a href="vision.html">Vision</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="navbar-social mobile-social">
         <a href="https://www.instagram.com/akserverstorage/" target="_blank" aria-label="Instagram AkServer" rel="noopener">
@@ -104,7 +135,6 @@
       </div>
     </div>
   </header>
-
 
   <!-- Main Content -->
   <main class="page" role="main" aria-labelledby="pageTitle">
@@ -559,28 +589,28 @@
     </div>
   </main>
 
-<!-- Footer -->
-<footer class="footer" role="contentinfo">
-  <div class="footer-container">
-    <nav aria-label="Social media links" style="display: inline-flex; gap: 12px; margin-bottom: 0.6rem; justify-content: center;">
-      <a href="https://www.instagram.com/akserverstorage/" target="_blank" rel="noopener" aria-label="Instagram AkServer">
-        <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" width="24" height="24" loading="lazy" />
-      </a>
-      <a href="https://x.com/akserverstorage" target="_blank" rel="noopener" aria-label="Twitter AkServer">
-        <img src="icons/x-logo.png" alt="Twitter" width="24" height="24" loading="lazy" />
-      </a>
-    </nav>
-    <p style="margin: 0; display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: center; color: #000;">
-      &copy; 2025 AkServer. All rights reserved.
-      &nbsp;|&nbsp;
-      <div href="privacy.html" style="color: var(--brand-blue); text-decoration: none; font-weight: 500;" aria-label="View Licenses, Privacy Policy, and EULA">
-        Licenses & Privacy Policy <span style="color: #000;">|</span>
-      </div>
-      
-      <span style="font-style: italic; color: #555;">Designed by AkshAy S.</span>
-    </p>
-  </div>
-</footer>
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <nav aria-label="Social media links" style="display: inline-flex; gap: 12px; margin-bottom: 0.6rem; justify-content: center;">
+        <a href="https://www.instagram.com/akserverstorage/" target="_blank" rel="noopener" aria-label="Instagram AkServer">
+          <img src="icons/Instagram_Glyph_Gradient.svg" alt="Instagram" width="24" height="24" loading="lazy" />
+        </a>
+        <a href="https://x.com/akserverstorage" target="_blank" rel="noopener" aria-label="Twitter AkServer">
+          <img src="icons/x-logo.png" alt="Twitter" width="24" height="24" loading="lazy" />
+        </a>
+      </nav>
+      <p style="margin: 0; display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: center; color: #000;">
+        &copy; 2025 AkServer. All rights reserved.
+        &nbsp;|&nbsp;
+        <a href="privacy.html" style="color: var(--brand-blue); text-decoration: none; font-weight: 500;" aria-label="View Licenses, Privacy Policy, and EULA">
+          Licenses & Privacy Policy <span style="color: #000;">|</span>
+        </a>
+
+        <span style="font-style: italic; color: #555;">Designed by AkshAy S.</span>
+      </p>
+    </div>
+  </footer>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -589,7 +619,6 @@
       once: true,
       duration: 800
     });
-
     // Smooth scroll with navbar offset
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -604,7 +633,6 @@
         }
       });
     });
-
     // Ensure page loads at top if no hash
     window.addEventListener('load', () => {
       if (!location.hash) {
@@ -614,22 +642,30 @@
         });
       }
     });
-
-    // Hamburger Menu Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    if (hamburger && mobileMenu) {
-      hamburger.addEventListener('click', () => {
-        const expanded = mobileMenu.classList.toggle('active');
-        hamburger.setAttribute('aria-expanded', expanded);
+    document.addEventListener("DOMContentLoaded", function() {
+      const hamburger = document.querySelector(".hamburger");
+      const menu = document.querySelector(".mobile-menu");
+      if (!hamburger || !menu) return;
+      const closeMenu = () => {
+        menu.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+      };
+      // Toggle menu on hamburger click
+      hamburger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = menu.classList.toggle("active");
+        hamburger.setAttribute("aria-expanded", isOpen);
       });
-      document.querySelectorAll('.mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.remove('active');
-          hamburger.setAttribute('aria-expanded', false);
-        });
+      // Close menu when clicking/tapping outside
+      document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
       });
-    }
+      document.addEventListener("touchstart", (e) => {
+        if (!menu.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
+      });
+      // Close menu on mobile menu link click
+      menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+    });
   </script>
 </body>
 
